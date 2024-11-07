@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "gamepage.h"
 #include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
@@ -12,3 +13,11 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+void MainWindow::on_pushButton_clicked()
+{
+    Gamepage *game = new Gamepage();
+    game->show();
+    this->close();
+}
+

@@ -2,29 +2,141 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::WindowModality::NonModal</enum>
+  </property>
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>600</width>
+    <height>700</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>600</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>600</width>
+    <height>700</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>800</width>
-     <height>25</height>
-    </rect>
-   </property>
+  <property name="styleSheet">
+   <string notr="true">background :url(:/res/C:/Users/User/Downloads/20241107_172533_1849929185.jpg);
+background-size: cover;
+
+
+
+
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>40</y>
+      <width>301</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-family: 'Vazir';
+font-size: 50px;
+font-weight: bold;
+color: black;
+text-align: center;
+text-shadow: 5px 5px 10px rgba(100, 0, 0, 0.5);
+background:none;
+</string>
+    </property>
+    <property name="text">
+     <string>منوی بازی</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>190</y>
+      <width>201</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 26px;
+font-weight: bold;
+color: black;
+background-color: white;
+border: 2px solid black;
+border-radius: 15px;
+padding: 10px 20px;
+box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);</string>
+    </property>
+    <property name="text">
+     <string>ورود به بازی</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>270</y>
+      <width>201</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 26px;
+font-weight: bold;
+color: black;
+background-color: white;
+border: 2px solid black;
+border-radius: 15px;
+padding: 10px 20px;
+box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);</string>
+    </property>
+    <property name="text">
+     <string>پروفایل</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>350</y>
+      <width>201</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 26px;
+font-weight: bold;
+color: black;
+background-color: white;
+border: 2px solid black;
+border-radius: 15px;
+padding: 10px 20px;
+box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);</string>
+    </property>
+    <property name="text">
+     <string>تنظیمات</string>
+    </property>
+   </widget>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>
