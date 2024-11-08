@@ -33,21 +33,15 @@ public:
             MainWindow->setObjectName("MainWindow");
         MainWindow->setWindowModality(Qt::WindowModality::NonModal);
         MainWindow->setEnabled(true);
-        MainWindow->resize(600, 700);
-        MainWindow->setMinimumSize(QSize(600, 700));
-        MainWindow->setMaximumSize(QSize(600, 700));
-        MainWindow->setStyleSheet(QString::fromUtf8("background :url(:/res/C:/Users/User/Downloads/20241107_172533_1849929185.jpg);\n"
-"background-size: cover;\n"
-"\n"
-"\n"
-"\n"
-"\n"
-""));
+        MainWindow->resize(400, 500);
+        MainWindow->setMinimumSize(QSize(400, 500));
+        MainWindow->setMaximumSize(QSize(400, 500));
+        MainWindow->setStyleSheet(QString::fromUtf8("background : rgb(117, 225, 255);"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         label = new QLabel(centralwidget);
         label->setObjectName("label");
-        label->setGeometry(QRect(150, 40, 301, 131));
+        label->setGeometry(QRect(60, 30, 301, 131));
         label->setStyleSheet(QString::fromUtf8("font-family: 'Vazir';\n"
 "font-size: 50px;\n"
 "font-weight: bold;\n"
@@ -59,7 +53,7 @@ public:
         label->setAlignment(Qt::AlignmentFlag::AlignCenter);
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(180, 190, 201, 61));
+        pushButton->setGeometry(QRect(90, 180, 201, 61));
         pushButton->setStyleSheet(QString::fromUtf8("font-size: 26px;\n"
 "font-weight: bold;\n"
 "color: black;\n"
@@ -70,7 +64,7 @@ public:
 "box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);"));
         pushButton_2 = new QPushButton(centralwidget);
         pushButton_2->setObjectName("pushButton_2");
-        pushButton_2->setGeometry(QRect(220, 270, 201, 61));
+        pushButton_2->setGeometry(QRect(130, 260, 201, 61));
         pushButton_2->setStyleSheet(QString::fromUtf8("font-size: 26px;\n"
 "font-weight: bold;\n"
 "color: black;\n"
@@ -81,7 +75,7 @@ public:
 "box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);"));
         pushButton_3 = new QPushButton(centralwidget);
         pushButton_3->setObjectName("pushButton_3");
-        pushButton_3->setGeometry(QRect(180, 350, 201, 61));
+        pushButton_3->setGeometry(QRect(90, 340, 201, 61));
         pushButton_3->setStyleSheet(QString::fromUtf8("font-size: 26px;\n"
 "font-weight: bold;\n"
 "color: black;\n"
