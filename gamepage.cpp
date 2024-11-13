@@ -71,7 +71,6 @@ void Gamepage::moveObject( QLabel *label )
     animationGroup = new QSequentialAnimationGroup(this);
     QPropertyAnimation *animation0 = new QPropertyAnimation(label, "geometry");
     animation0->setDuration(4000);
-    animation0->setStartValue(QRect(matrix[{1,1}].first, matrix[{1,1}].second, label->width(), label->height()));
     animation0->setEndValue(QRect(matrix[{1,2}].first, matrix[{1,2}].second, label->width(), label->height()));
     QPropertyAnimation *animation1 = new QPropertyAnimation(label, "geometry");
     animation1->setDuration(6000);
@@ -96,6 +95,7 @@ void Gamepage::createLabelsInGroupBox(int initialCount)
         label->setFixedSize(80, 80);
         label->setStyleSheet("background-color: blue;");
         label->setText(QString("Label %1").arg(i));
+        label->status = true;
 
         connect(label, &ClickableLabel::clicked, this, &Gamepage::labelClicked);
 
@@ -114,6 +114,7 @@ void Gamepage::createNewLabel(QPoint position)
     label->setFixedSize(80, 80);
     label->setStyleSheet("background-color: blue;");
     label->setText(QString("Label %1").arg(labels.size()));
+    label->status = true;
 
     connect(label, &ClickableLabel::clicked, this, &Gamepage::labelClicked);
 
@@ -127,7 +128,11 @@ void Gamepage::labelClicked()
 {
     selectedLabel = qobject_cast<ClickableLabel*>(sender());
     if (selectedLabel) {
-        selectedLabel->setStyleSheet("background-color: red;");
+        if ( selectedLabel->status == true )
+        {
+            selectedLabel->setStyleSheet("background-color: red;");
+            selectedLabel->status = false;
+        }
     }
 }
 
@@ -138,6 +143,17 @@ bool Gamepage::isPositionOccupied(QRect rec) {
         }
     }
     return false;
+}
+
+void Gamepage::labelClicked2()
+{
+    selectedLabel2 = qobject_cast<ClickableLabel2*>(sender());
+    if (selectedLabel2) {
+        QLabel *parentLabel = qobject_cast<QLabel*>(selectedLabel2->parent());
+        if (parentLabel) {
+            parentLabel->move(1000,1000);
+        }
+    }
 }
 
 
@@ -154,7 +170,16 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                 selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2));
                 selectedLabel->setStyleSheet("background-color: blue;");
 
-                selectedLabel->setEnabled(false);
+                ClickableLabel2 *deletelabel = new ClickableLabel2(selectedLabel);
+                deletelabel->setStyleSheet("background-color: red;border-radius : 5px;");
+                deletelabel->setFixedSize(20, 20);
+                //deletelabel->move(selectedLabel->pos().rx() , selectedLabel->pos().ry());
+
+                deletelabel->show();
+
+                connect(deletelabel, &ClickableLabel2::clicked, this, &Gamepage::labelClicked2);
+
+                //selectedLabel->setEnabled(false);
                 selectedLabel = nullptr;
                 createNewLabel(previousPosition);
                 labels.removeOne(selectedLabel);
@@ -162,5 +187,6 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
         }
     }
 }
+
 
 

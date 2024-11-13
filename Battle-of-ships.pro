@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -10,12 +10,14 @@ CONFIG += c++17
 
 SOURCES += \
     clickablelabel.cpp \
+    clickablelabel2.cpp \
     gamepage.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     clickablelabel.h \
+    clickablelabel2.h \
     gamepage.h \
     mainwindow.h
 

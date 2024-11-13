@@ -3,15 +3,14 @@
 
 #include <QLabel>
 #include <QWidget>
-#include <QMouseEvent>
+#include <Qt>
 
-class ClickableLabel : public QLabel
-{
+class ClickableLabel : public QLabel {
     Q_OBJECT
 
 public:
     explicit ClickableLabel(QWidget *parent = nullptr);
-
+    bool status;
 signals:
     void clicked();
 

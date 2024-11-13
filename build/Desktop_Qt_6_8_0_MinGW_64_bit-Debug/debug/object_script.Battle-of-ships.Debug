@@ -1,0 +1,10 @@
+debug/clickablelabel.o
+debug/clickablelabel2.o
+debug/gamepage.o
+debug/main.o
+debug/mainwindow.o
+debug/qrc_Image.o
+debug/moc_clickablelabel.o
+debug/moc_clickablelabel2.o
+debug/moc_gamepage.o
+debug/moc_mainwindow.o

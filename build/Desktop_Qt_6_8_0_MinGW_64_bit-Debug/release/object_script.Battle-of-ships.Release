@@ -1,0 +1,10 @@
+release/clickablelabel.o
+release/clickablelabel2.o
+release/gamepage.o
+release/main.o
+release/mainwindow.o
+release/qrc_Image.o
+release/moc_clickablelabel.o
+release/moc_clickablelabel2.o
+release/moc_gamepage.o
+release/moc_mainwindow.o

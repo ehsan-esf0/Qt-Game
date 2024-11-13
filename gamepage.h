@@ -2,6 +2,7 @@
 #define GAMEPAGE_H
 
 #include "clickablelabel.h"
+#include "clickablelabel2.h"
 #include <QApplication>
 #include <QMainWindow>
 #include <QTabWidget>
@@ -40,10 +41,12 @@ private:
     QTimer *timer;
     int labelCount;
     void labelClicked();
+    void labelClicked2();
     void mousePressEvent(QMouseEvent *event) override;
     QPoint position = QPoint(50, 50);
     static bool check;
     ClickableLabel *selectedLabel;
+    ClickableLabel2 *selectedLabel2;
     QVector<ClickableLabel*> labels;
     void createLabelsInGroupBox(int initialCount);
     void createNewLabel(QPoint position);
