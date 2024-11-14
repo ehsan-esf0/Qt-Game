@@ -11,8 +11,10 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QTabWidget>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -20,38 +22,47 @@ QT_BEGIN_NAMESPACE
 class Ui_LoginPage
 {
 public:
-    QLineEdit *usernameLineEdit;
-    QLineEdit *passwordLineEdit;
-    QPushButton *loginButton;
-    QLineEdit *usernameLineEdit_2;
-    QPushButton *loginButton_2;
-    QLineEdit *passwordLineEdit_2;
+    QTabWidget *tabWidget;
+    QWidget *tab;
+    QLineEdit *lineEdit;
+    QLineEdit *lineEdit_2;
+    QPushButton *pushButton;
+    QWidget *tab_2;
+    QLabel *label;
 
     void setupUi(QWidget *LoginPage)
     {
         if (LoginPage->objectName().isEmpty())
             LoginPage->setObjectName("LoginPage");
-        LoginPage->resize(400, 300);
-        usernameLineEdit = new QLineEdit(LoginPage);
-        usernameLineEdit->setObjectName("usernameLineEdit");
-        usernameLineEdit->setGeometry(QRect(40, 70, 113, 28));
-        passwordLineEdit = new QLineEdit(LoginPage);
-        passwordLineEdit->setObjectName("passwordLineEdit");
-        passwordLineEdit->setGeometry(QRect(40, 120, 113, 28));
-        loginButton = new QPushButton(LoginPage);
-        loginButton->setObjectName("loginButton");
-        loginButton->setGeometry(QRect(60, 180, 83, 29));
-        usernameLineEdit_2 = new QLineEdit(LoginPage);
-        usernameLineEdit_2->setObjectName("usernameLineEdit_2");
-        usernameLineEdit_2->setGeometry(QRect(230, 70, 113, 28));
-        loginButton_2 = new QPushButton(LoginPage);
-        loginButton_2->setObjectName("loginButton_2");
-        loginButton_2->setGeometry(QRect(250, 180, 83, 29));
-        passwordLineEdit_2 = new QLineEdit(LoginPage);
-        passwordLineEdit_2->setObjectName("passwordLineEdit_2");
-        passwordLineEdit_2->setGeometry(QRect(230, 120, 113, 28));
+        LoginPage->resize(409, 484);
+        LoginPage->setMaximumSize(QSize(409, 484));
+        LoginPage->setStyleSheet(QString::fromUtf8("background : rgb(117, 225, 255);"));
+        tabWidget = new QTabWidget(LoginPage);
+        tabWidget->setObjectName("tabWidget");
+        tabWidget->setGeometry(QRect(20, 20, 361, 391));
+        tab = new QWidget();
+        tab->setObjectName("tab");
+        lineEdit = new QLineEdit(tab);
+        lineEdit->setObjectName("lineEdit");
+        lineEdit->setGeometry(QRect(20, 30, 221, 41));
+        lineEdit_2 = new QLineEdit(tab);
+        lineEdit_2->setObjectName("lineEdit_2");
+        lineEdit_2->setGeometry(QRect(20, 80, 221, 41));
+        pushButton = new QPushButton(tab);
+        pushButton->setObjectName("pushButton");
+        pushButton->setGeometry(QRect(100, 150, 151, 41));
+        tabWidget->addTab(tab, QString());
+        tab_2 = new QWidget();
+        tab_2->setObjectName("tab_2");
+        tabWidget->addTab(tab_2, QString());
+        label = new QLabel(LoginPage);
+        label->setObjectName("label");
+        label->setGeometry(QRect(130, 430, 141, 31));
 
         retranslateUi(LoginPage);
+
+        tabWidget->setCurrentIndex(0);
+
 
         QMetaObject::connectSlotsByName(LoginPage);
     } // setupUi
@@ -59,12 +70,10 @@ public:
     void retranslateUi(QWidget *LoginPage)
     {
         LoginPage->setWindowTitle(QCoreApplication::translate("LoginPage", "Form", nullptr));
-        usernameLineEdit->setText(QString());
-        passwordLineEdit->setText(QString());
-        loginButton->setText(QCoreApplication::translate("LoginPage", "login", nullptr));
-        usernameLineEdit_2->setText(QString());
-        loginButton_2->setText(QCoreApplication::translate("LoginPage", "sign in", nullptr));
-        passwordLineEdit_2->setText(QString());
+        pushButton->setText(QCoreApplication::translate("LoginPage", "PushButton", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("LoginPage", "Tab 1", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab_2), QCoreApplication::translate("LoginPage", "Tab 2", nullptr));
+        label->setText(QCoreApplication::translate("LoginPage", "TextLabel", nullptr));
     } // retranslateUi
 
 };

@@ -12,6 +12,7 @@ SOURCES += \
     clickablelabel.cpp \
     clickablelabel2.cpp \
     gamepage.cpp \
+    loginpage.cpp \
     main.cpp \
     mainwindow.cpp
 
@@ -19,10 +20,12 @@ HEADERS += \
     clickablelabel.h \
     clickablelabel2.h \
     gamepage.h \
+    loginpage.h \
     mainwindow.h
 
 FORMS += \
     gamepage.ui \
+    loginpage.ui \
     mainwindow.ui
 
 

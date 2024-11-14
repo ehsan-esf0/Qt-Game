@@ -21,7 +21,7 @@ void Gamepage::addMatrix()
 Gamepage::Gamepage(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Gamepage)
-    ,   selectedLabel(nullptr) // مقدار اولیه برای لیبل انتخاب شده
+    ,   selectedLabel(nullptr)
 {
     ui->setupUi(this);
     addMatrix();
@@ -131,7 +131,6 @@ void Gamepage::labelClicked()
         if ( selectedLabel->status == true )
         {
             selectedLabel->setStyleSheet("background-color: red;");
-            selectedLabel->status = false;
         }
     }
 }
@@ -149,9 +148,19 @@ void Gamepage::labelClicked2()
 {
     selectedLabel2 = qobject_cast<ClickableLabel2*>(sender());
     if (selectedLabel2) {
-        QLabel *parentLabel = qobject_cast<QLabel*>(selectedLabel2->parent());
-        if (parentLabel) {
-            parentLabel->move(1000,1000);
+        if ( selectedLabel2->mod == 1 )
+        {
+            QLabel *parentLabel = qobject_cast<QLabel*>(selectedLabel2->parent());
+            if (parentLabel) {
+                parentLabel->move(1000,1000);
+            }
+        }
+        if ( selectedLabel2->mod == 2)
+        {
+            QLabel *parentLabel = qobject_cast<QLabel*>(selectedLabel2->parent());
+            if (parentLabel) {
+                parentLabel->setStyleSheet("background-color: red;");
+            }
         }
     }
 }
@@ -163,30 +172,45 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
         QPoint previousPosition = selectedLabel->pos();
         QRect newRect(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2), selectedLabel->size());
 
-        if ( (350 < event->pos().rx() && event->pos().rx()  < 950) && (250 < event->pos().ry() && event->pos().ry()  < 450) )
+        if ( selectedLabel->status == true )
         {
-            if (!isPositionOccupied(newRect))
+            if ( (350 < event->pos().rx() && event->pos().rx()  < 950) && (250 < event->pos().ry() && event->pos().ry()  < 450) )
             {
-                selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2));
-                selectedLabel->setStyleSheet("background-color: blue;");
+                if (!isPositionOccupied(newRect))
+                {
+                    selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2));
+                    selectedLabel->setStyleSheet("background-color: blue;");
 
-                ClickableLabel2 *deletelabel = new ClickableLabel2(selectedLabel);
-                deletelabel->setStyleSheet("background-color: red;border-radius : 5px;");
-                deletelabel->setFixedSize(20, 20);
-                //deletelabel->move(selectedLabel->pos().rx() , selectedLabel->pos().ry());
+                    ClickableLabel2 *deletelabel = new ClickableLabel2(selectedLabel);
+                    deletelabel->setStyleSheet("background-color: red;border-radius : 5px;");
+                    deletelabel->setFixedSize(20, 20);
+                    deletelabel->mod = 1;
+                    //deletelabel->move(selectedLabel->pos().rx() , selectedLabel->pos().ry());
 
-                deletelabel->show();
+                    deletelabel->show();
 
-                connect(deletelabel, &ClickableLabel2::clicked, this, &Gamepage::labelClicked2);
+                    connect(deletelabel, &ClickableLabel2::clicked, this, &Gamepage::labelClicked2);
 
-                //selectedLabel->setEnabled(false);
-                selectedLabel = nullptr;
-                createNewLabel(previousPosition);
-                labels.removeOne(selectedLabel);
+                    ClickableLabel2 *editlabel = new ClickableLabel2(selectedLabel);
+                    editlabel->setStyleSheet("background-color: green;border-radius : 5px;");
+                    editlabel->setFixedSize(10, 10);
+                    editlabel->mod = 2;
+                    //deletelabel->move(selectedLabel->pos().rx() , selectedLabel->pos().ry());
+
+                    editlabel->show();
+
+                    connect(editlabel, &ClickableLabel2::clicked, this, &Gamepage::labelClicked2);
+
+                    //selectedLabel->setEnabled(false);
+                    selectedLabel->status = false;
+
+                    selectedLabel = nullptr;
+                    createNewLabel(previousPosition);
+                    labels.removeOne(selectedLabel);
+                }
             }
         }
     }
 }
-
 
 
