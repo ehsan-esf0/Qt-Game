@@ -24,10 +24,13 @@ class Ui_LoginPage
 public:
     QTabWidget *tabWidget;
     QWidget *tab;
-    QLineEdit *lineEdit;
-    QLineEdit *lineEdit_2;
-    QPushButton *pushButton;
+    QLineEdit *username;
+    QLineEdit *password;
+    QPushButton *singin;
     QWidget *tab_2;
+    QLineEdit *username_2;
+    QLineEdit *password_2;
+    QPushButton *login;
     QLabel *label;
 
     void setupUi(QWidget *LoginPage)
@@ -42,18 +45,27 @@ public:
         tabWidget->setGeometry(QRect(20, 20, 361, 391));
         tab = new QWidget();
         tab->setObjectName("tab");
-        lineEdit = new QLineEdit(tab);
-        lineEdit->setObjectName("lineEdit");
-        lineEdit->setGeometry(QRect(20, 30, 221, 41));
-        lineEdit_2 = new QLineEdit(tab);
-        lineEdit_2->setObjectName("lineEdit_2");
-        lineEdit_2->setGeometry(QRect(20, 80, 221, 41));
-        pushButton = new QPushButton(tab);
-        pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(100, 150, 151, 41));
+        username = new QLineEdit(tab);
+        username->setObjectName("username");
+        username->setGeometry(QRect(20, 30, 221, 41));
+        password = new QLineEdit(tab);
+        password->setObjectName("password");
+        password->setGeometry(QRect(20, 80, 221, 41));
+        singin = new QPushButton(tab);
+        singin->setObjectName("singin");
+        singin->setGeometry(QRect(100, 150, 151, 41));
         tabWidget->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName("tab_2");
+        username_2 = new QLineEdit(tab_2);
+        username_2->setObjectName("username_2");
+        username_2->setGeometry(QRect(40, 30, 221, 41));
+        password_2 = new QLineEdit(tab_2);
+        password_2->setObjectName("password_2");
+        password_2->setGeometry(QRect(40, 90, 221, 41));
+        login = new QPushButton(tab_2);
+        login->setObjectName("login");
+        login->setGeometry(QRect(100, 160, 151, 41));
         tabWidget->addTab(tab_2, QString());
         label = new QLabel(LoginPage);
         label->setObjectName("label");
@@ -61,7 +73,7 @@ public:
 
         retranslateUi(LoginPage);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(LoginPage);
@@ -70,8 +82,9 @@ public:
     void retranslateUi(QWidget *LoginPage)
     {
         LoginPage->setWindowTitle(QCoreApplication::translate("LoginPage", "Form", nullptr));
-        pushButton->setText(QCoreApplication::translate("LoginPage", "PushButton", nullptr));
+        singin->setText(QCoreApplication::translate("LoginPage", "PushButton", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("LoginPage", "Tab 1", nullptr));
+        login->setText(QCoreApplication::translate("LoginPage", "PushButton", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QCoreApplication::translate("LoginPage", "Tab 2", nullptr));
         label->setText(QCoreApplication::translate("LoginPage", "TextLabel", nullptr));
     } // retranslateUi

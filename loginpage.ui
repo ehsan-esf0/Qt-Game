@@ -32,13 +32,13 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
      <string>Tab 1</string>
     </attribute>
-    <widget class="QLineEdit" name="lineEdit">
+    <widget class="QLineEdit" name="username">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -48,7 +48,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QLineEdit" name="lineEdit_2">
+    <widget class="QLineEdit" name="password">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -58,7 +58,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="singin">
      <property name="geometry">
       <rect>
        <x>100</x>
@@ -76,6 +76,39 @@
     <attribute name="title">
      <string>Tab 2</string>
     </attribute>
+    <widget class="QLineEdit" name="username_2">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>30</y>
+       <width>221</width>
+       <height>41</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="password_2">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>90</y>
+       <width>221</width>
+       <height>41</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="login">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>160</y>
+       <width>151</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>PushButton</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QLabel" name="label">
