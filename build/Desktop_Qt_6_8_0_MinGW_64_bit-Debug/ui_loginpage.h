@@ -27,11 +27,20 @@ public:
     QLineEdit *username;
     QLineEdit *password;
     QPushButton *singin;
-    QWidget *tab_2;
+    QLabel *labeu;
+    QLabel *label_2;
+    QLabel *label_3;
+    QLineEdit *password_3;
+    QLabel *label_4;
+    QLabel *label_5;
+    QLabel *label_9;
+    QWidget *Tab2;
     QLineEdit *username_2;
     QLineEdit *password_2;
     QPushButton *login;
-    QLabel *label;
+    QLabel *label_6;
+    QLabel *label_7;
+    QLabel *label_8;
 
     void setupUi(QWidget *LoginPage)
     {
@@ -42,34 +51,105 @@ public:
         LoginPage->setStyleSheet(QString::fromUtf8("background : rgb(117, 225, 255);"));
         tabWidget = new QTabWidget(LoginPage);
         tabWidget->setObjectName("tabWidget");
-        tabWidget->setGeometry(QRect(20, 20, 361, 391));
+        tabWidget->setGeometry(QRect(10, 10, 391, 461));
         tab = new QWidget();
         tab->setObjectName("tab");
         username = new QLineEdit(tab);
         username->setObjectName("username");
-        username->setGeometry(QRect(20, 30, 221, 41));
+        username->setGeometry(QRect(20, 80, 221, 41));
         password = new QLineEdit(tab);
         password->setObjectName("password");
-        password->setGeometry(QRect(20, 80, 221, 41));
+        password->setGeometry(QRect(20, 140, 221, 41));
         singin = new QPushButton(tab);
         singin->setObjectName("singin");
-        singin->setGeometry(QRect(100, 150, 151, 41));
+        singin->setGeometry(QRect(10, 370, 151, 41));
+        singin->setStyleSheet(QString::fromUtf8("background-color : rgb(170, 0, 255);\n"
+"font-color : 20px;\n"
+"font-size : 18px;\n"
+""));
+        labeu = new QLabel(tab);
+        labeu->setObjectName("labeu");
+        labeu->setGeometry(QRect(250, 80, 121, 41));
+        labeu->setStyleSheet(QString::fromUtf8("color : black;\n"
+"font-size : 20px;\n"
+""));
+        labeu->setAlignment(Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter);
+        label_2 = new QLabel(tab);
+        label_2->setObjectName("label_2");
+        label_2->setGeometry(QRect(250, 130, 121, 41));
+        label_2->setStyleSheet(QString::fromUtf8("color : black;\n"
+"font-size : 20px;\n"
+""));
+        label_2->setAlignment(Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter);
+        label_3 = new QLabel(tab);
+        label_3->setObjectName("label_3");
+        label_3->setGeometry(QRect(150, 10, 121, 41));
+        label_3->setStyleSheet(QString::fromUtf8("color : black;\n"
+"font-size : 20px;\n"
+""));
+        label_3->setAlignment(Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter);
+        password_3 = new QLineEdit(tab);
+        password_3->setObjectName("password_3");
+        password_3->setGeometry(QRect(20, 200, 221, 41));
+        label_4 = new QLabel(tab);
+        label_4->setObjectName("label_4");
+        label_4->setGeometry(QRect(250, 190, 121, 41));
+        label_4->setStyleSheet(QString::fromUtf8("color : black;\n"
+"font-size : 20px;\n"
+""));
+        label_4->setAlignment(Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter);
+        label_5 = new QLabel(tab);
+        label_5->setObjectName("label_5");
+        label_5->setGeometry(QRect(40, 260, 301, 81));
+        label_5->setStyleSheet(QString::fromUtf8("color : red;\n"
+"font-size : 15px;\n"
+""));
+        label_5->setAlignment(Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter);
+        label_9 = new QLabel(tab);
+        label_9->setObjectName("label_9");
+        label_9->setGeometry(QRect(180, 370, 181, 31));
+        label_9->setStyleSheet(QString::fromUtf8("color : red;\n"
+"font-size : 15px;\n"
+""));
+        label_9->setAlignment(Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter);
         tabWidget->addTab(tab, QString());
-        tab_2 = new QWidget();
-        tab_2->setObjectName("tab_2");
-        username_2 = new QLineEdit(tab_2);
+        Tab2 = new QWidget();
+        Tab2->setObjectName("Tab2");
+        username_2 = new QLineEdit(Tab2);
         username_2->setObjectName("username_2");
-        username_2->setGeometry(QRect(40, 30, 221, 41));
-        password_2 = new QLineEdit(tab_2);
+        username_2->setGeometry(QRect(30, 60, 221, 41));
+        password_2 = new QLineEdit(Tab2);
         password_2->setObjectName("password_2");
-        password_2->setGeometry(QRect(40, 90, 221, 41));
-        login = new QPushButton(tab_2);
+        password_2->setGeometry(QRect(30, 120, 221, 41));
+        login = new QPushButton(Tab2);
         login->setObjectName("login");
-        login->setGeometry(QRect(100, 160, 151, 41));
-        tabWidget->addTab(tab_2, QString());
-        label = new QLabel(LoginPage);
-        label->setObjectName("label");
-        label->setGeometry(QRect(130, 430, 141, 31));
+        login->setGeometry(QRect(20, 360, 151, 41));
+        login->setStyleSheet(QString::fromUtf8("background-color : rgb(170, 0, 255);\n"
+"font-color : 20px;\n"
+"font-size : 18px;\n"
+""));
+        label_6 = new QLabel(Tab2);
+        label_6->setObjectName("label_6");
+        label_6->setGeometry(QRect(260, 60, 121, 41));
+        label_6->setStyleSheet(QString::fromUtf8("color : black;\n"
+"font-size : 20px;\n"
+""));
+        label_6->setAlignment(Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter);
+        label_7 = new QLabel(Tab2);
+        label_7->setObjectName("label_7");
+        label_7->setGeometry(QRect(260, 110, 121, 41));
+        label_7->setStyleSheet(QString::fromUtf8("color : black;\n"
+"font-size : 20px;\n"
+""));
+        label_7->setAlignment(Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter);
+        label_8 = new QLabel(Tab2);
+        label_8->setObjectName("label_8");
+        label_8->setGeometry(QRect(50, 180, 281, 141));
+        label_8->setStyleSheet(QString::fromUtf8("color : red;\n"
+"font-size : 15px;\n"
+""));
+        label_8->setAlignment(Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter);
+        tabWidget->addTab(Tab2, QString());
 
         retranslateUi(LoginPage);
 
@@ -82,11 +162,19 @@ public:
     void retranslateUi(QWidget *LoginPage)
     {
         LoginPage->setWindowTitle(QCoreApplication::translate("LoginPage", "Form", nullptr));
-        singin->setText(QCoreApplication::translate("LoginPage", "PushButton", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("LoginPage", "Tab 1", nullptr));
-        login->setText(QCoreApplication::translate("LoginPage", "PushButton", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tab_2), QCoreApplication::translate("LoginPage", "Tab 2", nullptr));
-        label->setText(QCoreApplication::translate("LoginPage", "TextLabel", nullptr));
+        singin->setText(QCoreApplication::translate("LoginPage", "Sign in", nullptr));
+        labeu->setText(QCoreApplication::translate("LoginPage", "\331\206\330\247\331\205 \332\251\330\247\330\261\330\250\330\261\333\214", nullptr));
+        label_2->setText(QCoreApplication::translate("LoginPage", "\330\261\331\205\330\262 \330\271\330\250\331\210\330\261", nullptr));
+        label_3->setText(QCoreApplication::translate("LoginPage", "\331\201\330\261\331\205 \330\253\330\250\330\252 \331\206\330\247\331\205", nullptr));
+        label_4->setText(QCoreApplication::translate("LoginPage", "\330\252\332\251\330\261\330\247\330\261 \330\261\331\205\330\262 \330\271\330\250\331\210\330\261", nullptr));
+        label_5->setText(QString());
+        label_9->setText(QString());
+        tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("LoginPage", "sing in", nullptr));
+        login->setText(QCoreApplication::translate("LoginPage", "login", nullptr));
+        label_6->setText(QCoreApplication::translate("LoginPage", "\331\206\330\247\331\205 \332\251\330\247\330\261\330\250\330\261\333\214", nullptr));
+        label_7->setText(QCoreApplication::translate("LoginPage", "\330\261\331\205\330\262 \330\271\330\250\331\210\330\261", nullptr));
+        label_8->setText(QString());
+        tabWidget->setTabText(tabWidget->indexOf(Tab2), QCoreApplication::translate("LoginPage", "login", nullptr));
     } // retranslateUi
 
 };
