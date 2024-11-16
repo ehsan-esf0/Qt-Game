@@ -41,6 +41,7 @@ public:
     QLabel *label_6;
     QLabel *label_7;
     QLabel *label_8;
+    QPushButton *pushButton;
 
     void setupUi(QWidget *LoginPage)
     {
@@ -149,6 +150,9 @@ public:
 "font-size : 15px;\n"
 ""));
         label_8->setAlignment(Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter);
+        pushButton = new QPushButton(Tab2);
+        pushButton->setObjectName("pushButton");
+        pushButton->setGeometry(QRect(232, 368, 121, 41));
         tabWidget->addTab(Tab2, QString());
 
         retranslateUi(LoginPage);
@@ -174,6 +178,7 @@ public:
         label_6->setText(QCoreApplication::translate("LoginPage", "\331\206\330\247\331\205 \332\251\330\247\330\261\330\250\330\261\333\214", nullptr));
         label_7->setText(QCoreApplication::translate("LoginPage", "\330\261\331\205\330\262 \330\271\330\250\331\210\330\261", nullptr));
         label_8->setText(QString());
+        pushButton->setText(QCoreApplication::translate("LoginPage", "\331\210\330\261\331\210\330\257 \330\263\330\261\333\214\330\271", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(Tab2), QCoreApplication::translate("LoginPage", "login", nullptr));
     } // retranslateUi
 

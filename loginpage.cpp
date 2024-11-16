@@ -98,6 +98,13 @@ void LoginPage::on_login_clicked()
     } else {
         ui->label_8->setText("نام کاربری یا رمز عبور نادرست است");
     }
+}
 
+
+void LoginPage::on_pushButton_clicked()
+{
+    MainWindow *m = new MainWindow();
+    m->show();
+    this->close();
 }
 

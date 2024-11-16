@@ -320,6 +320,19 @@ font-size : 15px;
       <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>232</x>
+       <y>368</y>
+       <width>121</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>ورود سریع</string>
+     </property>
+    </widget>
    </widget>
   </widget>
  </widget>

@@ -52,6 +52,8 @@ private:
     void createLabelsInGroupBox(int initialCount);
     void createNewLabel(QPoint position);
     bool isPositionOccupied(QRect position);
+    void createLabelMap( int startx , int starty);
+    bool checkMap(QMouseEvent *event);
 };
 
 #endif // GAMEPAGE_H

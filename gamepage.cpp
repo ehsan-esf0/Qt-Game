@@ -30,13 +30,26 @@ Gamepage::Gamepage(QWidget *parent) :
     connect(timer, &QTimer::timeout, this, &Gamepage::createBlueSquareLabel);
     timer->start(1000);
 
-    QLabel *labelpanel = new QLabel(this);
-    labelpanel->move( 350 , 250 );
-    labelpanel->setFixedSize( 600 , 200 );
-    labelpanel->setStyleSheet("background-color : rgb(100, 100, 100);");
-    labelpanel->show();
+    for (int i = 350 ; i <= 900 ; i += 100 ) {
+
+        for (int j = 250 ; j <= 600 ; j += 100 ) {
+
+            createLabelMap( i , j );
+            j += 10;
+        }
+        i += 10;
+    }
 
     createLabelsInGroupBox(5);
+}
+
+void Gamepage::createLabelMap( int startx , int starty)
+{
+    QLabel *labelpanel = new QLabel(this);
+    labelpanel->move( startx , starty );
+    labelpanel->setFixedSize( 100 , 100 );
+    labelpanel->setStyleSheet("background-color : rgb(100, 100, 100);");
+    labelpanel->show();
 }
 
 
@@ -165,6 +178,23 @@ void Gamepage::labelClicked2()
     }
 }
 
+bool Gamepage::checkMap ( QMouseEvent *event )
+{
+    for (int i = 350 ; i <= 900 ; i += 100 ) {
+
+        for (int j = 250 ; j <= 600 ; j += 100 ) {
+
+            if ((i + 30 < event->pos().rx() && event->pos().rx()  < i + 70) && (j + 30  < event->pos().ry() && event->pos().ry()  < j + 70))
+            {
+                return true;
+            }
+            j += 10;
+        }
+        i += 10;
+    }
+    return false;
+}
+
 
 void Gamepage::mousePressEvent(QMouseEvent *event)
 {
@@ -174,7 +204,7 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
 
         if ( selectedLabel->status == true )
         {
-            if ( (350 < event->pos().rx() && event->pos().rx()  < 950) && (250 < event->pos().ry() && event->pos().ry()  < 450) )
+            if ( checkMap(event) )
             {
                 if (!isPositionOccupied(newRect))
                 {

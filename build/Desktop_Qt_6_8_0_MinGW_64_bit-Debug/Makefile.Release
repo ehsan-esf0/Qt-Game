@@ -2330,19 +2330,30 @@ release/loginpage.o: ../../loginpage.cpp ../../loginpage.h \
 		C:/Qt/6.8.0/mingw_64/include/QtSql/qsqltablemodel.h \
 		C:/Qt/6.8.0/mingw_64/include/QtSql/qsqlresult.h \
 		C:/Qt/6.8.0/mingw_64/include/QtSql/qtsqlversion.h \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QMessageBox \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qmessagebox.h \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qdialog.h \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qdialogbuttonbox.h \
+		../../mainwindow.h \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QMainWindow \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qmainwindow.h \
 		ui_loginpage.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QApplication \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qapplication.h \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QLabel \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qlabel.h \
+		C:/Qt/6.8.0/mingw_64/include/QtGui/qpicture.h \
+		C:/Qt/6.8.0/mingw_64/include/QtGui/qtextdocument.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QLineEdit \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qlineedit.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qtextcursor.h \
-		C:/Qt/6.8.0/mingw_64/include/QtGui/qtextdocument.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qtextformat.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qpen.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qtextoption.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QPushButton \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qpushbutton.h \
-		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qabstractbutton.h
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QTabWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\loginpage.o ..\..\loginpage.cpp
 
 release/main.o: ../../main.cpp ../../loginpage.h \
