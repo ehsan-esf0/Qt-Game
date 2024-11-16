@@ -25,10 +25,14 @@ Gamepage::Gamepage(QWidget *parent) :
 {
     ui->setupUi(this);
     addMatrix();
-    labelCount = 0;
+    labelCount = 1;
+    wCount = 10;
+    timeCount = 10000;
     timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &Gamepage::createBlueSquareLabel);
-    timer->start(1000);
+    timer2 = new QTimer(this);
+    connect(timer2, &QTimer::timeout, this, &Gamepage::timeLabelText);
+    timer->start(500);
 
     for (int i = 350 ; i <= 900 ; i += 100 ) {
 
@@ -76,6 +80,28 @@ void Gamepage::createBlueSquareLabel()
     label->move(x, y);
     label->show();
     moveObject( label );
+    if ( labelCount  == wCount + 1 )
+    {
+        timer->setInterval(timeCount += 5000);
+        timer2->start(1000);
+        labelCount = 1;
+        wCount += 10;
+    }
+    else {
+        timer->setInterval(500);
+        icount = (timeCount % 1000);
+
+    }
+}
+
+void Gamepage::timeLabelText()
+{
+    ui->label->setText(QString("Label %1").arg( icount-- ));
+
+    if ( icount ==  (timeCount % 1000) )
+    {
+        ui->label->setText("مبارزه");
+    }
 }
 
 void Gamepage::moveObject( QLabel *label )
@@ -242,5 +268,4 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
         }
     }
 }
-
 

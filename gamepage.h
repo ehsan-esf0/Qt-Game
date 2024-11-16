@@ -39,6 +39,7 @@ private:
     void moveObject(QLabel *label);
     void createBlueSquareLabel();
     QTimer *timer;
+    QTimer *timer2;
     int labelCount;
     void labelClicked();
     void labelClicked2();
@@ -54,6 +55,10 @@ private:
     bool isPositionOccupied(QRect position);
     void createLabelMap( int startx , int starty);
     bool checkMap(QMouseEvent *event);
+    int wCount;
+    int timeCount;
+    void timeLabelText();
+    int icount;
 };
 
 #endif // GAMEPAGE_H

@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -18,6 +19,7 @@ QT_BEGIN_NAMESPACE
 class Ui_Gamepage
 {
 public:
+    QLabel *label;
 
     void setupUi(QWidget *Gamepage)
     {
@@ -27,6 +29,13 @@ public:
         Gamepage->setMinimumSize(QSize(1200, 700));
         Gamepage->setMaximumSize(QSize(1200, 700));
         Gamepage->setStyleSheet(QString::fromUtf8("background-color : rgb(105, 210, 255);"));
+        label = new QLabel(Gamepage);
+        label->setObjectName("label");
+        label->setGeometry(QRect(540, 10, 131, 41));
+        label->setStyleSheet(QString::fromUtf8("color : rgb(0, 0, 0);\n"
+"font-size : 20px;\n"
+""));
+        label->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         retranslateUi(Gamepage);
 
@@ -36,6 +45,7 @@ public:
     void retranslateUi(QWidget *Gamepage)
     {
         Gamepage->setWindowTitle(QCoreApplication::translate("Gamepage", "Game", nullptr));
+        label->setText(QString());
     } // retranslateUi
 
 };
