@@ -127,7 +127,8 @@ compiler_rcc_make_all: debug/qrc_Image.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) debug\qrc_Image.cpp
 debug/qrc_Image.cpp: ../../Image.qrc \
-		C:/Qt/6.8.0/mingw_64/bin/rcc.exe
+		C:/Qt/6.8.0/mingw_64/bin/rcc.exe \
+		C:/Users/User/Downloads/qj4vuf24u7l61.png
 	C:\Qt\6.8.0\mingw_64\bin\rcc.exe -name Image --no-zstd ..\..\Image.qrc -o debug\qrc_Image.cpp
 
 compiler_moc_predefs_make_all: debug/moc_predefs.h

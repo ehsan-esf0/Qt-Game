@@ -1,3 +1,5 @@
 <RCC>
-    <qresource prefix="/res"/>
+    <qresource prefix="/res">
+        <file>C:/Users/User/Downloads/qj4vuf24u7l61.png</file>
+    </qresource>
 </RCC>

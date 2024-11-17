@@ -34,7 +34,7 @@ Gamepage::Gamepage(QWidget *parent) :
     connect(timer2, &QTimer::timeout, this, &Gamepage::timeLabelText);
     timer->start(500);
 
-    for (int i = 350 ; i <= 900 ; i += 100 ) {
+    for (int i = 450 ; i <= 850 ; i += 100 ) {
 
         for (int j = 250 ; j <= 600 ; j += 100 ) {
 
@@ -72,7 +72,7 @@ void Gamepage::createBlueSquareLabel()
 {
     QLabel *label = new QLabel(this);
     label->setFixedSize(50, 50);
-    label->setStyleSheet("background-color : rgb(255, 67, 76);border-radius : 20px;text-align: center;");
+    label->setStyleSheet("background:url(:/res/C:/Users/User/Downloads/qj4vuf24u7l61.png);");
 
     label->setText(QString("%1").arg(labelCount++));
     int x = 200;
@@ -82,25 +82,26 @@ void Gamepage::createBlueSquareLabel()
     moveObject( label );
     if ( labelCount  == wCount + 1 )
     {
-        timer->setInterval(timeCount += 5000);
+        timeCount += 5000;
+        icount = (timeCount / 1000);
+        timer->setInterval(timeCount);
         timer2->start(1000);
         labelCount = 1;
         wCount += 10;
     }
     else {
-        timer->setInterval(500);
-        icount = (timeCount % 1000);
-
+        timer->setInterval(rand() % 600 + 400);
+        ui->label->setText("مبارزه");
     }
 }
 
 void Gamepage::timeLabelText()
 {
-    ui->label->setText(QString("Label %1").arg( icount-- ));
+    ui->label->setText(QString(" %1 تا موج بعدی حمله ").arg( icount-- ));
 
-    if ( icount ==  (timeCount % 1000) )
+    if ( icount ==  0 )
     {
-        ui->label->setText("مبارزه");
+        timer2->stop();
     }
 }
 
@@ -206,7 +207,7 @@ void Gamepage::labelClicked2()
 
 bool Gamepage::checkMap ( QMouseEvent *event )
 {
-    for (int i = 350 ; i <= 900 ; i += 100 ) {
+    for (int i = 450 ; i <= 850 ; i += 100 ) {
 
         for (int j = 250 ; j <= 600 ; j += 100 ) {
 

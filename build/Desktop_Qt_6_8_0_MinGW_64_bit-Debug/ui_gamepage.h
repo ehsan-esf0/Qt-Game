@@ -31,7 +31,7 @@ public:
         Gamepage->setStyleSheet(QString::fromUtf8("background-color : rgb(105, 210, 255);"));
         label = new QLabel(Gamepage);
         label->setObjectName("label");
-        label->setGeometry(QRect(540, 10, 131, 41));
+        label->setGeometry(QRect(500, 10, 231, 41));
         label->setStyleSheet(QString::fromUtf8("color : rgb(0, 0, 0);\n"
 "font-size : 20px;\n"
 ""));
