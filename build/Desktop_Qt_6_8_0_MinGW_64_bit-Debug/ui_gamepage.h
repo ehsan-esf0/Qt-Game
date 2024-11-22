@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -20,6 +21,7 @@ class Ui_Gamepage
 {
 public:
     QLabel *label;
+    QPushButton *pushButton_2;
 
     void setupUi(QWidget *Gamepage)
     {
@@ -36,6 +38,10 @@ public:
 "font-size : 20px;\n"
 ""));
         label->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        pushButton_2 = new QPushButton(Gamepage);
+        pushButton_2->setObjectName("pushButton_2");
+        pushButton_2->setGeometry(QRect(10, 10, 83, 29));
+        pushButton_2->setStyleSheet(QString::fromUtf8("background-color:rgb(255, 0, 0);"));
 
         retranslateUi(Gamepage);
 
@@ -46,6 +52,7 @@ public:
     {
         Gamepage->setWindowTitle(QCoreApplication::translate("Gamepage", "Game", nullptr));
         label->setText(QString());
+        pushButton_2->setText(QString());
     } // retranslateUi
 
 };

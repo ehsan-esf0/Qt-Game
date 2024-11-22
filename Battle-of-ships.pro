@@ -15,6 +15,7 @@ SOURCES += \
     loginpage.cpp \
     main.cpp \
     mainwindow.cpp \
+    savegamedata.cpp \
     selectmap.cpp
 
 HEADERS += \
@@ -23,6 +24,7 @@ HEADERS += \
     gamepage.h \
     loginpage.h \
     mainwindow.h \
+    savegamedata.h \
     selectmap.h
 
 FORMS += \

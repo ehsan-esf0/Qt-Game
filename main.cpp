@@ -14,8 +14,6 @@ int main(int argc, char *argv[]) {
     LoginPage l;
     l.show();
 
-    selectMap s;
-    s.show();
 
     return a.exec();
 }

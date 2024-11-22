@@ -4,6 +4,7 @@ release/gamepage.o
 release/loginpage.o
 release/main.o
 release/mainwindow.o
+release/savegamedata.o
 release/selectmap.o
 release/qrc_Image.o
 release/moc_clickablelabel.o

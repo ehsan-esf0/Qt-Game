@@ -1,6 +1,7 @@
 #include "gamepage.h"
 #include "mainwindow.h"
 #include "qpropertyanimation.h"
+#include "savegamedata.h"
 #include "selectmap.h"
 #include "ui_gamepage.h"
 #include <QThread>
@@ -18,7 +19,6 @@ void Gamepage::addMatrix()
     matrix[{2,1}] = {1100 ,100};
     matrix[{2,2}] = {1100 ,800};
 }
-QLabel* Gamepage::label_2 = nullptr;
 
 Gamepage::Gamepage(QWidget *parent) :
     QWidget(parent),
@@ -48,16 +48,18 @@ Gamepage::Gamepage(QWidget *parent) :
     }
 
     createLabelsInGroupBox(5);
-    if (label_2 == nullptr) {
-        label_2 = new QLabel("My Label", this);
-        label_2->show();
-    }
+
+    label_2 = new QLabel(saveGameData::str, this);
+    label_2->setFixedSize(50, 50);
+    int x = 100;
+    int y = 50;
+    label_2->move(x, y);
+    label_2->show();
+
 }
 
 void Gamepage::changeLabelColor()
 {
-    label_2->setStyleSheet("background-color: red;");
-    label_2->setText("hi");
 }
 
 void Gamepage::createLabelMap( int startx , int starty)
@@ -282,5 +284,13 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
             }
         }
     }
+}
+
+
+void Gamepage::on_pushButton_2_clicked()
+{
+    MainWindow *menu = new MainWindow();
+    menu->show();
+    this->close();
 }
 

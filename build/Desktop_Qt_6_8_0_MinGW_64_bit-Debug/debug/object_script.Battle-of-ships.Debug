@@ -4,6 +4,7 @@ debug/gamepage.o
 debug/loginpage.o
 debug/main.o
 debug/mainwindow.o
+debug/savegamedata.o
 debug/selectmap.o
 debug/qrc_Image.o
 debug/moc_clickablelabel.o

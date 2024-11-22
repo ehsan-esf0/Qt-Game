@@ -30,8 +30,11 @@ public:
     explicit Gamepage(QWidget *parent = nullptr);
     ~Gamepage();
     void changeLabelColor();
-    static QLabel *label_2;
+    QLabel *label_2;
 
+
+private slots:
+    void on_pushButton_2_clicked();
 
 private:
     std::map<std::pair<int, int>, std::pair<int, int>> matrix;
