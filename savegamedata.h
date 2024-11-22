@@ -8,6 +8,8 @@ class saveGameData
 public:
     saveGameData();
     static QString str;
+    static int mapNumber;
+    static int speed;
 };
 
 #endif // SAVEGAMEDATA_H

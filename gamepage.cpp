@@ -14,10 +14,32 @@
 
 void Gamepage::addMatrix()
 {
-    matrix[{1,1}] = {200 ,800};
-    matrix[{1,2}] = {200 ,100};
-    matrix[{2,1}] = {1100 ,100};
-    matrix[{2,2}] = {1100 ,800};
+    switch (saveGameData::mapNumber) {
+    case 1:
+        matrix[{1,1}] = {200 ,800};
+        matrix[{1,2}] = {200 ,100};
+        matrix[{2,1}] = {1100 ,100};
+        matrix[{2,2}] = {1100 ,800};
+        break;
+    case 2:
+        matrix[{1,1}] = {600 ,800};
+        matrix[{1,2}] = {600 ,500};
+        matrix[{2,1}] = {600 ,200};
+        matrix[{2,2}] = {600 ,-100};
+        break;
+    case 3:
+        matrix[{1,1}] = {0 ,600};
+        matrix[{1,2}] = {600 ,600};
+        matrix[{2,1}] = {600 ,50};
+        matrix[{2,2}] = {1200 ,50};
+        break;
+    default:
+        matrix[{1,1}] = {200 ,800};
+        matrix[{1,2}] = {200 ,100};
+        matrix[{2,1}] = {1100 ,100};
+        matrix[{2,2}] = {1100 ,800};
+        break;
+    }
 }
 
 Gamepage::Gamepage(QWidget *parent) :
@@ -37,14 +59,69 @@ Gamepage::Gamepage(QWidget *parent) :
     timer->start(500);
 
 
-    for (int i = 450 ; i <= 850 ; i += 100 ) {
+    switch (saveGameData::mapNumber) {
+    case 1:
+        for (int i = 450 ; i <= 850 ; i += 100 ) {
 
-        for (int j = 250 ; j <= 600 ; j += 100 ) {
+            for (int j = 250 ; j <= 600 ; j += 100 ) {
 
-            createLabelMap( i , j );
-            j += 10;
+                createLabelMap( i , j );
+                j += 10;
+            }
+            i += 10;
         }
-        i += 10;
+        break;
+    case 2:
+        for (int i = 250 ; i <= 450 ; i += 100 ) {
+
+            for (int j = 150 ; j <= 500 ; j += 100 ) {
+
+                createLabelMap( i , j );
+                j += 10;
+            }
+            i += 10;
+        }
+        for (int i = 800 ; i <= 950 ; i += 100 ) {
+
+            for (int j = 150 ; j <= 500 ; j += 100 ) {
+
+                createLabelMap( i , j );
+                j += 10;
+            }
+            i += 10;
+        }
+        break;
+    case 3:
+        for (int i = 250 ; i <= 450 ; i += 100 ) {
+
+            for (int j = 100 ; j <= 450 ; j += 100 ) {
+
+                createLabelMap( i , j );
+                j += 10;
+            }
+            i += 10;
+        }
+        for (int i = 800 ; i <= 950 ; i += 100 ) {
+
+            for (int j = 200 ; j <= 550 ; j += 100 ) {
+
+                createLabelMap( i , j );
+                j += 10;
+            }
+            i += 10;
+        }
+        break;
+    default:
+        for (int i = 450 ; i <= 850 ; i += 100 ) {
+
+            for (int j = 250 ; j <= 600 ; j += 100 ) {
+
+                createLabelMap( i , j );
+                j += 10;
+            }
+            i += 10;
+        }
+        break;
     }
 
     createLabelsInGroupBox(5);
@@ -91,8 +168,8 @@ void Gamepage::createBlueSquareLabel()
     label->setStyleSheet("background:url(:/res/C:/Users/User/Downloads/qj4vuf24u7l61.png);");
 
     label->setText(QString("%1").arg(labelCount++));
-    int x = 200;
-    int y = 800;
+    int x = matrix[{1,1}].first;
+    int y = matrix[{1,1}].second;
     label->move(x, y);
     label->show();
     moveObject( label );
@@ -123,17 +200,23 @@ void Gamepage::timeLabelText()
 
 void Gamepage::moveObject( QLabel *label )
 {
+    int numberSpeed = 0;
+    if ( saveGameData::mapNumber == 2 )
+    {
+        numberSpeed = 2000;
+    }
+
     QSequentialAnimationGroup *animationGroup;
     animationGroup = new QSequentialAnimationGroup(this);
     QPropertyAnimation *animation0 = new QPropertyAnimation(label, "geometry");
-    animation0->setDuration(4000);
+    animation0->setDuration(((100 - saveGameData::speed )*100) - numberSpeed);
     animation0->setEndValue(QRect(matrix[{1,2}].first, matrix[{1,2}].second, label->width(), label->height()));
     QPropertyAnimation *animation1 = new QPropertyAnimation(label, "geometry");
-    animation1->setDuration(6000);
+    animation1->setDuration(((100 - saveGameData::speed )*100 )- numberSpeed);
     animation1->setStartValue(QRect(matrix[{1,2}].first, matrix[{1,2}].second, label->width(), label->height()));
     animation1->setEndValue(QRect(matrix[{2,1}].first, matrix[{2,1}].second, label->width(), label->height()));
     QPropertyAnimation *animation6 = new QPropertyAnimation(label, "geometry");
-    animation6->setDuration(4000);
+    animation6->setDuration(((100 - saveGameData::speed )*100) - numberSpeed);
     animation6->setStartValue(QRect(matrix[{2,1}].first, matrix[{2,1}].second, label->width(), label->height()));
     animation6->setEndValue(QRect(matrix[{2,2}].first, matrix[{2,2}].second, label->width(), label->height()));
 
@@ -223,17 +306,89 @@ void Gamepage::labelClicked2()
 
 bool Gamepage::checkMap ( QMouseEvent *event )
 {
-    for (int i = 450 ; i <= 850 ; i += 100 ) {
+    switch (saveGameData::mapNumber) {
+    case 1:
+        for (int i = 450 ; i <= 850 ; i += 100 ) {
 
-        for (int j = 250 ; j <= 600 ; j += 100 ) {
+            for (int j = 250 ; j <= 600 ; j += 100 ) {
 
-            if ((i + 30 < event->pos().rx() && event->pos().rx()  < i + 70) && (j + 30  < event->pos().ry() && event->pos().ry()  < j + 70))
-            {
-                return true;
+                if ((i + 30 < event->pos().rx() && event->pos().rx()  < i + 70) && (j + 30  < event->pos().ry() && event->pos().ry()  < j + 70))
+                {
+                    return true;
+                }
+                j += 10;
             }
-            j += 10;
+            i += 10;
         }
-        i += 10;
+        return false;
+        break;
+    case 2:
+        for (int i = 250 ; i <= 450 ; i += 100 ) {
+
+            for (int j = 150 ; j <= 500 ; j += 100 ) {
+
+                if ((i + 30 < event->pos().rx() && event->pos().rx()  < i + 70) && (j + 30  < event->pos().ry() && event->pos().ry()  < j + 70))
+                {
+                    return true;
+                }
+                j += 10;
+            }
+            i += 10;
+        }
+        for (int i = 800 ; i <= 950 ; i += 100 ) {
+
+            for (int j = 150 ; j <= 500 ; j += 100 ) {
+
+                if ((i + 30 < event->pos().rx() && event->pos().rx()  < i + 70) && (j + 30  < event->pos().ry() && event->pos().ry()  < j + 70))
+                {
+                    return true;
+                }
+                j += 10;
+            }
+            i += 10;
+        }
+        return false;
+    case 3:
+        for (int i = 250 ; i <= 450 ; i += 100 ) {
+
+            for (int j = 100 ; j <= 450 ; j += 100 ) {
+
+                if ((i + 30 < event->pos().rx() && event->pos().rx()  < i + 70) && (j + 30  < event->pos().ry() && event->pos().ry()  < j + 70))
+                {
+                    return true;
+                }
+                j += 10;
+            }
+            i += 10;
+        }
+        for (int i = 800 ; i <= 950 ; i += 100 ) {
+
+            for (int j = 200 ; j <= 550 ; j += 100 ) {
+
+                if ((i + 30 < event->pos().rx() && event->pos().rx()  < i + 70) && (j + 30  < event->pos().ry() && event->pos().ry()  < j + 70))
+                {
+                    return true;
+                }
+                j += 10;
+            }
+            i += 10;
+        }
+        break;
+    default:
+        for (int i = 450 ; i <= 850 ; i += 100 ) {
+
+            for (int j = 250 ; j <= 600 ; j += 100 ) {
+
+                if ((i + 30 < event->pos().rx() && event->pos().rx()  < i + 70) && (j + 30  < event->pos().ry() && event->pos().ry()  < j + 70))
+                {
+                    return true;
+                }
+                j += 10;
+            }
+            i += 10;
+        }
+        return false;
+        break;
     }
     return false;
 }

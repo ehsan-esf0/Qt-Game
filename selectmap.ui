@@ -28,25 +28,6 @@
   <property name="styleSheet">
    <string notr="true">background-color : rgb(105, 210, 255);</string>
   </property>
-  <widget class="QPushButton" name="pushButton_2">
-   <property name="geometry">
-    <rect>
-     <x>1080</x>
-     <y>660</y>
-     <width>111</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="maximumSize">
-    <size>
-     <width>1200</width>
-     <height>700</height>
-    </size>
-   </property>
-   <property name="text">
-    <string>change text</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
@@ -57,10 +38,11 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color : rgb(255, 237, 202);</string>
+    <string notr="true">background-color : rgb(255, 237, 202);
+color : rgb(0, 0, 0);</string>
    </property>
    <property name="text">
-    <string/>
+    <string>                  1</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_2">
@@ -73,10 +55,11 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color : rgb(255, 237, 202);</string>
+    <string notr="true">background-color : rgb(255, 237, 202);
+color : rgb(0, 0, 0);</string>
    </property>
    <property name="text">
-    <string/>
+    <string>                  2</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">
@@ -89,10 +72,11 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color : rgb(255, 237, 202);</string>
+    <string notr="true">background-color : rgb(255, 237, 202);
+color : rgb(0, 0, 0);</string>
    </property>
    <property name="text">
-    <string/>
+    <string>                    3</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton">
@@ -111,7 +95,133 @@
     <string/>
    </property>
   </widget>
+  <widget class="QCheckBox" name="checkBox">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>370</y>
+     <width>93</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>map 1</string>
+   </property>
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBox_2">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>370</y>
+     <width>93</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>map 2</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBox_3">
+   <property name="geometry">
+    <rect>
+     <x>920</x>
+     <y>370</y>
+     <width>93</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>map 3</string>
+   </property>
+  </widget>
+  <widget class="QScrollBar" name="horizontalScrollBar">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>630</y>
+     <width>611</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>100</number>
+   </property>
+   <property name="value">
+    <number>60</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Orientation::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QProgressBar" name="progressBar">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>570</y>
+     <width>171</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="value">
+    <number>60</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>530</y>
+     <width>63</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>1060</x>
+     <y>640</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>1200</width>
+     <height>700</height>
+    </size>
+   </property>
+   <property name="text">
+    <string>change text</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>horizontalScrollBar</sender>
+   <signal>sliderMoved(int)</signal>
+   <receiver>progressBar</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>676</x>
+     <y>639</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>270</x>
+     <y>570</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

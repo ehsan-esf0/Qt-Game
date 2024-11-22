@@ -20,6 +20,16 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void on_checkBox_clicked();
+
+    void on_checkBox_2_clicked();
+
+    void on_checkBox_3_clicked();
+
+    void on_horizontalScrollBar_actionTriggered(int action);
+
+    void on_progressBar_valueChanged(int value);
+
 private:
     Ui::selectMap *ui;
 };
