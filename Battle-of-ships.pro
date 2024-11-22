@@ -14,19 +14,22 @@ SOURCES += \
     gamepage.cpp \
     loginpage.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    selectmap.cpp
 
 HEADERS += \
     clickablelabel.h \
     clickablelabel2.h \
     gamepage.h \
     loginpage.h \
-    mainwindow.h
+    mainwindow.h \
+    selectmap.h
 
 FORMS += \
     gamepage.ui \
     loginpage.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    selectmap.ui
 
 
 # Default rules for deployment.

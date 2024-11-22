@@ -29,6 +29,9 @@ public:
 
     explicit Gamepage(QWidget *parent = nullptr);
     ~Gamepage();
+    void changeLabelColor();
+    static QLabel *label_2;
+
 
 private:
     std::map<std::pair<int, int>, std::pair<int, int>> matrix;
@@ -44,7 +47,7 @@ private:
     void labelClicked();
     void labelClicked2();
     void mousePressEvent(QMouseEvent *event) override;
-    void mousePressEvent2(QMouseEvent *event)  ;
+    void mousePressEvent2(QMouseEvent *event);
     QPoint position = QPoint(50, 50);
     static bool check;
     ClickableLabel *selectedLabel;

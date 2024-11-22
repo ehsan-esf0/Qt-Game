@@ -4,9 +4,11 @@ release/gamepage.o
 release/loginpage.o
 release/main.o
 release/mainwindow.o
+release/selectmap.o
 release/qrc_Image.o
 release/moc_clickablelabel.o
 release/moc_clickablelabel2.o
 release/moc_gamepage.o
 release/moc_loginpage.o
 release/moc_mainwindow.o
+release/moc_selectmap.o

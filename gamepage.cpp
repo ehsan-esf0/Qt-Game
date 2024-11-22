@@ -1,6 +1,7 @@
 #include "gamepage.h"
 #include "mainwindow.h"
 #include "qpropertyanimation.h"
+#include "selectmap.h"
 #include "ui_gamepage.h"
 #include <QThread>
 #include <QSequentialAnimationGroup>
@@ -17,6 +18,7 @@ void Gamepage::addMatrix()
     matrix[{2,1}] = {1100 ,100};
     matrix[{2,2}] = {1100 ,800};
 }
+QLabel* Gamepage::label_2 = nullptr;
 
 Gamepage::Gamepage(QWidget *parent) :
     QWidget(parent),
@@ -34,6 +36,7 @@ Gamepage::Gamepage(QWidget *parent) :
     connect(timer2, &QTimer::timeout, this, &Gamepage::timeLabelText);
     timer->start(500);
 
+
     for (int i = 450 ; i <= 850 ; i += 100 ) {
 
         for (int j = 250 ; j <= 600 ; j += 100 ) {
@@ -45,6 +48,16 @@ Gamepage::Gamepage(QWidget *parent) :
     }
 
     createLabelsInGroupBox(5);
+    if (label_2 == nullptr) {
+        label_2 = new QLabel("My Label", this);
+        label_2->show();
+    }
+}
+
+void Gamepage::changeLabelColor()
+{
+    label_2->setStyleSheet("background-color: red;");
+    label_2->setText("hi");
 }
 
 void Gamepage::createLabelMap( int startx , int starty)
@@ -68,6 +81,7 @@ void Gamepage::on_pushButton_clicked()
     m->show();
     this->close();
 }
+
 void Gamepage::createBlueSquareLabel()
 {
     QLabel *label = new QLabel(this);

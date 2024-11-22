@@ -1,5 +1,6 @@
 #include "loginpage.h"
 #include "mainwindow.h"
+#include "selectmap.h"
 #include <QApplication>
 #include <QSqlDatabase>
 #include <QSqlQuery>
@@ -12,6 +13,9 @@ int main(int argc, char *argv[]) {
 
     LoginPage l;
     l.show();
+
+    selectMap s;
+    s.show();
 
     return a.exec();
 }
