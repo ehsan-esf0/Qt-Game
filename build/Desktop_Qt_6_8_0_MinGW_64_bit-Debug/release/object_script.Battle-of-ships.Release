@@ -6,6 +6,7 @@ release/main.o
 release/mainwindow.o
 release/savegamedata.o
 release/selectmap.o
+release/turret_q8.o
 release/qrc_Image.o
 release/moc_clickablelabel.o
 release/moc_clickablelabel2.o

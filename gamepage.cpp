@@ -3,6 +3,7 @@
 #include "qpropertyanimation.h"
 #include "savegamedata.h"
 #include "selectmap.h"
+#include "turret_q8.h"
 #include "ui_gamepage.h"
 #include <QThread>
 #include <QSequentialAnimationGroup>
@@ -230,7 +231,7 @@ void Gamepage::moveObject( QLabel *label )
 void Gamepage::createLabelsInGroupBox(int initialCount)
 {
     for (int i = 0; i < initialCount; ++i) {
-        ClickableLabel *label = new ClickableLabel(this);
+        Turret_Q8 *label = new Turret_Q8(this);
         label->setFixedSize(80, 80);
         label->setStyleSheet("background-color: blue;");
         label->setText(QString("Label %1").arg(i));
@@ -249,7 +250,7 @@ void Gamepage::createLabelsInGroupBox(int initialCount)
 
 void Gamepage::createNewLabel(QPoint position)
 {
-    ClickableLabel *label = new ClickableLabel(this);
+    Turret_Q8 *label = new Turret_Q8(this);
     label->setFixedSize(80, 80);
     label->setStyleSheet("background-color: blue;");
     label->setText(QString("Label %1").arg(labels.size()));

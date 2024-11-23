@@ -6,6 +6,7 @@ debug/main.o
 debug/mainwindow.o
 debug/savegamedata.o
 debug/selectmap.o
+debug/turret_q8.o
 debug/qrc_Image.o
 debug/moc_clickablelabel.o
 debug/moc_clickablelabel2.o

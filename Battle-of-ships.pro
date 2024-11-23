@@ -16,7 +16,8 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     savegamedata.cpp \
-    selectmap.cpp
+    selectmap.cpp \
+    turret_q8.cpp
 
 HEADERS += \
     clickablelabel.h \
@@ -25,7 +26,8 @@ HEADERS += \
     loginpage.h \
     mainwindow.h \
     savegamedata.h \
-    selectmap.h
+    selectmap.h \
+    turret_q8.h
 
 FORMS += \
     gamepage.ui \
