@@ -13,6 +13,7 @@
 #include <QVBoxLayout>
 #include "clickablelabel.h"
 
+
 void Gamepage::addMatrix()
 {
     switch (saveGameData::mapNumber) {
@@ -172,6 +173,7 @@ void Gamepage::createBlueSquareLabel()
     int x = matrix[{1,1}].first;
     int y = matrix[{1,1}].second;
     label->move(x, y);
+    enimi.append(label);
     label->show();
     moveObject( label );
     if ( labelCount  == wCount + 1 )
@@ -433,6 +435,9 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                     //selectedLabel->setEnabled(false);
                     selectedLabel->status = false;
 
+                    dynamic_cast<Turret_Q8*>(selectedLabel)->getLabel(enimi[1]);
+                    dynamic_cast<Turret_Q8*>(selectedLabel)->startShotBullet();
+
                     selectedLabel = nullptr;
                     createNewLabel(previousPosition);
                     labels.removeOne(selectedLabel);
@@ -449,4 +454,5 @@ void Gamepage::on_pushButton_2_clicked()
     menu->show();
     this->close();
 }
+
 

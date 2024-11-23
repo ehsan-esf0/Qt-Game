@@ -1,6 +1,7 @@
 #ifndef GAMEPAGE_H
 #define GAMEPAGE_H
 
+#include "bullet.h"
 #include "clickablelabel.h"
 #include "clickablelabel2.h"
 #include <QApplication>
@@ -31,7 +32,7 @@ public:
     ~Gamepage();
     void changeLabelColor();
     QLabel *label_2;
-
+    QVector<QLabel*> enimi;
 
 private slots:
     void on_pushButton_2_clicked();
@@ -65,6 +66,8 @@ private:
     int timeCount;
     void timeLabelText();
     int icount;
+
+
 };
 
 #endif // GAMEPAGE_H

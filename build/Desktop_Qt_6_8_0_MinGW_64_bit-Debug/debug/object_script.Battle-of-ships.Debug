@@ -1,3 +1,4 @@
+debug/bullet.o
 debug/clickablelabel.o
 debug/clickablelabel2.o
 debug/gamepage.o
@@ -8,6 +9,7 @@ debug/savegamedata.o
 debug/selectmap.o
 debug/turret_q8.o
 debug/qrc_Image.o
+debug/moc_bullet.o
 debug/moc_clickablelabel.o
 debug/moc_clickablelabel2.o
 debug/moc_gamepage.o

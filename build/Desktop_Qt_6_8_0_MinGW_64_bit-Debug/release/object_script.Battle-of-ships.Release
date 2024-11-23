@@ -1,3 +1,4 @@
+release/bullet.o
 release/clickablelabel.o
 release/clickablelabel2.o
 release/gamepage.o
@@ -8,6 +9,7 @@ release/savegamedata.o
 release/selectmap.o
 release/turret_q8.o
 release/qrc_Image.o
+release/moc_bullet.o
 release/moc_clickablelabel.o
 release/moc_clickablelabel2.o
 release/moc_gamepage.o
