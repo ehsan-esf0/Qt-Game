@@ -9,13 +9,14 @@ class Turret_Q8 : public ClickableLabel
 private:
     QVector<Bullet*> bullet;
     QTimer *timer;
-    QLabel *label;
+    QVector<QLabel*> label;
+    int i;
 public:
     void shotBullet( );
     explicit Turret_Q8(QWidget *parent = nullptr);
     QVector<QLabel*> enimi;
     void startShotBullet();
-    void getLabel(QLabel *l);
+    void getLabel(QVector<QLabel *> l);
 };
 
 #endif // TURRET_Q8_H

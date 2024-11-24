@@ -32,7 +32,7 @@ public:
     ~Gamepage();
     void changeLabelColor();
     QLabel *label_2;
-    QVector<QLabel*> enimi;
+    static QVector<QLabel*> enimi;
 
 private slots:
     void on_pushButton_2_clicked();

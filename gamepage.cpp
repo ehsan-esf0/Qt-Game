@@ -13,6 +13,7 @@
 #include <QVBoxLayout>
 #include "clickablelabel.h"
 
+QVector<QLabel*> Gamepage::enimi;
 
 void Gamepage::addMatrix()
 {
@@ -435,7 +436,7 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                     //selectedLabel->setEnabled(false);
                     selectedLabel->status = false;
 
-                    dynamic_cast<Turret_Q8*>(selectedLabel)->getLabel(enimi[1]);
+                    //dynamic_cast<Turret_Q8*>(selectedLabel)->getLabel(enimi);
                     dynamic_cast<Turret_Q8*>(selectedLabel)->startShotBullet();
 
                     selectedLabel = nullptr;

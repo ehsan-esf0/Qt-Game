@@ -6,14 +6,18 @@ Turret_Q8::Turret_Q8(QWidget *parent) : ClickableLabel(parent) {
     setText("Label 1");
     timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &Turret_Q8::shotBullet);
+    i = 0;
 }
 
 
 void Turret_Q8::shotBullet ()
 {
-    Bullet *b = new Bullet(parentWidget());
-    b->shoot(this->pos() , label );
-    bullet.append(bullet);
+    if ( i < Gamepage::enimi.size() )
+    {
+        Bullet *b = new Bullet(parentWidget());
+        b->shoot(this->pos() , Gamepage::enimi[i++] );
+        bullet.append(bullet);
+    }
 }
 
 void Turret_Q8::startShotBullet()
@@ -21,7 +25,7 @@ void Turret_Q8::startShotBullet()
     timer->start(500);
 }
 
-void Turret_Q8::getLabel( QLabel *l )
+void Turret_Q8::getLabel( QVector<QLabel*> l )
 {
     label = l;
 }
