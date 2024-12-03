@@ -1,6 +1,7 @@
 release/bullet.o
 release/clickablelabel.o
 release/clickablelabel2.o
+release/enemy.o
 release/gamepage.o
 release/loginpage.o
 release/main.o
@@ -12,6 +13,7 @@ release/qrc_Image.o
 release/moc_bullet.o
 release/moc_clickablelabel.o
 release/moc_clickablelabel2.o
+release/moc_enemy.o
 release/moc_gamepage.o
 release/moc_loginpage.o
 release/moc_mainwindow.o

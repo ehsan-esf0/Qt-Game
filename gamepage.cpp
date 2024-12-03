@@ -13,22 +13,22 @@
 #include <QVBoxLayout>
 #include "clickablelabel.h"
 
-QVector<QLabel*> Gamepage::enimi;
+QVector<Enemy*> Gamepage::enimi;
 
 void Gamepage::addMatrix()
 {
     switch (saveGameData::mapNumber) {
     case 1:
-        matrix[{1,1}] = {200 ,800};
+        matrix[{1,1}] = {200 ,700};
         matrix[{1,2}] = {200 ,100};
         matrix[{2,1}] = {1100 ,100};
-        matrix[{2,2}] = {1100 ,800};
+        matrix[{2,2}] = {1100 ,600};
         break;
     case 2:
-        matrix[{1,1}] = {600 ,800};
+        matrix[{1,1}] = {600 ,700};
         matrix[{1,2}] = {600 ,500};
         matrix[{2,1}] = {600 ,200};
-        matrix[{2,2}] = {600 ,-100};
+        matrix[{2,2}] = {600 ,-10};
         break;
     case 3:
         matrix[{1,1}] = {0 ,600};
@@ -37,10 +37,10 @@ void Gamepage::addMatrix()
         matrix[{2,2}] = {1200 ,50};
         break;
     default:
-        matrix[{1,1}] = {200 ,800};
+        matrix[{1,1}] = {200 ,700};
         matrix[{1,2}] = {200 ,100};
         matrix[{2,1}] = {1100 ,100};
-        matrix[{2,2}] = {1100 ,800};
+        matrix[{2,2}] = {1100 ,600};
         break;
     }
 }
@@ -50,6 +50,7 @@ Gamepage::Gamepage(QWidget *parent) :
     ui(new Ui::Gamepage)
     ,   selectedLabel(nullptr)
 {
+    enimi.clear();
     ui->setupUi(this);
     addMatrix();
     labelCount = 1;
@@ -166,7 +167,7 @@ void Gamepage::on_pushButton_clicked()
 
 void Gamepage::createBlueSquareLabel()
 {
-    QLabel *label = new QLabel(this);
+    Enemy *label = new Enemy(this);
     label->setFixedSize(50, 50);
     label->setStyleSheet("background:url(:/res/C:/Users/User/Downloads/qj4vuf24u7l61.png);");
 
@@ -176,6 +177,9 @@ void Gamepage::createBlueSquareLabel()
     label->move(x, y);
     enimi.append(label);
     label->show();
+
+
+
     moveObject( label );
     if ( labelCount  == wCount + 1 )
     {
@@ -202,7 +206,7 @@ void Gamepage::timeLabelText()
     }
 }
 
-void Gamepage::moveObject( QLabel *label )
+void Gamepage::moveObject( Enemy *label )
 {
     int numberSpeed = 0;
     if ( saveGameData::mapNumber == 2 )
@@ -211,6 +215,7 @@ void Gamepage::moveObject( QLabel *label )
     }
 
     QSequentialAnimationGroup *animationGroup;
+
     animationGroup = new QSequentialAnimationGroup(this);
     QPropertyAnimation *animation0 = new QPropertyAnimation(label, "geometry");
     animation0->setDuration(((100 - saveGameData::speed )*100) - numberSpeed);
@@ -228,7 +233,15 @@ void Gamepage::moveObject( QLabel *label )
     animationGroup->addAnimation(animation1);
     animationGroup->addAnimation(animation6);
 
+    connect(animationGroup, &QSequentialAnimationGroup::finished, this, [ label]()
+    {
+        label->deleteLater();
+        enimi.removeOne(label);
+
+    });
+
     animationGroup->start();
+
 }
 
 void Gamepage::createLabelsInGroupBox(int initialCount)

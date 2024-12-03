@@ -32,7 +32,7 @@ public:
     ~Gamepage();
     void changeLabelColor();
     QLabel *label_2;
-    static QVector<QLabel*> enimi;
+    static QVector<Enemy*> enimi;
 
 private slots:
     void on_pushButton_2_clicked();
@@ -43,7 +43,7 @@ private:
     Ui::Gamepage *ui;
     static std::vector <int> cartbar;
     void on_pushButton_clicked();
-    void moveObject(QLabel *label);
+    void moveObject(Enemy *label);
     void createBlueSquareLabel();
     QTimer *timer;
     QTimer *timer2;
@@ -66,8 +66,6 @@ private:
     int timeCount;
     void timeLabelText();
     int icount;
-
-
 };
 
 #endif // GAMEPAGE_H

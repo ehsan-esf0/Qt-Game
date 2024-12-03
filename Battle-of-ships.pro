@@ -12,6 +12,7 @@ SOURCES += \
     bullet.cpp \
     clickablelabel.cpp \
     clickablelabel2.cpp \
+    enemy.cpp \
     gamepage.cpp \
     loginpage.cpp \
     main.cpp \
@@ -24,6 +25,7 @@ HEADERS += \
     bullet.h \
     clickablelabel.h \
     clickablelabel2.h \
+    enemy.h \
     gamepage.h \
     loginpage.h \
     mainwindow.h \
