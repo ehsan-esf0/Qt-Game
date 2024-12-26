@@ -36,9 +36,11 @@ public:
     static QVector<Enemy*> enimi;
     void startNewWave();
     void ironLabelshow();
+    void updateEnemies();
 
 private slots:
     void on_pushButton_2_clicked();
+    void onEnemyExited();
 
 private:
     std::map<std::pair<int, int>, std::pair<int, int>> matrix;
@@ -77,6 +79,8 @@ private:
     void countIron();
     int iron;
     QLabel *ironLabel;
+    int enemiesExited;
+    QLabel *exitCounterLabel;
 };
 
 #endif // GAMEPAGE_H

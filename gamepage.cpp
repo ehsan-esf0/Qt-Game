@@ -55,6 +55,7 @@ Gamepage::Gamepage(QWidget *parent) :
     ,   selectedLabel(nullptr)
 {
     //enimi.clear();
+    enemiesExited = 0;
     ui->setupUi(this);
     addMatrix();
     labelCount = 1;
@@ -206,6 +207,13 @@ Gamepage::Gamepage(QWidget *parent) :
     ironLabel->setFixedSize(100 , 50);
     ironLabel->show();
 
+
+    exitCounterLabel = new QLabel(this);
+    exitCounterLabel->setText(QString("Enemies exited: %1").arg(enemiesExited));
+    exitCounterLabel->setFixedSize(100,40);
+    exitCounterLabel->move(1060, 70);
+    exitCounterLabel->show();
+
 }
 
 void Gamepage::countIron()
@@ -353,6 +361,8 @@ void Gamepage::createBlueSquareLabel()
         ui->label->setText("مبارزه");
     }
 
+    connect(label, &Enemy::animationFinished, this , &Gamepage::onEnemyExited);
+
     moveObject( label );
 }
 
@@ -399,12 +409,20 @@ void Gamepage::moveObject( Enemy *label )
         //label->deleteLater();
         Gamepage::enimi.removeOne(label);
         label->hide();
-
+        if ( label->isAlive == true ){
+            emit label->animationFinished();
+        }
     });
 
     animationGroup->start();
 
 }
+
+void Gamepage::onEnemyExited() {
+    enemiesExited++;
+    exitCounterLabel->setText(QString("Enemies exited: %1").arg(enemiesExited));
+}
+
 
 void Gamepage::createLabelsInGroupBox(int initialCount)
 {

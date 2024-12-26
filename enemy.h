@@ -15,6 +15,9 @@ public:
 
 protected:
     int health;
+
+signals:
+    void animationFinished();
 };
 
 #endif // ENEMY_H
