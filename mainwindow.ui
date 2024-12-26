@@ -32,49 +32,37 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background : rgb(117, 225, 255);</string>
+   <string notr="true">background-color : rgb(255, 255, 255);
+background :url(:/res/image/Untitled-3.png);
+</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>60</x>
-      <y>30</y>
-      <width>301</width>
-      <height>131</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font-family: 'Vazir';
-font-size: 50px;
-font-weight: bold;
-color: black;
-text-align: center;
-text-shadow: 5px 5px 10px rgba(100, 0, 0, 0.5);
-background:none;
-</string>
-    </property>
-    <property name="text">
-     <string>منوی بازی</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignmentFlag::AlignCenter</set>
-    </property>
-   </widget>
+   <property name="styleSheet">
+    <string notr="true">background-color : rgb(255, 255, 255);</string>
+   </property>
    <widget class="QPushButton" name="pushButton">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>180</y>
-      <width>201</width>
-      <height>61</height>
+      <x>100</x>
+      <y>130</y>
+      <width>231</width>
+      <height>71</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="styleSheet">
      <string notr="true">font-size: 26px;
 font-weight: bold;
 color: black;
-background-color: white;
+background-color:rgb(255, 255, 255);
 border: 2px solid black;
 border-radius: 15px;
 padding: 10px 20px;
@@ -83,13 +71,22 @@ box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);</string>
     <property name="text">
      <string>ورود به بازی</string>
     </property>
+    <property name="autoExclusive">
+     <bool>false</bool>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>260</y>
-      <width>201</width>
+      <x>220</x>
+      <y>240</y>
+      <width>171</width>
       <height>61</height>
      </rect>
     </property>
@@ -110,9 +107,9 @@ box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);</string>
    <widget class="QPushButton" name="pushButton_3">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>340</y>
-      <width>201</width>
+      <x>220</x>
+      <y>310</y>
+      <width>171</width>
       <height>61</height>
      </rect>
     </property>
@@ -130,6 +127,26 @@ box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);</string>
      <string>تنظیمات</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>-10</x>
+      <y>0</y>
+      <width>351</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background : url(:/res/image/Untitled-5.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>pushButton_2</zorder>
+   <zorder>pushButton_3</zorder>
+   <zorder>pushButton</zorder>
+   <zorder>label</zorder>
   </widget>
  </widget>
  <resources/>

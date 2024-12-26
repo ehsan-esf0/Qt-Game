@@ -50,7 +50,7 @@ Gamepage::Gamepage(QWidget *parent) :
     ui(new Ui::Gamepage)
     ,   selectedLabel(nullptr)
 {
-    enimi.clear();
+    //enimi.clear();
     ui->setupUi(this);
     addMatrix();
     labelCount = 1;
@@ -65,6 +65,8 @@ Gamepage::Gamepage(QWidget *parent) :
 
     switch (saveGameData::mapNumber) {
     case 1:
+        Gamepage::setStyleSheet("background-color : rgb(28, 181, 222);");
+
         for (int i = 450 ; i <= 850 ; i += 100 ) {
 
             for (int j = 250 ; j <= 600 ; j += 100 ) {
@@ -74,8 +76,25 @@ Gamepage::Gamepage(QWidget *parent) :
             }
             i += 10;
         }
+        labelInMap( 330 , 400 , 100 , 140 , "background: url(:/res/image/tree2.png);" );
+
+        labelInMap( 900 , 500 , 100 , 140 , "background: url(:/res/image/tree2.png);" );
+
+        labelInMap( 900 , 170 , 100 , 140 , "background: url(:/res/image/tree3.png);" );
+
+        labelInMap( 890 , 340 , 60 , 50 , "background: url(:/res/image/shark.png);" );
+
+        labelInMap( 340 , 315 , 60 , 50 , "background: url(:/res/image/shark.png);" );
+
+        labelInMap( 320 , 615 , 70 , 70 , "background: url(:/res/image/stone.png);" );
+
+        labelInMap( 460 , 160 , 70 , 70 , "background: url(:/res/image/stone.png);" );
+
+        labelInMap( 550 , 180 , 70 , 70 , "background: url(:/res/image/stone.png);" );
+
         break;
     case 2:
+        Gamepage::setStyleSheet("background-color : rgb(110, 203, 146);");
         for (int i = 250 ; i <= 450 ; i += 100 ) {
 
             for (int j = 150 ; j <= 500 ; j += 100 ) {
@@ -94,6 +113,14 @@ Gamepage::Gamepage(QWidget *parent) :
             }
             i += 10;
         }
+        labelInMap( 1030 , 400 , 150 , 150 , "background: url(:/res/image/tree4.png);" );
+
+        labelInMap( 1030 , 150 , 150 , 150 , "background: url(:/res/image/tree4.png);" );
+
+        labelInMap( 800 , -10 , 150 , 150 , "background: url(:/res/image/tree4.png);" );
+
+        labelInMap( 120 , 550 , 150 , 150 , "background: url(:/res/image/tree4.png);" );
+
         break;
     case 3:
         for (int i = 250 ; i <= 450 ; i += 100 ) {
@@ -116,6 +143,8 @@ Gamepage::Gamepage(QWidget *parent) :
         }
         break;
     default:
+        Gamepage::setStyleSheet("background-color : rgb(28, 181, 222);");
+
         for (int i = 450 ; i <= 850 ; i += 100 ) {
 
             for (int j = 250 ; j <= 600 ; j += 100 ) {
@@ -125,6 +154,23 @@ Gamepage::Gamepage(QWidget *parent) :
             }
             i += 10;
         }
+        labelInMap( 330 , 400 , 100 , 140 , "background: url(:/res/image/tree2.png);" );
+
+        labelInMap( 900 , 500 , 100 , 140 , "background: url(:/res/image/tree2.png);" );
+
+        labelInMap( 900 , 170 , 100 , 140 , "background: url(:/res/image/tree3.png);" );
+
+        labelInMap( 890 , 340 , 60 , 50 , "background: url(:/res/image/shark.png);" );
+
+        labelInMap( 340 , 315 , 60 , 50 , "background: url(:/res/image/shark.png);" );
+
+        labelInMap( 320 , 615 , 70 , 70 , "background: url(:/res/image/stone.png);" );
+
+        labelInMap( 460 , 160 , 70 , 70 , "background: url(:/res/image/stone.png);" );
+
+        labelInMap( 550 , 180 , 70 , 70 , "background: url(:/res/image/stone.png);" );
+
+
         break;
     }
 
@@ -136,11 +182,15 @@ Gamepage::Gamepage(QWidget *parent) :
     int y = 50;
     label_2->move(x, y);
     label_2->show();
-
 }
 
-void Gamepage::changeLabelColor()
+void Gamepage::labelInMap( int x , int y , int z , int k , QString s )
 {
+    QLabel *labelpanel = new QLabel(this);
+    labelpanel->move( x , y );
+    labelpanel->setFixedSize( z , k );
+    labelpanel->setStyleSheet(s);
+    labelpanel->show();
 }
 
 void Gamepage::createLabelMap( int startx , int starty)
@@ -148,7 +198,68 @@ void Gamepage::createLabelMap( int startx , int starty)
     QLabel *labelpanel = new QLabel(this);
     labelpanel->move( startx , starty );
     labelpanel->setFixedSize( 100 , 100 );
-    labelpanel->setStyleSheet("background-color : rgb(100, 100, 100);");
+    if ( saveGameData::mapNumber == 1 )
+    {
+        switch (rand() % 5 + 1) {
+        case 1:
+            labelpanel->setStyleSheet("background: url(:/res/image/Map3.png);");
+            break;
+        case 2:
+            labelpanel->setStyleSheet("background: url(:/res/image/Map4.png);");
+            break;
+        case 3:
+            labelpanel->setStyleSheet("background: url(:/res/image/Map5.png);");
+            break;
+        case 4:
+            labelpanel->setStyleSheet("background: url(:/res/image/Map6.png);");
+            break;
+        case 5:
+            labelpanel->setStyleSheet("background: url(:/res/image/Map7.png);");
+            break;
+        default:
+            break;
+        }
+    }else if ( saveGameData::mapNumber == 2 ) {
+        switch (rand() % 5 + 1) {
+        case 1:
+            labelpanel->setStyleSheet("background: url(:/res/image/map2_1.png);");
+            break;
+        case 2:
+            labelpanel->setStyleSheet("background: url(:/res/image/map2_2.png);");
+            break;
+        case 3:
+            labelpanel->setStyleSheet("background: url(:/res/image/map2_3.png);");
+            break;
+        case 4:
+            labelpanel->setStyleSheet("background: url(:/res/image/map2_4.png);");
+            break;
+        case 5:
+            labelpanel->setStyleSheet("background: url(:/res/image/map2_5.png);");
+            break;
+        default:
+            break;
+        }
+    }else {
+        switch (rand() % 5 + 1) {
+        case 1:
+            labelpanel->setStyleSheet("background: url(:/res/image/Map3.png);");
+            break;
+        case 2:
+            labelpanel->setStyleSheet("background: url(:/res/image/Map4.png);");
+            break;
+        case 3:
+            labelpanel->setStyleSheet("background: url(:/res/image/Map5.png);");
+            break;
+        case 4:
+            labelpanel->setStyleSheet("background: url(:/res/image/Map6.png);");
+            break;
+        case 5:
+            labelpanel->setStyleSheet("background: url(:/res/image/Map7.png);");
+            break;
+        default:
+            break;
+        }
+    }
     labelpanel->show();
 }
 
@@ -168,19 +279,19 @@ void Gamepage::on_pushButton_clicked()
 void Gamepage::createBlueSquareLabel()
 {
     Enemy *label = new Enemy(this);
-    label->setFixedSize(50, 50);
-    label->setStyleSheet("background:url(:/res/C:/Users/User/Downloads/qj4vuf24u7l61.png);");
+    label->setFixedSize(47, 47);
+    label->setStyleSheet("background:url(:/res/image/enimi.png);");
 
     label->setText(QString("%1").arg(labelCount++));
     int x = matrix[{1,1}].first;
     int y = matrix[{1,1}].second;
     label->move(x, y);
-    enimi.append(label);
+    Gamepage::enimi.append(label);
     label->show();
 
 
 
-    moveObject( label );
+
     if ( labelCount  == wCount + 1 )
     {
         timeCount += 5000;
@@ -194,6 +305,8 @@ void Gamepage::createBlueSquareLabel()
         timer->setInterval(rand() % 600 + 400);
         ui->label->setText("مبارزه");
     }
+
+    moveObject( label );
 }
 
 void Gamepage::timeLabelText()
@@ -236,7 +349,8 @@ void Gamepage::moveObject( Enemy *label )
     connect(animationGroup, &QSequentialAnimationGroup::finished, this, [ label]()
     {
         label->deleteLater();
-        enimi.removeOne(label);
+        Gamepage::enimi.removeOne(label);
+        label->hide();
 
     });
 
@@ -248,9 +362,9 @@ void Gamepage::createLabelsInGroupBox(int initialCount)
 {
     for (int i = 0; i < initialCount; ++i) {
         Turret_Q8 *label = new Turret_Q8(this);
-        label->setFixedSize(80, 80);
-        label->setStyleSheet("background-color: blue;");
-        label->setText(QString("Label %1").arg(i));
+        label->setFixedSize(90, 60);
+        label->setStyleSheet("background: url(:/res/image/T.png);");
+        //label->setText(QString("Label %1").arg(i));
         label->status = true;
 
         connect(label, &ClickableLabel::clicked, this, &Gamepage::labelClicked);
@@ -267,9 +381,9 @@ void Gamepage::createLabelsInGroupBox(int initialCount)
 void Gamepage::createNewLabel(QPoint position)
 {
     Turret_Q8 *label = new Turret_Q8(this);
-    label->setFixedSize(80, 80);
-    label->setStyleSheet("background-color: blue;");
-    label->setText(QString("Label %1").arg(labels.size()));
+    label->setFixedSize(90, 60);
+    label->setStyleSheet("background: url(:/res/image/T.png);");
+    //label->setText(QString("Label %1").arg(labels.size()));
     label->status = true;
 
     connect(label, &ClickableLabel::clicked, this, &Gamepage::labelClicked);
@@ -424,7 +538,7 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                 if (!isPositionOccupied(newRect))
                 {
                     selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2));
-                    selectedLabel->setStyleSheet("background-color: blue;");
+                    selectedLabel->setStyleSheet("background: url(:/res/image/T.png);");
 
                     ClickableLabel2 *deletelabel = new ClickableLabel2(selectedLabel);
                     deletelabel->setStyleSheet("background-color: red;border-radius : 5px;");

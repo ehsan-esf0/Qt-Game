@@ -154,7 +154,36 @@ compiler_rcc_clean:
 	-$(DEL_FILE) release\qrc_Image.cpp
 release/qrc_Image.cpp: ../../Image.qrc \
 		C:/Qt/6.8.0/mingw_64/bin/rcc.exe \
-		C:/Users/User/Downloads/qj4vuf24u7l61.png
+		../../image/map2_2.png \
+		../../image/map2_3.png \
+		../../image/stone'.png \
+		../../image/Map.png \
+		../../image/Map2.png \
+		../../image/Map5.png \
+		../../image/T.png \
+		../../image/Untitled-5.png \
+		../../image/enimiD.png \
+		../../image/mainmap2.png \
+		../../image/Map6.png \
+		../../image/enimiR.png \
+		../../image/tree4.png \
+		../../image/Map4.png \
+		../../image/Untitled-1.png \
+		../../image/mainMap.png \
+		../../image/tree2.png \
+		../../image/smap1.png \
+		../../image/map2_5.png \
+		../../image/tree3.png \
+		../../image/Map3.png \
+		../../image/Untitled-2.png \
+		../../image/Map7.png \
+		../../image/enimi.png \
+		../../image/stone.png \
+		../../image/shark.png \
+		../../image/map2_4.png \
+		../../image/Untitled-3.png \
+		../../image/map2_1.png \
+		../../image/smap2.png
 	C:\Qt\6.8.0\mingw_64\bin\rcc.exe -name Image --no-zstd ..\..\Image.qrc -o release\qrc_Image.cpp
 
 compiler_moc_predefs_make_all: release/moc_predefs.h
@@ -369,6 +398,8 @@ release/moc_bullet.cpp: ../../bullet.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qvariantanimation.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qabstractanimation.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qeasingcurve.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/QPointer \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qpointer.h \
 		release/moc_predefs.h \
 		C:/Qt/6.8.0/mingw_64/bin/moc.exe
 	C:\Qt\6.8.0\mingw_64\bin\moc.exe $(DEFINES) --include "D:/Computer engineering/Qt/project/Battle-of-ships/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/release/moc_predefs.h" -IC:/Qt/6.8.0/mingw_64/mkspecs/win32-g++ -I"D:/Computer engineering/Qt/project/Battle-of-ships" -IC:/Qt/6.8.0/mingw_64/include -IC:/Qt/6.8.0/mingw_64/include/QtWidgets -IC:/Qt/6.8.0/mingw_64/include/QtGui -IC:/Qt/6.8.0/mingw_64/include/QtSql -IC:/Qt/6.8.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -IC:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\bullet.h -o release\moc_bullet.cpp
@@ -1175,10 +1206,13 @@ release/moc_gamepage.cpp: ../../gamepage.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qvariantanimation.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qabstractanimation.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qeasingcurve.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/QPointer \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qpointer.h \
 		../../clickablelabel.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QWidget \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/Qt \
 		../../clickablelabel2.h \
+		../../turret_q8.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QApplication \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qapplication.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QMainWindow \
@@ -2186,7 +2220,31 @@ release/bullet.o: ../../bullet.cpp ../../bullet.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qpropertyanimation.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qvariantanimation.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qabstractanimation.h \
-		C:/Qt/6.8.0/mingw_64/include/QtCore/qeasingcurve.h
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qeasingcurve.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/QPointer \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qpointer.h \
+		../../gamepage.h \
+		../../clickablelabel.h \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QWidget \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/Qt \
+		../../clickablelabel2.h \
+		../../turret_q8.h \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QApplication \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qapplication.h \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QMainWindow \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qmainwindow.h \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qtabwidget.h \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QTabWidget \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QVBoxLayout \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qboxlayout.h \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qlayout.h \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qlayoutitem.h \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qgridlayout.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/QString \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/QDebug \
+		C:/Qt/6.8.0/mingw_64/include/QtGui/QMouseEvent \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QGroupBox \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qgroupbox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\bullet.o ..\..\bullet.cpp
 
 release/clickablelabel.o: ../../clickablelabel.cpp ../../clickablelabel.h \
@@ -2789,10 +2847,13 @@ release/enemy.o: ../../enemy.cpp ../../enemy.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qvariantanimation.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qabstractanimation.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qeasingcurve.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/QPointer \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qpointer.h \
 		../../clickablelabel.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QWidget \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/Qt \
 		../../clickablelabel2.h \
+		../../turret_q8.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QApplication \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qapplication.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QMainWindow \
@@ -3015,10 +3076,13 @@ release/gamepage.o: ../../gamepage.cpp ../../gamepage.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qvariantanimation.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qabstractanimation.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qeasingcurve.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/QPointer \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qpointer.h \
 		../../clickablelabel.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QWidget \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/Qt \
 		../../clickablelabel2.h \
+		../../turret_q8.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QApplication \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qapplication.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QMainWindow \
@@ -3038,7 +3102,6 @@ release/gamepage.o: ../../gamepage.cpp ../../gamepage.h \
 		../../mainwindow.h \
 		../../savegamedata.h \
 		../../selectmap.h \
-		../../turret_q8.h \
 		ui_gamepage.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/QVariant \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QPushButton \
@@ -4010,10 +4073,13 @@ release/mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qvariantanimation.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qabstractanimation.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qeasingcurve.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/QPointer \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qpointer.h \
 		../../clickablelabel.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QWidget \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/Qt \
 		../../clickablelabel2.h \
+		../../turret_q8.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QApplication \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qapplication.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QTabWidget \
@@ -4320,9 +4386,12 @@ release/selectmap.o: ../../selectmap.cpp ../../selectmap.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qvariantanimation.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qabstractanimation.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qeasingcurve.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/QPointer \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qpointer.h \
 		../../clickablelabel.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/Qt \
 		../../clickablelabel2.h \
+		../../turret_q8.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QApplication \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qapplication.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QMainWindow \
@@ -4559,6 +4628,8 @@ release/turret_q8.o: ../../turret_q8.cpp ../../turret_q8.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qvariantanimation.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qabstractanimation.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qeasingcurve.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/QPointer \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qpointer.h \
 		../../clickablelabel.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QWidget \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/Qt \

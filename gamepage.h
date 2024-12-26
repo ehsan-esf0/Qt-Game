@@ -4,6 +4,7 @@
 #include "bullet.h"
 #include "clickablelabel.h"
 #include "clickablelabel2.h"
+#include "turret_q8.h"
 #include <QApplication>
 #include <QMainWindow>
 #include <QTabWidget>
@@ -30,9 +31,10 @@ public:
 
     explicit Gamepage(QWidget *parent = nullptr);
     ~Gamepage();
-    void changeLabelColor();
+    void labelInMap(int x , int y , int z, int k, QString s );
     QLabel *label_2;
     static QVector<Enemy*> enimi;
+    void startNewWave();
 
 private slots:
     void on_pushButton_2_clicked();
@@ -66,6 +68,9 @@ private:
     int timeCount;
     void timeLabelText();
     int icount;
+    QVector<Turret_Q8*> turrets;
+    QTimer *checkOutOfBoundsTimer;
+     void checkOutOfBounds();
 };
 
 #endif // GAMEPAGE_H

@@ -30,7 +30,7 @@ public:
         Gamepage->resize(1200, 700);
         Gamepage->setMinimumSize(QSize(1200, 700));
         Gamepage->setMaximumSize(QSize(1200, 700));
-        Gamepage->setStyleSheet(QString::fromUtf8("background-color : rgb(105, 210, 255);"));
+        Gamepage->setStyleSheet(QString::fromUtf8(""));
         label = new QLabel(Gamepage);
         label->setObjectName("label");
         label->setGeometry(QRect(210, 10, 231, 41));

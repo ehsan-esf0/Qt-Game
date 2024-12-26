@@ -11,7 +11,7 @@ public:
     ~Enemy();
 
     void takeHit();
-    bool isAlive() const; // تعریف تابع isAlive
+    bool isAlive() const;
 
 private:
     int health;

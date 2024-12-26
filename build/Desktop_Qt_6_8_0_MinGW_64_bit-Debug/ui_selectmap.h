@@ -40,18 +40,23 @@ public:
         if (selectMap->objectName().isEmpty())
             selectMap->setObjectName("selectMap");
         selectMap->resize(1200, 700);
+        selectMap->setMinimumSize(QSize(300, 250));
         selectMap->setMaximumSize(QSize(1200, 700));
         selectMap->setSizeIncrement(QSize(1200, 700));
         selectMap->setStyleSheet(QString::fromUtf8("background-color : rgb(105, 210, 255);"));
         label = new QLabel(selectMap);
         label->setObjectName("label");
-        label->setGeometry(QRect(90, 100, 291, 261));
-        label->setStyleSheet(QString::fromUtf8("background-color : rgb(255, 237, 202);\n"
-"color : rgb(0, 0, 0);"));
+        label->setGeometry(QRect(90, 100, 301, 251));
+        label->setMinimumSize(QSize(300, 249));
+        label->setSizeIncrement(QSize(400, 400));
+        label->setStyleSheet(QString::fromUtf8("background :url(:/res/image/smap1.png);\n"
+""));
         label_2 = new QLabel(selectMap);
         label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(450, 100, 291, 261));
-        label_2->setStyleSheet(QString::fromUtf8("background-color : rgb(255, 237, 202);\n"
+        label_2->setGeometry(QRect(450, 100, 301, 249));
+        label_2->setMinimumSize(QSize(300, 249));
+        label_2->setSizeIncrement(QSize(300, 249));
+        label_2->setStyleSheet(QString::fromUtf8("background: url(:/res/image/smap2.png) ;\n"
 "color : rgb(0, 0, 0);"));
         label_3 = new QLabel(selectMap);
         label_3->setObjectName("label_3");
@@ -64,12 +69,12 @@ public:
         pushButton->setStyleSheet(QString::fromUtf8("background-color:rgb(255, 0, 0);"));
         checkBox = new QCheckBox(selectMap);
         checkBox->setObjectName("checkBox");
-        checkBox->setGeometry(QRect(200, 370, 93, 26));
+        checkBox->setGeometry(QRect(200, 360, 93, 26));
         checkBox->setCheckable(true);
         checkBox->setChecked(false);
         checkBox_2 = new QCheckBox(selectMap);
         checkBox_2->setObjectName("checkBox_2");
-        checkBox_2->setGeometry(QRect(550, 370, 93, 26));
+        checkBox_2->setGeometry(QRect(570, 360, 93, 26));
         checkBox_3 = new QCheckBox(selectMap);
         checkBox_3->setObjectName("checkBox_3");
         checkBox_3->setGeometry(QRect(920, 370, 93, 26));
@@ -100,7 +105,7 @@ public:
     void retranslateUi(QWidget *selectMap)
     {
         selectMap->setWindowTitle(QCoreApplication::translate("selectMap", "Form", nullptr));
-        label->setText(QCoreApplication::translate("selectMap", "                  1", nullptr));
+        label->setText(QString());
         label_2->setText(QCoreApplication::translate("selectMap", "                  2", nullptr));
         label_3->setText(QCoreApplication::translate("selectMap", "                    3", nullptr));
         pushButton->setText(QString());

@@ -10,11 +10,15 @@ private:
     QVector<Bullet*> bullet;
     QTimer *timer;
     QVector<QLabel*> label;
+    bool active;
     int i;
 public:
     void shotBullet( );
     explicit Turret_Q8(QWidget *parent = nullptr);
     QVector<QLabel*> enimi;
+    void startShooting();
+    void stopShooting();
+    bool isActive();
     void startShotBullet();
     void getLabel(QVector<QLabel *> l);
 };

@@ -5,13 +5,15 @@
 #include <QLabel>
 #include <QTimer>
 #include <QPropertyAnimation>
+#include <QPointer>
 
 class Bullet : public QLabel {
     Q_OBJECT
 
 public:
     explicit Bullet(QWidget *parent = nullptr);
-    void shoot(const QPoint &start, Enemy *targetLabel);
+    void shoot(const QPoint &start, QPointer<Enemy> targetLabel);
+    void updateTarget();
 
 private slots:
     void moveBullet();
@@ -20,7 +22,7 @@ private slots:
 
 private:
     QPropertyAnimation *animation;
-    Enemy *targetLabel;
+    QPointer<Enemy> targetLabel;
     QTimer *moveTimer;
     QTimer *checkTimer;
 };

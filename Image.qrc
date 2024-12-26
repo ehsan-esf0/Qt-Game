@@ -1,5 +1,34 @@
 <RCC>
     <qresource prefix="/res">
-        <file>C:/Users/User/Downloads/qj4vuf24u7l61.png</file>
+        <file>image/Map.png</file>
+        <file>image/mainMap.png</file>
+        <file>image/mainmap2.png</file>
+        <file>image/Map2.png</file>
+        <file>image/Map3.png</file>
+        <file>image/tree2.png</file>
+        <file>image/tree3.png</file>
+        <file>image/stone'.png</file>
+        <file>image/shark.png</file>
+        <file>image/Map4.png</file>
+        <file>image/Map5.png</file>
+        <file>image/Map6.png</file>
+        <file>image/Map7.png</file>
+        <file>image/stone.png</file>
+        <file>image/smap1.png</file>
+        <file>image/map2_1.png</file>
+        <file>image/map2_2.png</file>
+        <file>image/map2_3.png</file>
+        <file>image/map2_4.png</file>
+        <file>image/map2_5.png</file>
+        <file>image/tree4.png</file>
+        <file>image/smap2.png</file>
+        <file>image/Untitled-1.png</file>
+        <file>image/Untitled-2.png</file>
+        <file>image/Untitled-3.png</file>
+        <file>image/Untitled-5.png</file>
+        <file>image/T.png</file>
+        <file>image/enimiD.png</file>
+        <file>image/enimiR.png</file>
+        <file>image/enimi.png</file>
     </qresource>
 </RCC>

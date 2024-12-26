@@ -10,6 +10,12 @@
     <height>700</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>300</width>
+    <height>250</height>
+   </size>
+  </property>
   <property name="maximumSize">
    <size>
     <width>1200</width>
@@ -33,16 +39,28 @@
     <rect>
      <x>90</x>
      <y>100</y>
-     <width>291</width>
-     <height>261</height>
+     <width>301</width>
+     <height>251</height>
     </rect>
    </property>
+   <property name="minimumSize">
+    <size>
+     <width>300</width>
+     <height>249</height>
+    </size>
+   </property>
+   <property name="sizeIncrement">
+    <size>
+     <width>400</width>
+     <height>400</height>
+    </size>
+   </property>
    <property name="styleSheet">
-    <string notr="true">background-color : rgb(255, 237, 202);
-color : rgb(0, 0, 0);</string>
+    <string notr="true">background :url(:/res/image/smap1.png);
+</string>
    </property>
    <property name="text">
-    <string>                  1</string>
+    <string/>
    </property>
   </widget>
   <widget class="QLabel" name="label_2">
@@ -50,12 +68,24 @@ color : rgb(0, 0, 0);</string>
     <rect>
      <x>450</x>
      <y>100</y>
-     <width>291</width>
-     <height>261</height>
+     <width>301</width>
+     <height>249</height>
     </rect>
    </property>
+   <property name="minimumSize">
+    <size>
+     <width>300</width>
+     <height>249</height>
+    </size>
+   </property>
+   <property name="sizeIncrement">
+    <size>
+     <width>300</width>
+     <height>249</height>
+    </size>
+   </property>
    <property name="styleSheet">
-    <string notr="true">background-color : rgb(255, 237, 202);
+    <string notr="true">background: url(:/res/image/smap2.png) ;
 color : rgb(0, 0, 0);</string>
    </property>
    <property name="text">
@@ -99,7 +129,7 @@ color : rgb(0, 0, 0);</string>
    <property name="geometry">
     <rect>
      <x>200</x>
-     <y>370</y>
+     <y>360</y>
      <width>93</width>
      <height>26</height>
     </rect>
@@ -117,8 +147,8 @@ color : rgb(0, 0, 0);</string>
   <widget class="QCheckBox" name="checkBox_2">
    <property name="geometry">
     <rect>
-     <x>550</x>
-     <y>370</y>
+     <x>570</x>
+     <y>360</y>
      <width>93</width>
      <height>26</height>
     </rect>
