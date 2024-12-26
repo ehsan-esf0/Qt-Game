@@ -35,6 +35,7 @@ public:
     QLabel *label_2;
     static QVector<Enemy*> enimi;
     void startNewWave();
+    void ironLabelshow();
 
 private slots:
     void on_pushButton_2_clicked();
@@ -49,6 +50,8 @@ private:
     void createBlueSquareLabel();
     QTimer *timer;
     QTimer *timer2;
+    QTimer *timer3;
+    QTimer *timer4;
     int labelCount;
     void labelClicked();
     void labelClicked2();
@@ -70,7 +73,10 @@ private:
     int icount;
     QVector<Turret_Q8*> turrets;
     QTimer *checkOutOfBoundsTimer;
-     void checkOutOfBounds();
+    void checkOutOfBounds();
+    void countIron();
+    int iron;
+    QLabel *ironLabel;
 };
 
 #endif // GAMEPAGE_H

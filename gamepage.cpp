@@ -65,6 +65,9 @@ Gamepage::Gamepage(QWidget *parent) :
     timer2 = new QTimer(this);
     connect(timer2, &QTimer::timeout, this, &Gamepage::timeLabelText);
     timer->start(500);
+    timer4 = new QTimer(this);
+    connect(timer4, &QTimer::timeout, this, &Gamepage::ironLabelshow);
+    timer->start(10);
 
 
     switch (saveGameData::mapNumber) {
@@ -181,11 +184,38 @@ Gamepage::Gamepage(QWidget *parent) :
     createLabelsInGroupBox(5);
 
     label_2 = new QLabel(saveGameData::str, this);
-    label_2->setFixedSize(50, 50);
+    label_2->setFixedSize(200, 50);
     int x = 100;
     int y = 50;
     label_2->move(x, y);
     label_2->show();
+
+    timer3 = new QTimer(this);
+    connect(timer3, &QTimer::timeout, this, &Gamepage::countIron);
+    timer3->start(1000);
+    iron = 2000;
+    ironLabel = new QLabel(this);
+    QLabel *iconIron = new QLabel(this);
+    iconIron->setStyleSheet("background: url(:/res/image/iron.png);");
+    iconIron->move(1037,27);
+    iconIron->setFixedSize(60,40);
+    iconIron->show();
+    ironLabel->setText(QString("%1").arg(iron));
+    ironLabel->setStyleSheet("font-size : 20px; font-weight : bold;");
+    ironLabel->move(1100, 20);
+    ironLabel->setFixedSize(100 , 50);
+    ironLabel->show();
+
+}
+
+void Gamepage::countIron()
+{
+    iron += 100;
+    ironLabel->setText(QString("%1").arg(iron));
+}
+void Gamepage::ironLabelshow()
+{
+    ironLabel->setText(QString("%1").arg(iron));
 }
 
 void Gamepage::labelInMap( int x , int y , int z , int k , QString s )
@@ -385,19 +415,23 @@ void Gamepage::createLabelsInGroupBox(int initialCount)
         switch (rands) {
         case 1:
             label = new Turret_Q8(this);
+            label->setStyleSheet("background: url(:/res/image/card1.png);");
             break;
         case 2:
             label = new Turret_q8f(this);
+            label->setStyleSheet("background: url(:/res/image/card2.png);");
             break;
         case 3:
             label = new Turret_q8r(this);
+            label->setStyleSheet("background: url(:/res/image/card3.png);");
             break;
         default:
             label = new Turret_Q8(this);
+            label->setStyleSheet("background: url(:/res/image/card1.png);");
             break;
         }
 
-        label->setFixedSize(90, 60);
+        label->setFixedSize(90, 90);
 
 
         label->status = true;
@@ -415,25 +449,29 @@ void Gamepage::createLabelsInGroupBox(int initialCount)
 
 void Gamepage::createNewLabel(QPoint position)
 {
-    ClickableLabel *label = nullptr;
+    ClickableLabel *label;
     int rands = std::rand() % 3 + 1;
 
     switch (rands) {
     case 1:
         label = new Turret_Q8(this);
+        label->setStyleSheet("background: url(:/res/image/card1.png);");
         break;
     case 2:
         label = new Turret_q8f(this);
+        label->setStyleSheet("background: url(:/res/image/card2.png);");
         break;
     case 3:
         label = new Turret_q8r(this);
+        label->setStyleSheet("background: url(:/res/image/card3.png);");
         break;
     default:
         label = new Turret_Q8(this);
+        label->setStyleSheet("background: url(:/res/image/card1.png);");
         break;
     }
 
-    label->setFixedSize(90, 60);
+    label->setFixedSize(90, 90);
     label->status = true;
 
     connect(label, &ClickableLabel::clicked, this, &Gamepage::labelClicked);
@@ -587,51 +625,76 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
             {
                 if (!isPositionOccupied(newRect))
                 {
-                    selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2));
 
-                    ClickableLabel2 *deletelabel = new ClickableLabel2(selectedLabel);
-                    deletelabel->setStyleSheet("background-color: red;border-radius : 5px;");
-                    deletelabel->setFixedSize(20, 20);
-                    deletelabel->mod = 1;
-                    //deletelabel->move(selectedLabel->pos().rx() , selectedLabel->pos().ry());
+                    // ClickableLabel2 *deletelabel = new ClickableLabel2(selectedLabel);
+                    // deletelabel->setStyleSheet("background-color: red;border-radius : 5px;");
+                    // deletelabel->setFixedSize(20, 20);
+                    // deletelabel->mod = 1;
+                    // //deletelabel->move(selectedLabel->pos().rx() , selectedLabel->pos().ry());
 
-                    deletelabel->show();
+                    // deletelabel->show();
 
-                    connect(deletelabel, &ClickableLabel2::clicked, this, &Gamepage::labelClicked2);
+                    // connect(deletelabel, &ClickableLabel2::clicked, this, &Gamepage::labelClicked2);
 
-                    ClickableLabel2 *editlabel = new ClickableLabel2(selectedLabel);
-                    editlabel->setStyleSheet("background-color: green;border-radius : 5px;");
-                    editlabel->setFixedSize(10, 10);
-                    editlabel->mod = 2;
-                    //deletelabel->move(selectedLabel->pos().rx() , selectedLabel->pos().ry());
+                    // ClickableLabel2 *editlabel = new ClickableLabel2(selectedLabel);
+                    // editlabel->setStyleSheet("background-color: green;border-radius : 5px;");
+                    // editlabel->setFixedSize(10, 10);
+                    // editlabel->mod = 2;
+                    // //deletelabel->move(selectedLabel->pos().rx() , selectedLabel->pos().ry());
 
-                    editlabel->show();
+                    // editlabel->show();
 
-                    connect(editlabel, &ClickableLabel2::clicked, this, &Gamepage::labelClicked2);
+                    // connect(editlabel, &ClickableLabel2::clicked, this, &Gamepage::labelClicked2);
 
                     //selectedLabel->setEnabled(false);
-                    selectedLabel->status = false;
+
 
                     //dynamic_cast<Turret_Q8*>(selectedLabel)->getLabel(enimi);
                     //dynamic_cast<Turret_Q8*>(selectedLabel)->startShotBullet();
 
                     if (auto turret1 = dynamic_cast<Turret_Q8 *>(selectedLabel))
                     {
-                        turret1->startShotBullet();
-                        selectedLabel->setStyleSheet("background: url(:/res/image/T.png);");
+                        if ( iron - 500 < 0 ){}
+                        else {
+                            selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2));
+                            iron -= 500;
+                            turret1->startShotBullet();
+                            selectedLabel->setFixedSize(90, 60);
+                            selectedLabel->setStyleSheet("background: url(:/res/image/T.png);");
+                            selectedLabel->status = false;
+                            selectedLabel = nullptr;
+                            createNewLabel(previousPosition);
+                            labels.removeOne(selectedLabel);
+                        }
                     } else if (auto turret2 = dynamic_cast<Turret_q8f *>(selectedLabel))
                     {
-                        turret2->startShotBullet();
-                        selectedLabel->setStyleSheet("background: url(:/res/image/T1.png);");
+                        if ( iron - 700 < 0 ){}
+                        else {
+                            selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2));
+                            iron -= 700;
+                            turret2->startShotBullet();
+                            selectedLabel->setStyleSheet("background: url(:/res/image/T1.png);");
+                            selectedLabel->setFixedSize(90, 60);
+                            selectedLabel->status = false;
+                            selectedLabel = nullptr;
+                            createNewLabel(previousPosition);
+                            labels.removeOne(selectedLabel);
+                        }
                     } else if (auto turret3 = dynamic_cast<Turret_q8r *>(selectedLabel))
                     {
-                        turret3->startShotBullet();
-                        selectedLabel->setStyleSheet("background: url(:/res/image/T2.png);");
+                        if ( iron - 1000 < 0 ){}
+                        else {
+                            selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2));
+                            iron -= 1000;
+                            turret3->startShotBullet();
+                            selectedLabel->setStyleSheet("background: url(:/res/image/T2.png);");
+                            selectedLabel->setFixedSize(90, 60);
+                            selectedLabel->status = false;
+                            selectedLabel = nullptr;
+                            createNewLabel(previousPosition);
+                            labels.removeOne(selectedLabel);
+                        }
                     }
-
-                    selectedLabel = nullptr;
-                    createNewLabel(previousPosition);
-                    labels.removeOne(selectedLabel);
                 }
             }
         }

@@ -33,5 +33,11 @@
         <file>image/T1.png</file>
         <file>image/T2.png</file>
         <file>image/enimi1.png</file>
+        <file>image/card1.png</file>
+        <file>image/card2.png</file>
+        <file>image/card3.png</file>
+        <file>image/iron.png</file>
     </qresource>
+    <qresource prefix="/new/prefix1"/>
+    <qresource prefix="/new/prefix2"/>
 </RCC>

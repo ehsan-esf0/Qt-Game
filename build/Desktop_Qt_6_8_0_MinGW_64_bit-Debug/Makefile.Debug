@@ -184,6 +184,7 @@ debug/qrc_Image.cpp: ../../Image.qrc \
 		../../image/stone'.png \
 		../../image/Map.png \
 		../../image/Map2.png \
+		../../image/card2.png \
 		../../image/Map5.png \
 		../../image/T.png \
 		../../image/Untitled-5.png \
@@ -199,12 +200,15 @@ debug/qrc_Image.cpp: ../../Image.qrc \
 		../../image/mainMap.png \
 		../../image/tree2.png \
 		../../image/smap1.png \
+		../../image/card3.png \
 		../../image/map2_5.png \
 		../../image/tree3.png \
 		../../image/Map3.png \
+		../../image/iron.png \
 		../../image/Untitled-2.png \
 		../../image/Map7.png \
 		../../image/enimi.png \
+		../../image/card1.png \
 		../../image/stone.png \
 		../../image/shark.png \
 		../../image/map2_4.png \
