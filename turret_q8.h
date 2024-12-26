@@ -13,7 +13,7 @@ private:
     bool active;
     int i;
 public:
-    void shotBullet( );
+    void shotBullet();
     explicit Turret_Q8(QWidget *parent = nullptr);
     QVector<QLabel*> enimi;
     void startShooting();

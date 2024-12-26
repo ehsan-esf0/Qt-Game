@@ -1,10 +1,9 @@
 #include "enemy.h"
 #include "gamepage.h"
 
-Enemy::Enemy(QWidget *parent) : QLabel(parent), health(5) {
-    setStyleSheet("background-color: green;");
+Enemy::Enemy(QWidget *parent) : QLabel(parent){
     setFixedSize(50, 50);
-    Gamepage::enimi.append(this);
+    //Gamepage::enimi.append(this);
 }
 
 Enemy::~Enemy() {
@@ -12,15 +11,6 @@ Enemy::~Enemy() {
 }
 
 void Enemy::takeHit() {
-    health--;
-    if (health <= 0)
-    {
-        Gamepage::enimi.removeOne(this);
-        //this->deleteLater();
-        this->hide();
-    }
 }
 
-bool Enemy::isAlive() const {
-    return health > 0;
-}
+

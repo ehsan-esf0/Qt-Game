@@ -13,25 +13,33 @@ SOURCES += \
     clickablelabel.cpp \
     clickablelabel2.cpp \
     enemy.cpp \
+    fighter111.cpp \
+    fighter298.cpp \
     gamepage.cpp \
     loginpage.cpp \
     main.cpp \
     mainwindow.cpp \
     savegamedata.cpp \
     selectmap.cpp \
-    turret_q8.cpp
+    turret_q8.cpp \
+    turret_q8f.cpp \
+    turret_q8r.cpp
 
 HEADERS += \
     bullet.h \
     clickablelabel.h \
     clickablelabel2.h \
     enemy.h \
+    fighter111.h \
+    fighter298.h \
     gamepage.h \
     loginpage.h \
     mainwindow.h \
     savegamedata.h \
     selectmap.h \
-    turret_q8.h
+    turret_q8.h \
+    turret_q8f.h \
+    turret_q8r.h
 
 FORMS += \
     gamepage.ui \

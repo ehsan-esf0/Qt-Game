@@ -2,6 +2,8 @@ debug/bullet.o
 debug/clickablelabel.o
 debug/clickablelabel2.o
 debug/enemy.o
+debug/fighter111.o
+debug/fighter298.o
 debug/gamepage.o
 debug/loginpage.o
 debug/main.o
@@ -9,12 +11,18 @@ debug/mainwindow.o
 debug/savegamedata.o
 debug/selectmap.o
 debug/turret_q8.o
+debug/turret_q8f.o
+debug/turret_q8r.o
 debug/qrc_Image.o
 debug/moc_bullet.o
 debug/moc_clickablelabel.o
 debug/moc_clickablelabel2.o
 debug/moc_enemy.o
+debug/moc_fighter111.o
+debug/moc_fighter298.o
 debug/moc_gamepage.o
 debug/moc_loginpage.o
 debug/moc_mainwindow.o
 debug/moc_selectmap.o
+debug/moc_turret_q8f.o
+debug/moc_turret_q8r.o

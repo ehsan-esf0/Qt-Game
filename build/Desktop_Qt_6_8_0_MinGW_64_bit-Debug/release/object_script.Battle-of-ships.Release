@@ -2,6 +2,8 @@ release/bullet.o
 release/clickablelabel.o
 release/clickablelabel2.o
 release/enemy.o
+release/fighter111.o
+release/fighter298.o
 release/gamepage.o
 release/loginpage.o
 release/main.o
@@ -9,12 +11,18 @@ release/mainwindow.o
 release/savegamedata.o
 release/selectmap.o
 release/turret_q8.o
+release/turret_q8f.o
+release/turret_q8r.o
 release/qrc_Image.o
 release/moc_bullet.o
 release/moc_clickablelabel.o
 release/moc_clickablelabel2.o
 release/moc_enemy.o
+release/moc_fighter111.o
+release/moc_fighter298.o
 release/moc_gamepage.o
 release/moc_loginpage.o
 release/moc_mainwindow.o
 release/moc_selectmap.o
+release/moc_turret_q8f.o
+release/moc_turret_q8r.o

@@ -47,7 +47,7 @@ void Bullet::moveBullet() {
 }
 
 void Bullet::checkTarget() {
-    if (!targetLabel || !targetLabel->isAlive()) {
+    if (!targetLabel || !targetLabel->isAlive) {
         updateTarget();
         checkTimer->stop();
         hide();
@@ -67,7 +67,7 @@ void Bullet::updateTarget() {
     checkTimer->stop();
         for (Enemy *enemy : Gamepage::enimi ) {
 
-            if (enemy->isAlive()) {
+            if (enemy->isAlive) {
 
                 targetLabel = enemy;
                 animation->setEndValue(targetLabel->pos() + QPoint(targetLabel->width() / 2, targetLabel->height() / 2));

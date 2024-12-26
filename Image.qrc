@@ -30,5 +30,8 @@
         <file>image/enimiD.png</file>
         <file>image/enimiR.png</file>
         <file>image/enimi.png</file>
+        <file>image/T1.png</file>
+        <file>image/T2.png</file>
+        <file>image/enimi1.png</file>
     </qresource>
 </RCC>

@@ -10,10 +10,10 @@ public:
     explicit Enemy(QWidget *parent = nullptr);
     ~Enemy();
 
-    void takeHit();
-    bool isAlive() const;
+    virtual void takeHit();
+    bool isAlive;
 
-private:
+protected:
     int health;
 };
 

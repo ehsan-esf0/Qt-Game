@@ -1,9 +1,13 @@
 #include "gamepage.h"
+#include "fighter298.h"
+#include "fighter111.h"
 #include "mainwindow.h"
 #include "qpropertyanimation.h"
 #include "savegamedata.h"
 #include "selectmap.h"
 #include "turret_q8.h"
+#include "turret_q8f.h"
+#include "turret_q8r.h"
 #include "ui_gamepage.h"
 #include <QThread>
 #include <QSequentialAnimationGroup>
@@ -278,9 +282,22 @@ void Gamepage::on_pushButton_clicked()
 
 void Gamepage::createBlueSquareLabel()
 {
-    Enemy *label = new Enemy(this);
+    Enemy *label;
+    int rands = std::rand() % 2 + 1;
+
+    switch (rands) {
+    case 1:
+        label = new Fighter298(this);
+        break;
+    case 2:
+        label = new fighter111(this);
+        break;
+    default:
+        label = new Fighter298(this);
+        break;
+    }
     label->setFixedSize(47, 47);
-    label->setStyleSheet("background:url(:/res/image/enimi.png);");
+
 
     label->setText(QString("%1").arg(labelCount++));
     int x = matrix[{1,1}].first;
@@ -348,7 +365,8 @@ void Gamepage::moveObject( Enemy *label )
 
     connect(animationGroup, &QSequentialAnimationGroup::finished, this, [ label]()
     {
-        label->deleteLater();
+        label->isAlive = false;
+        //label->deleteLater();
         Gamepage::enimi.removeOne(label);
         label->hide();
 
@@ -361,10 +379,27 @@ void Gamepage::moveObject( Enemy *label )
 void Gamepage::createLabelsInGroupBox(int initialCount)
 {
     for (int i = 0; i < initialCount; ++i) {
-        Turret_Q8 *label = new Turret_Q8(this);
+        ClickableLabel *label;
+        int rands = std::rand() % 3 + 1;
+
+        switch (rands) {
+        case 1:
+            label = new Turret_Q8(this);
+            break;
+        case 2:
+            label = new Turret_q8f(this);
+            break;
+        case 3:
+            label = new Turret_q8r(this);
+            break;
+        default:
+            label = new Turret_Q8(this);
+            break;
+        }
+
         label->setFixedSize(90, 60);
-        label->setStyleSheet("background: url(:/res/image/T.png);");
-        //label->setText(QString("Label %1").arg(i));
+
+
         label->status = true;
 
         connect(label, &ClickableLabel::clicked, this, &Gamepage::labelClicked);
@@ -380,10 +415,25 @@ void Gamepage::createLabelsInGroupBox(int initialCount)
 
 void Gamepage::createNewLabel(QPoint position)
 {
-    Turret_Q8 *label = new Turret_Q8(this);
+    ClickableLabel *label = nullptr;
+    int rands = std::rand() % 3 + 1;
+
+    switch (rands) {
+    case 1:
+        label = new Turret_Q8(this);
+        break;
+    case 2:
+        label = new Turret_q8f(this);
+        break;
+    case 3:
+        label = new Turret_q8r(this);
+        break;
+    default:
+        label = new Turret_Q8(this);
+        break;
+    }
+
     label->setFixedSize(90, 60);
-    label->setStyleSheet("background: url(:/res/image/T.png);");
-    //label->setText(QString("Label %1").arg(labels.size()));
     label->status = true;
 
     connect(label, &ClickableLabel::clicked, this, &Gamepage::labelClicked);
@@ -538,7 +588,6 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                 if (!isPositionOccupied(newRect))
                 {
                     selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2));
-                    selectedLabel->setStyleSheet("background: url(:/res/image/T.png);");
 
                     ClickableLabel2 *deletelabel = new ClickableLabel2(selectedLabel);
                     deletelabel->setStyleSheet("background-color: red;border-radius : 5px;");
@@ -564,7 +613,21 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                     selectedLabel->status = false;
 
                     //dynamic_cast<Turret_Q8*>(selectedLabel)->getLabel(enimi);
-                    dynamic_cast<Turret_Q8*>(selectedLabel)->startShotBullet();
+                    //dynamic_cast<Turret_Q8*>(selectedLabel)->startShotBullet();
+
+                    if (auto turret1 = dynamic_cast<Turret_Q8 *>(selectedLabel))
+                    {
+                        turret1->startShotBullet();
+                        selectedLabel->setStyleSheet("background: url(:/res/image/T.png);");
+                    } else if (auto turret2 = dynamic_cast<Turret_q8f *>(selectedLabel))
+                    {
+                        turret2->startShotBullet();
+                        selectedLabel->setStyleSheet("background: url(:/res/image/T1.png);");
+                    } else if (auto turret3 = dynamic_cast<Turret_q8r *>(selectedLabel))
+                    {
+                        turret3->startShotBullet();
+                        selectedLabel->setStyleSheet("background: url(:/res/image/T2.png);");
+                    }
 
                     selectedLabel = nullptr;
                     createNewLabel(previousPosition);
