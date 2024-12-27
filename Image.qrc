@@ -37,6 +37,8 @@
         <file>image/card2.png</file>
         <file>image/card3.png</file>
         <file>image/iron.png</file>
+        <file>image/Bomb.png</file>
+        <file>image/card4.png</file>
     </qresource>
     <qresource prefix="/new/prefix1"/>
     <qresource prefix="/new/prefix2"/>

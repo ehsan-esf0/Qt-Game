@@ -69,6 +69,7 @@ private:
     bool isPositionOccupied(QRect position);
     void createLabelMap( int startx , int starty);
     bool checkMap(QMouseEvent *event);
+    bool checkMap2 ( QMouseEvent *event );
     int wCount;
     int timeCount;
     void timeLabelText();

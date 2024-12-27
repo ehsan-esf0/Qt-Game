@@ -1,4 +1,5 @@
 #include "gamepage.h"
+#include "bomb.h"
 #include "fighter298.h"
 #include "fighter111.h"
 #include "mainwindow.h"
@@ -409,7 +410,7 @@ void Gamepage::moveObject( Enemy *label )
         //label->deleteLater();
         Gamepage::enimi.removeOne(label);
         label->hide();
-        if ( label->isAlive == true ){
+        if ( label->isAlive == false ){
             emit label->animationFinished();
         }
     });
@@ -428,7 +429,7 @@ void Gamepage::createLabelsInGroupBox(int initialCount)
 {
     for (int i = 0; i < initialCount; ++i) {
         ClickableLabel *label;
-        int rands = std::rand() % 3 + 1;
+        int rands = std::rand() % 4 + 1;
 
         switch (rands) {
         case 1:
@@ -442,6 +443,10 @@ void Gamepage::createLabelsInGroupBox(int initialCount)
         case 3:
             label = new Turret_q8r(this);
             label->setStyleSheet("background: url(:/res/image/card3.png);");
+            break;
+        case 4:
+            label = new Bomb(this);
+            label->setStyleSheet("background: url(:/res/image/card4.png);");
             break;
         default:
             label = new Turret_Q8(this);
@@ -468,7 +473,7 @@ void Gamepage::createLabelsInGroupBox(int initialCount)
 void Gamepage::createNewLabel(QPoint position)
 {
     ClickableLabel *label;
-    int rands = std::rand() % 3 + 1;
+    int rands = std::rand() % 4 + 1;
 
     switch (rands) {
     case 1:
@@ -482,6 +487,10 @@ void Gamepage::createNewLabel(QPoint position)
     case 3:
         label = new Turret_q8r(this);
         label->setStyleSheet("background: url(:/res/image/card3.png);");
+        break;
+    case 4:
+        label = new Bomb(this);
+        label->setStyleSheet("background: url(:/res/image/card4.png);");
         break;
     default:
         label = new Turret_Q8(this);
@@ -631,6 +640,24 @@ bool Gamepage::checkMap ( QMouseEvent *event )
 }
 
 
+bool Gamepage::checkMap2 ( QMouseEvent *event )
+{
+    switch (saveGameData::mapNumber)
+    {
+    case 1:
+        if ( (200 < event->pos().rx() && event->pos().rx()  < 450 )  && (200 < event->pos().ry() && event->pos().ry()  < 600)
+            && (850 < event->pos().rx() && event->pos().rx()  < 1050 ))
+        {
+            return true;
+        }
+        return false;
+        break;
+    }
+    return false;
+}
+
+
+
 void Gamepage::mousePressEvent(QMouseEvent *event)
 {
     if (selectedLabel && event->button() == Qt::LeftButton) {
@@ -707,6 +734,26 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                             turret3->startShotBullet();
                             selectedLabel->setStyleSheet("background: url(:/res/image/T2.png);");
                             selectedLabel->setFixedSize(90, 60);
+                            selectedLabel->status = false;
+                            selectedLabel = nullptr;
+                            createNewLabel(previousPosition);
+                            labels.removeOne(selectedLabel);
+                        }
+                    }
+                }
+            }
+            else {
+                if (!isPositionOccupied(newRect))
+                {
+                    if (auto turret1 = dynamic_cast<Bomb *>(selectedLabel))
+                    {
+                        if ( iron - 500 < 0 ){}
+                        else {
+                            selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2 - 20, selectedLabel->height() / 2 - 20));
+                            iron -= 500;
+                            //connect(selectedLabel, &Bomb::clicked, selectedLabel, &Bomb::checkCollision); // اتصال کلیک به بررسی برخورد                            selectedLabel->setFixedSize(90, 60);
+                            selectedLabel->setStyleSheet("background: url(:/res/image/Bomb.png);");
+                            selectedLabel->setFixedSize(50, 50);
                             selectedLabel->status = false;
                             selectedLabel = nullptr;
                             createNewLabel(previousPosition);
