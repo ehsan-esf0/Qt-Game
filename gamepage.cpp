@@ -2,6 +2,7 @@
 #include "bomb.h"
 #include "fighter298.h"
 #include "fighter111.h"
+#include "ice_bomb.h"
 #include "mainwindow.h"
 #include "qpropertyanimation.h"
 #include "savegamedata.h"
@@ -342,6 +343,8 @@ void Gamepage::createBlueSquareLabel()
     int x = matrix[{1,1}].first;
     int y = matrix[{1,1}].second;
     label->move(x, y);
+    label->currentPosition.setX(x);
+    label->currentPosition.setY(y);
     Gamepage::enimi.append(label);
     label->show();
 
@@ -379,24 +382,17 @@ void Gamepage::timeLabelText()
 
 void Gamepage::moveObject( Enemy *label )
 {
-    int numberSpeed = 0;
-    if ( saveGameData::mapNumber == 2 )
-    {
-        numberSpeed = 2000;
-    }
-
-    QSequentialAnimationGroup *animationGroup;
-
     animationGroup = new QSequentialAnimationGroup(this);
     QPropertyAnimation *animation0 = new QPropertyAnimation(label, "geometry");
-    animation0->setDuration(((100 - saveGameData::speed )*100) - numberSpeed);
+    animation0->setDuration(label->speed);
+    animation0->setStartValue(QRect(label->currentPosition.x(), label->currentPosition.y(), label->width(), label->height()));
     animation0->setEndValue(QRect(matrix[{1,2}].first, matrix[{1,2}].second, label->width(), label->height()));
     QPropertyAnimation *animation1 = new QPropertyAnimation(label, "geometry");
-    animation1->setDuration(((100 - saveGameData::speed )*100 )- numberSpeed);
+    animation1->setDuration(label->speed * 2);
     animation1->setStartValue(QRect(matrix[{1,2}].first, matrix[{1,2}].second, label->width(), label->height()));
     animation1->setEndValue(QRect(matrix[{2,1}].first, matrix[{2,1}].second, label->width(), label->height()));
     QPropertyAnimation *animation6 = new QPropertyAnimation(label, "geometry");
-    animation6->setDuration(((100 - saveGameData::speed )*100) - numberSpeed);
+    animation6->setDuration(label->speed);
     animation6->setStartValue(QRect(matrix[{2,1}].first, matrix[{2,1}].second, label->width(), label->height()));
     animation6->setEndValue(QRect(matrix[{2,2}].first, matrix[{2,2}].second, label->width(), label->height()));
 
@@ -406,17 +402,16 @@ void Gamepage::moveObject( Enemy *label )
 
     connect(animationGroup, &QSequentialAnimationGroup::finished, this, [ label]()
     {
-        label->isAlive = false;
         //label->deleteLater();
-        Gamepage::enimi.removeOne(label);
-        label->hide();
-        if ( label->isAlive == false ){
+        if ( label->isAlive == true ){
             emit label->animationFinished();
         }
+        Gamepage::enimi.removeOne(label);
+        label->hide();
+        label->isAlive = false;
     });
 
     animationGroup->start();
-
 }
 
 void Gamepage::onEnemyExited() {
@@ -429,7 +424,7 @@ void Gamepage::createLabelsInGroupBox(int initialCount)
 {
     for (int i = 0; i < initialCount; ++i) {
         ClickableLabel *label;
-        int rands = std::rand() % 4 + 1;
+        int rands = std::rand() % 5 + 1;
 
         switch (rands) {
         case 1:
@@ -447,6 +442,10 @@ void Gamepage::createLabelsInGroupBox(int initialCount)
         case 4:
             label = new Bomb(this);
             label->setStyleSheet("background: url(:/res/image/card4.png);");
+            break;
+        case 5:
+            label = new Ice_Bomb(this);
+            label->setStyleSheet("background: url(:/res/image/card5.png);");
             break;
         default:
             label = new Turret_Q8(this);
@@ -473,7 +472,7 @@ void Gamepage::createLabelsInGroupBox(int initialCount)
 void Gamepage::createNewLabel(QPoint position)
 {
     ClickableLabel *label;
-    int rands = std::rand() % 4 + 1;
+    int rands = std::rand() % 5 + 1;
 
     switch (rands) {
     case 1:
@@ -492,11 +491,16 @@ void Gamepage::createNewLabel(QPoint position)
         label = new Bomb(this);
         label->setStyleSheet("background: url(:/res/image/card4.png);");
         break;
+    case 5:
+        label = new Ice_Bomb(this);
+        label->setStyleSheet("background: url(:/res/image/card5.png);");
+        break;
     default:
         label = new Turret_Q8(this);
         label->setStyleSheet("background: url(:/res/image/card1.png);");
         break;
     }
+
 
     label->setFixedSize(90, 90);
     label->status = true;
@@ -751,8 +755,22 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                         else {
                             selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2 - 20, selectedLabel->height() / 2 - 20));
                             iron -= 500;
-                            //connect(selectedLabel, &Bomb::clicked, selectedLabel, &Bomb::checkCollision); // اتصال کلیک به بررسی برخورد                            selectedLabel->setFixedSize(90, 60);
+                            //connect(selectedLabel, &Bomb::clicked, selectedLabel, &Bomb::checkCollision);
                             selectedLabel->setStyleSheet("background: url(:/res/image/Bomb.png);");
+                            selectedLabel->setFixedSize(50, 50);
+                            selectedLabel->status = false;
+                            selectedLabel = nullptr;
+                            createNewLabel(previousPosition);
+                            labels.removeOne(selectedLabel);
+                        }
+                    }
+                    else if (auto turret2 = dynamic_cast<Ice_Bomb *>(selectedLabel)) {
+                        if ( iron - 300 < 0 ){}
+                        else {
+                            selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2 - 20, selectedLabel->height() / 2 - 20));
+                            iron -= 300;
+                            //connect(selectedLabel, &Bomb::clicked, selectedLabel, &Bomb::checkCollision);
+                            selectedLabel->setStyleSheet("background: url(:/res/image/Bomb2.png);");
                             selectedLabel->setFixedSize(50, 50);
                             selectedLabel->status = false;
                             selectedLabel = nullptr;

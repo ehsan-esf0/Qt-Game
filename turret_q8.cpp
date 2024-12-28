@@ -8,23 +8,35 @@ Turret_Q8::Turret_Q8(QWidget *parent) : ClickableLabel(parent) {
     active = true;
     speedshoot = 550;
 }
-
-void Turret_Q8::shotBullet() {
-    if (!isActive()) {
+void Turret_Q8::shotBullet()
+{
+    if (!isActive())
+    {
         return;
     }
-    if (Gamepage::enimi.isEmpty()) {
-        //stopShooting();
+    if (Gamepage::enimi.isEmpty())
+    {
         return;
-    } else if ( Gamepage::enimi.isEmpty() == false ) {
-        for (Enemy *e : Gamepage::enimi) {
-            if (e->isAlive) {
-                Bullet *b = new Bullet(parentWidget());
-                b->shoot(this->pos(), QPointer<Enemy>(e));
-                bullet.append(b);
-                return;
+    }
+    Enemy *farthestEnemy = nullptr;
+    int maxDistance = -1;
+    for (Enemy *e : Gamepage::enimi)
+    {
+        if (e->isAlive)
+        {
+            int distance = e->x();
+            if (distance > maxDistance)
+            {
+                maxDistance = distance;
+                farthestEnemy = e;
             }
         }
+    }
+    if (farthestEnemy)
+    {
+        Bullet *b = new Bullet(parentWidget());
+        b->shoot(this->pos(), QPointer<Enemy>(farthestEnemy));
+        bullet.append(b);
     }
 }
 

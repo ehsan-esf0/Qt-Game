@@ -11,7 +11,11 @@ public:
     ~Enemy();
 
     virtual void takeHit();
+    void updateAnimationSpeed();
+    void restoreSpeed();
     bool isAlive;
+    int speed;
+    QPoint currentPosition;
 
 protected:
     int health;

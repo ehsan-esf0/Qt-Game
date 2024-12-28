@@ -13,4 +13,23 @@ Enemy::~Enemy() {
 void Enemy::takeHit() {
 }
 
+void Enemy::updateAnimationSpeed()
+{
+    if (isAlive)
+    {
+        Gamepage *gamePage = qobject_cast<Gamepage *>(parentWidget());
+        if (gamePage)
+        {
+            this->currentPosition.setX(this->x());
+            this->currentPosition.setY(this->y());
+            gamePage->moveObject(this);
+        }
+    }
+}
+
+void Enemy::restoreSpeed()
+{
+    speed /= 2;
+    updateAnimationSpeed();
+}
 

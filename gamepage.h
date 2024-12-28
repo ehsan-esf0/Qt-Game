@@ -37,6 +37,10 @@ public:
     void startNewWave();
     void ironLabelshow();
     void updateEnemies();
+    void moveObject(Enemy *label);
+    void moveObject2( Enemy *label );
+    QSequentialAnimationGroup *animationGroup;
+
 
 private slots:
     void on_pushButton_2_clicked();
@@ -48,7 +52,6 @@ private:
     Ui::Gamepage *ui;
     static std::vector <int> cartbar;
     void on_pushButton_clicked();
-    void moveObject(Enemy *label);
     void createBlueSquareLabel();
     QTimer *timer;
     QTimer *timer2;
@@ -82,6 +85,7 @@ private:
     QLabel *ironLabel;
     int enemiesExited;
     QLabel *exitCounterLabel;
+
 };
 
 #endif // GAMEPAGE_H

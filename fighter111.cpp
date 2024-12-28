@@ -8,6 +8,7 @@ fighter111::fighter111(QWidget *parent) : Enemy(parent) {
     isAlive = true;
     health = 6;
     Gamepage::enimi.append(this);
+    speed = 3000;
 }
 
 fighter111::~fighter111() {

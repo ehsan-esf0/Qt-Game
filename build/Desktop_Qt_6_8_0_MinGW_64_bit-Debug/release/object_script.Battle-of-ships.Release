@@ -6,6 +6,7 @@ release/enemy.o
 release/fighter111.o
 release/fighter298.o
 release/gamepage.o
+release/ice_bomb.o
 release/loginpage.o
 release/main.o
 release/mainwindow.o
@@ -23,6 +24,7 @@ release/moc_enemy.o
 release/moc_fighter111.o
 release/moc_fighter298.o
 release/moc_gamepage.o
+release/moc_ice_bomb.o
 release/moc_loginpage.o
 release/moc_mainwindow.o
 release/moc_selectmap.o

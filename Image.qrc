@@ -39,7 +39,7 @@
         <file>image/iron.png</file>
         <file>image/Bomb.png</file>
         <file>image/card4.png</file>
+        <file>image/Bomb2.png</file>
+        <file>image/card5.png</file>
     </qresource>
-    <qresource prefix="/new/prefix1"/>
-    <qresource prefix="/new/prefix2"/>
 </RCC>

@@ -17,6 +17,7 @@ SOURCES += \
     fighter111.cpp \
     fighter298.cpp \
     gamepage.cpp \
+    ice_bomb.cpp \
     loginpage.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -35,6 +36,7 @@ HEADERS += \
     fighter111.h \
     fighter298.h \
     gamepage.h \
+    ice_bomb.h \
     loginpage.h \
     mainwindow.h \
     savegamedata.h \

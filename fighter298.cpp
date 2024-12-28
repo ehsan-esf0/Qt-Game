@@ -7,6 +7,7 @@ Fighter298::Fighter298(QWidget *parent) : Enemy(parent) {
     isAlive = true;
     health = 4;
     Gamepage::enimi.append(this);
+    speed = 4000;
 }
 
 Fighter298::~Fighter298() {
