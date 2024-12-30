@@ -35,6 +35,7 @@ public:
     QLabel *label_2;
     static QVector<Enemy*> enimi;
     static QVector<ClickableLabel*> turrets;
+    static QVector<ClickableLabel*> bombs;
     void startNewWave();
     void ironLabelshow();
     void updateEnemies();

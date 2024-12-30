@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     bomb.cpp \
+    bombdisabler.cpp \
     bullet.cpp \
     clickablelabel.cpp \
     clickablelabel2.cpp \
@@ -31,6 +32,7 @@ SOURCES += \
 
 HEADERS += \
     bomb.h \
+    bombdisabler.h \
     bullet.h \
     clickablelabel.h \
     clickablelabel2.h \

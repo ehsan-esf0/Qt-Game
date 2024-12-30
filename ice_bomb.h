@@ -12,6 +12,7 @@ class Ice_Bomb : public ClickableLabel {
 public:
     explicit Ice_Bomb(QWidget *parent = nullptr);
     void checkCollision();
+    bool isActive;
 
 signals:
     void bombExploded();
@@ -19,7 +20,6 @@ signals:
 private slots:
     void handleBombExplosion();
 private:
-    bool isActive;
 
 };
 

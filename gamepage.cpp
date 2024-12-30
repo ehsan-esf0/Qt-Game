@@ -8,6 +8,7 @@
 #include "savegamedata.h"
 #include "selectmap.h"
 #include "towerdestroyer.h"
+#include "bombdisabler.h"
 #include "towerdisabler.h"
 #include "turret_q8.h"
 #include "turret_q8f.h"
@@ -23,6 +24,7 @@
 
 QVector<Enemy*> Gamepage::enimi;
 QVector<ClickableLabel*> Gamepage::turrets;
+QVector<ClickableLabel*> Gamepage::bombs;
 
 void Gamepage::addMatrix()
 {
@@ -339,7 +341,7 @@ void Gamepage::createBlueSquareLabel()
     //     label = new TowerDestroyer(this);
     //     break;
     case 4:
-        label = new TowerDisabler(this);
+        label = new BombDisabler(this);
         break;
     default:
         label = new Fighter298(this);
@@ -771,6 +773,7 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                             selectedLabel->setStyleSheet("background: url(:/res/image/Bomb.png);");
                             selectedLabel->setFixedSize(50, 50);
                             selectedLabel->status = false;
+                            Gamepage::bombs.append(selectedLabel);
                             selectedLabel = nullptr;
                             createNewLabel(previousPosition);
                             labels.removeOne(selectedLabel);
@@ -785,6 +788,7 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                             selectedLabel->setStyleSheet("background: url(:/res/image/Bomb2.png);");
                             selectedLabel->setFixedSize(50, 50);
                             selectedLabel->status = false;
+                            Gamepage::bombs.append(selectedLabel);
                             selectedLabel = nullptr;
                             createNewLabel(previousPosition);
                             labels.removeOne(selectedLabel);
