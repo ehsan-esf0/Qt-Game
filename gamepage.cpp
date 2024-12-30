@@ -7,6 +7,7 @@
 #include "qpropertyanimation.h"
 #include "savegamedata.h"
 #include "selectmap.h"
+#include "towerdestroyer.h"
 #include "turret_q8.h"
 #include "turret_q8f.h"
 #include "turret_q8r.h"
@@ -20,6 +21,7 @@
 #include "clickablelabel.h"
 
 QVector<Enemy*> Gamepage::enimi;
+QVector<ClickableLabel*> Gamepage::turrets;
 
 void Gamepage::addMatrix()
 {
@@ -184,7 +186,7 @@ Gamepage::Gamepage(QWidget *parent) :
         break;
     }
 
-    createLabelsInGroupBox(5);
+    createLabelsInGroupBox(4);
 
     label_2 = new QLabel(saveGameData::str, this);
     label_2->setFixedSize(200, 50);
@@ -323,7 +325,7 @@ void Gamepage::on_pushButton_clicked()
 void Gamepage::createBlueSquareLabel()
 {
     Enemy *label;
-    int rands = std::rand() % 2 + 1;
+    int rands = std::rand() % 3 + 1;
 
     switch (rands) {
     case 1:
@@ -331,6 +333,9 @@ void Gamepage::createBlueSquareLabel()
         break;
     case 2:
         label = new fighter111(this);
+        break;
+    case 3:
+        label = new TowerDestroyer(this);
         break;
     default:
         label = new Fighter298(this);
@@ -711,6 +716,7 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                             selectedLabel->setFixedSize(90, 60);
                             selectedLabel->setStyleSheet("background: url(:/res/image/T.png);");
                             selectedLabel->status = false;
+                            Gamepage::turrets.append(selectedLabel);
                             selectedLabel = nullptr;
                             createNewLabel(previousPosition);
                             labels.removeOne(selectedLabel);
@@ -725,6 +731,7 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                             selectedLabel->setStyleSheet("background: url(:/res/image/T1.png);");
                             selectedLabel->setFixedSize(90, 60);
                             selectedLabel->status = false;
+                            Gamepage::turrets.append(selectedLabel);
                             selectedLabel = nullptr;
                             createNewLabel(previousPosition);
                             labels.removeOne(selectedLabel);
@@ -739,6 +746,7 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                             selectedLabel->setStyleSheet("background: url(:/res/image/T2.png);");
                             selectedLabel->setFixedSize(90, 60);
                             selectedLabel->status = false;
+                            Gamepage::turrets.append(selectedLabel);
                             selectedLabel = nullptr;
                             createNewLabel(previousPosition);
                             labels.removeOne(selectedLabel);

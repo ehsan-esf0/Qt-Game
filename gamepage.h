@@ -34,6 +34,7 @@ public:
     void labelInMap(int x , int y , int z, int k, QString s );
     QLabel *label_2;
     static QVector<Enemy*> enimi;
+    static QVector<ClickableLabel*> turrets;
     void startNewWave();
     void ironLabelshow();
     void updateEnemies();
@@ -77,7 +78,6 @@ private:
     int timeCount;
     void timeLabelText();
     int icount;
-    QVector<Turret_Q8*> turrets;
     QTimer *checkOutOfBoundsTimer;
     void checkOutOfBounds();
     void countIron();

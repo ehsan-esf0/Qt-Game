@@ -23,6 +23,7 @@ SOURCES += \
     mainwindow.cpp \
     savegamedata.cpp \
     selectmap.cpp \
+    towerdestroyer.cpp \
     turret_q8.cpp \
     turret_q8f.cpp \
     turret_q8r.cpp
@@ -41,6 +42,7 @@ HEADERS += \
     mainwindow.h \
     savegamedata.h \
     selectmap.h \
+    towerdestroyer.h \
     turret_q8.h \
     turret_q8f.h \
     turret_q8r.h
@@ -61,4 +63,7 @@ DISTFILES +=
 
 RESOURCES += \
     Image.qrc
+
+STATECHARTS += \
+    chartGame.scxml
 

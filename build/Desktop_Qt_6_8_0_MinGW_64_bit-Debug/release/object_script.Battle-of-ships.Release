@@ -12,6 +12,7 @@ release/main.o
 release/mainwindow.o
 release/savegamedata.o
 release/selectmap.o
+release/towerdestroyer.o
 release/turret_q8.o
 release/turret_q8f.o
 release/turret_q8r.o
@@ -28,5 +29,6 @@ release/moc_ice_bomb.o
 release/moc_loginpage.o
 release/moc_mainwindow.o
 release/moc_selectmap.o
+release/moc_towerdestroyer.o
 release/moc_turret_q8f.o
 release/moc_turret_q8r.o
