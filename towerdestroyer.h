@@ -11,7 +11,7 @@ class TowerDestroyer : public Enemy {
 public:
     explicit TowerDestroyer(QWidget *parent = nullptr);
     ~TowerDestroyer();
-    void takeHit() override;
+    void takeHit(int hit) override;
 
 
 private slots:

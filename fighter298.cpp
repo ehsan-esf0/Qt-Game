@@ -14,8 +14,8 @@ Fighter298::~Fighter298() {
     //Gamepage::enimi.removeOne(this);
 }
 
-void Fighter298::takeHit() {
-    health--;
+void Fighter298::takeHit(int hit) {
+    health -= hit;
     if (health <= 0)
     {
         isAlive = false;

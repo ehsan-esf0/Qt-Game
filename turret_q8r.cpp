@@ -66,3 +66,7 @@ void Turret_q8r::getLabel( QVector<QLabel*> l )
 {
     label = l;
 }
+
+void Turret_q8r::setActive( bool x ){
+    active = x;
+}

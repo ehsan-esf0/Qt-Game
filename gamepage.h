@@ -53,6 +53,7 @@ private:
     Ui::Gamepage *ui;
     static std::vector <int> cartbar;
     void on_pushButton_clicked();
+    void extracted(Enemy *&label);
     void createBlueSquareLabel();
     QTimer *timer;
     QTimer *timer2;
@@ -85,7 +86,6 @@ private:
     QLabel *ironLabel;
     int enemiesExited;
     QLabel *exitCounterLabel;
-
 };
 
 #endif // GAMEPAGE_H

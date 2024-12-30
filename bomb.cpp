@@ -28,7 +28,7 @@ void Bomb::checkCollision() {
 
         if (!collidedEnemies.isEmpty()) {
             for (Enemy *enemy : collidedEnemies) {
-                enemy->isAlive = false;
+                enemy->takeHit(10);
                 Gamepage::enimi.removeOne(enemy);
                 enemy->hide();
             }

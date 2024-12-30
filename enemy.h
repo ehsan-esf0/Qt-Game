@@ -10,7 +10,7 @@ public:
     explicit Enemy(QWidget *parent = nullptr);
     ~Enemy();
 
-    virtual void takeHit();
+    virtual void takeHit( int hit );
     void updateAnimationSpeed();
     void restoreSpeed();
     bool isAlive;

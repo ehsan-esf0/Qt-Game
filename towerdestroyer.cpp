@@ -44,8 +44,8 @@ void TowerDestroyer::attemptToDestroyTower() {
     }
 }
 
-void TowerDestroyer::takeHit() {
-    health--;
+void TowerDestroyer::takeHit(int hit) {
+    health -= hit;
     if (health <= 0)
     {
         isAlive = false;

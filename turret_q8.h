@@ -19,6 +19,7 @@ public:
     void startShooting();
     void stopShooting();
     bool isActive();
+    void setActive( bool x);
     void startShotBullet();
     void getLabel(QVector<QLabel *> l);
 };

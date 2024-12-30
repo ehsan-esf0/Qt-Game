@@ -10,7 +10,7 @@ Enemy::~Enemy() {
     //Gamepage::enimi.removeOne(this);
 }
 
-void Enemy::takeHit() {
+void Enemy::takeHit(int hit) {
 }
 
 void Enemy::updateAnimationSpeed()

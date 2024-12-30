@@ -13,6 +13,7 @@ debug/mainwindow.o
 debug/savegamedata.o
 debug/selectmap.o
 debug/towerdestroyer.o
+debug/towerdisabler.o
 debug/turret_q8.o
 debug/turret_q8f.o
 debug/turret_q8r.o
@@ -30,5 +31,6 @@ debug/moc_loginpage.o
 debug/moc_mainwindow.o
 debug/moc_selectmap.o
 debug/moc_towerdestroyer.o
+debug/moc_towerdisabler.o
 debug/moc_turret_q8f.o
 debug/moc_turret_q8r.o

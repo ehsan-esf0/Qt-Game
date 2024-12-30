@@ -44,7 +44,8 @@ void Turret_q8f::startShooting() {
 void Turret_q8f::stopShooting()
 {
     active = false;
-} bool Turret_q8f::isActive()
+}
+bool Turret_q8f::isActive()
 {
     return active;
 }
@@ -58,4 +59,8 @@ void Turret_q8f::startShotBullet()
 void Turret_q8f::getLabel( QVector<QLabel*> l )
 {
     label = l;
+}
+
+void Turret_q8f::setActive( bool x ){
+    active = x;
 }

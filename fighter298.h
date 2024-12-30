@@ -11,7 +11,7 @@ public:
     ~Fighter298();
 
 
-    void takeHit() override;
+    void takeHit(int hit) override;
 
 private:
 };

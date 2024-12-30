@@ -8,6 +8,7 @@
 #include "savegamedata.h"
 #include "selectmap.h"
 #include "towerdestroyer.h"
+#include "towerdisabler.h"
 #include "turret_q8.h"
 #include "turret_q8f.h"
 #include "turret_q8r.h"
@@ -325,7 +326,7 @@ void Gamepage::on_pushButton_clicked()
 void Gamepage::createBlueSquareLabel()
 {
     Enemy *label;
-    int rands = std::rand() % 3 + 1;
+    int rands = std::rand() % 4 + 1;
 
     switch (rands) {
     case 1:
@@ -334,8 +335,11 @@ void Gamepage::createBlueSquareLabel()
     case 2:
         label = new fighter111(this);
         break;
-    case 3:
-        label = new TowerDestroyer(this);
+    // case 3:
+    //     label = new TowerDestroyer(this);
+    //     break;
+    case 4:
+        label = new TowerDisabler(this);
         break;
     default:
         label = new Fighter298(this);
