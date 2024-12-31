@@ -230,6 +230,7 @@ debug/qrc_Image.cpp: ../../Image.qrc \
 		../../image/Untitled-1.png \
 		../../image/T2.png \
 		../../image/T1.png \
+		../../image/menu-lvl.png \
 		../../image/mainMap.png \
 		../../image/tree2.png \
 		../../image/smap1.png \
@@ -5947,6 +5948,7 @@ debug/gamepage.o: ../../gamepage.cpp ../../gamepage.h \
 		../../savegamedata.h \
 		../../selectmap.h \
 		../../towerdestroyer.h \
+		../../bombdisabler.h \
 		../../towerdisabler.h \
 		../../turret_q8f.h \
 		../../turret_q8r.h \

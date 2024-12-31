@@ -62,6 +62,9 @@ void selectMap::on_checkBox_2_clicked()
     ui->checkBox->setChecked(false);
     ui->checkBox_3->setChecked(false);
     saveGameData::mapNumber = 2;
+    Gamepage::enimi.clear();
+    Gamepage::turrets.clear();
+    Gamepage::bombs.clear();
 }
 
 

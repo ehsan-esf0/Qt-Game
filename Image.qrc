@@ -44,5 +44,6 @@
         <file>image/enimi3.png</file>
         <file>image/enimi4.png</file>
         <file>image/enimi2.png</file>
+        <file>image/menu-lvl.png</file>
     </qresource>
 </RCC>

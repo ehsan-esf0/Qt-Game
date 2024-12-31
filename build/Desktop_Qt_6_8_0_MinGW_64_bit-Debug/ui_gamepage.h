@@ -22,14 +22,15 @@ class Ui_Gamepage
 public:
     QLabel *label;
     QPushButton *pushButton_2;
+    QLabel *label_2;
 
     void setupUi(QWidget *Gamepage)
     {
         if (Gamepage->objectName().isEmpty())
             Gamepage->setObjectName("Gamepage");
-        Gamepage->resize(1200, 700);
+        Gamepage->resize(1400, 700);
         Gamepage->setMinimumSize(QSize(1200, 700));
-        Gamepage->setMaximumSize(QSize(1200, 700));
+        Gamepage->setMaximumSize(QSize(1400, 700));
         Gamepage->setStyleSheet(QString::fromUtf8(""));
         label = new QLabel(Gamepage);
         label->setObjectName("label");
@@ -42,6 +43,10 @@ public:
         pushButton_2->setObjectName("pushButton_2");
         pushButton_2->setGeometry(QRect(10, 10, 83, 29));
         pushButton_2->setStyleSheet(QString::fromUtf8("background-color:rgb(255, 0, 0);"));
+        label_2 = new QLabel(Gamepage);
+        label_2->setObjectName("label_2");
+        label_2->setGeometry(QRect(1200, 0, 200, 900));
+        label_2->setStyleSheet(QString::fromUtf8("background : url(:/res/image/menu-lvl.png);"));
 
         retranslateUi(Gamepage);
 
@@ -53,6 +58,7 @@ public:
         Gamepage->setWindowTitle(QCoreApplication::translate("Gamepage", "Game", nullptr));
         label->setText(QString());
         pushButton_2->setText(QString());
+        label_2->setText(QString());
     } // retranslateUi
 
 };

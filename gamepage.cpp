@@ -189,7 +189,7 @@ Gamepage::Gamepage(QWidget *parent) :
         break;
     }
 
-    createLabelsInGroupBox(4);
+    createLabelsInGroupBox(5);
 
     label_2 = new QLabel(saveGameData::str, this);
     label_2->setFixedSize(200, 50);
@@ -328,7 +328,7 @@ void Gamepage::on_pushButton_clicked()
 void Gamepage::createBlueSquareLabel()
 {
     Enemy *label;
-    int rands = std::rand() % 4 + 1;
+    int rands = std::rand() % 2 + 1;
 
     switch (rands) {
     case 1:
@@ -336,12 +336,6 @@ void Gamepage::createBlueSquareLabel()
         break;
     case 2:
         label = new fighter111(this);
-        break;
-    // case 3:
-    //     label = new TowerDestroyer(this);
-    //     break;
-    case 4:
-        label = new BombDisabler(this);
         break;
     default:
         label = new Fighter298(this);
@@ -412,15 +406,15 @@ void Gamepage::moveObject( Enemy *label )
     animationGroup->addAnimation(animation6);
 
     connect(animationGroup, &QSequentialAnimationGroup::finished, this, [ label]()
-    {
-        //label->deleteLater();
-        if ( label->isAlive == true ){
-            emit label->animationFinished();
-        }
-        Gamepage::enimi.removeOne(label);
-        label->hide();
-        label->isAlive = false;
-    });
+            {
+                //label->deleteLater();
+                if ( label->isAlive == true ){
+                    emit label->animationFinished();
+                }
+                Gamepage::enimi.removeOne(label);
+                label->hide();
+                label->isAlive = false;
+            });
 
     animationGroup->start();
 }
@@ -807,5 +801,3 @@ void Gamepage::on_pushButton_2_clicked()
     menu->show();
     this->close();
 }
-
-
