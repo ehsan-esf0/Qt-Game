@@ -65,9 +65,12 @@ Gamepage::Gamepage(QWidget *parent) :
     enemiesExited = 0;
     ui->setupUi(this);
     addMatrix();
+    countWave = 1;
+    bossCount = 0;
     labelCount = 1;
-    wCount = 10;
+    wCount = 20;
     timeCount = 10000;
+    icount = 10;
     timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &Gamepage::createBlueSquareLabel);
     timer2 = new QTimer(this);
@@ -341,8 +344,31 @@ void Gamepage::createBlueSquareLabel()
         label = new Fighter298(this);
         break;
     }
-    label->setFixedSize(47, 47);
 
+
+    if ( countWave % 2 == 0 && bossCount == 0 ){
+        int rands2 = std::rand() % 3 + 1;
+
+        switch (rands2) {
+        case 1:
+            label = new TowerDestroyer(this);
+            bossCount = 1;
+            break;
+        case 2:
+            label = new TowerDisabler(this);
+            bossCount = 1;
+            break;
+        case 3:
+            label = new BombDisabler(this);
+            bossCount = 1;
+            break;
+        default:
+            label = new BombDisabler(this);
+            bossCount = 1;
+            break;
+        }
+    }
+        label->setFixedSize(47, 47);
 
     label->setText(QString("%1").arg(labelCount++));
     int x = matrix[{1,1}].first;
@@ -354,18 +380,17 @@ void Gamepage::createBlueSquareLabel()
     label->show();
 
 
-
-
     if ( labelCount  == wCount + 1 )
     {
-        timeCount += 5000;
-        icount = (timeCount / 1000);
         timer->setInterval(timeCount);
         timer2->start(1000);
+        icount = 10;
         labelCount = 1;
-        wCount += 10;
+        bossCount = 0;
+        countWave += 1;
     }
     else {
+
         timer->setInterval(rand() % 600 + 400);
         ui->label->setText("مبارزه");
     }

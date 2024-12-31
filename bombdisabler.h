@@ -12,6 +12,7 @@ class BombDisabler : public Enemy {
 public:
     explicit BombDisabler(QWidget *parent = nullptr);
     ~BombDisabler();
+    void takeHit(int hit) override;
 
 private slots:
     void disableNearbyBombs();  // اسلات برای غیرفعال کردن بمب‌های نزدیک

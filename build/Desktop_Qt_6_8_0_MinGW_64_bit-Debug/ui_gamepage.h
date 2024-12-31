@@ -28,7 +28,7 @@ public:
     {
         if (Gamepage->objectName().isEmpty())
             Gamepage->setObjectName("Gamepage");
-        Gamepage->resize(1400, 700);
+        Gamepage->resize(1200, 700);
         Gamepage->setMinimumSize(QSize(1200, 700));
         Gamepage->setMaximumSize(QSize(1400, 700));
         Gamepage->setStyleSheet(QString::fromUtf8(""));

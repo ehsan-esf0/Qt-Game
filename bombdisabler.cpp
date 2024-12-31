@@ -51,3 +51,16 @@ void BombDisabler::disableNearbyBombs() {
         }
     }
 }
+
+void BombDisabler::takeHit(int hit) {
+    health -= hit;
+    if (health <= 0)
+    {
+        isAlive = false;
+        Gamepage::enimi.removeOne(this);
+        //this->deleteLater();
+        this->hide();
+    }
+}
+
+

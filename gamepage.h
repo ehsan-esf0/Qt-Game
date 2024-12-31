@@ -42,6 +42,7 @@ public:
     void moveObject(Enemy *label);
     void moveObject2( Enemy *label );
     QSequentialAnimationGroup *animationGroup;
+    static int enimiInMap;
 
 
 private slots:
@@ -76,7 +77,9 @@ private:
     void createLabelMap( int startx , int starty);
     bool checkMap(QMouseEvent *event);
     bool checkMap2 ( QMouseEvent *event );
+    int countWave;
     int wCount;
+    int bossCount;
     int timeCount;
     void timeLabelText();
     int icount;
