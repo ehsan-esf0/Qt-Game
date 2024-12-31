@@ -6,7 +6,7 @@
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../../turret_q8f.h"
+#include "../../../Header/turret_q8f.h"
 #include <QtGui/qtextcursor.h>
 #include <QtCore/qmetatype.h>
 
