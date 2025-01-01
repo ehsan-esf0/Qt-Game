@@ -30,7 +30,7 @@ public:
             Gamepage->setObjectName("Gamepage");
         Gamepage->resize(1200, 700);
         Gamepage->setMinimumSize(QSize(1200, 700));
-        Gamepage->setMaximumSize(QSize(1400, 700));
+        Gamepage->setMaximumSize(QSize(1350, 700));
         Gamepage->setStyleSheet(QString::fromUtf8(""));
         label = new QLabel(Gamepage);
         label->setObjectName("label");

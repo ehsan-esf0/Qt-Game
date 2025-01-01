@@ -45,5 +45,30 @@
         <file>image/enimi4.png</file>
         <file>image/enimi2.png</file>
         <file>image/menu-lvl.png</file>
+        <file>image/card1-lvl1.png</file>
+        <file>image/card1-lvl2.png</file>
+        <file>image/card1-lvl3.png</file>
+        <file>image/card1-lvl4.png</file>
+        <file>image/card1-lvl5.png</file>
+        <file>image/card2-lvl1.png</file>
+        <file>image/card2-lvl2.png</file>
+        <file>image/card2-lvl3.png</file>
+        <file>image/card2-lvl4.png</file>
+        <file>image/card2-lvl5.png</file>
+        <file>image/card3-lvl1.png</file>
+        <file>image/card3-lvl2.png</file>
+        <file>image/card3-lvl3.png</file>
+        <file>image/card3-lvl4.png</file>
+        <file>image/card3-lvl5.png</file>
+        <file>image/card4-lvl1.png</file>
+        <file>image/card4-lvl2.png</file>
+        <file>image/card4-lvl3.png</file>
+        <file>image/card4-lvl4.png</file>
+        <file>image/card4-lvl5.png</file>
+        <file>image/card5-lvl1.png</file>
+        <file>image/card5-lvl2.png</file>
+        <file>image/card5-lvl3.png</file>
+        <file>image/card5-lvl4.png</file>
+        <file>image/card5-lvl5.png</file>
     </qresource>
 </RCC>

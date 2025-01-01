@@ -233,57 +233,65 @@ Gamepage::Gamepage(QWidget *parent) :
 
 void Gamepage::createToolbar(int initialCount)
 {
-    for (int i = 0; i < initialCount; ++i) {
-        ClickableLabel *label;
-        int rands = std::rand() % 5 + 1;
+    QLabel *label = new QLabel(this);
+    label->setStyleSheet("background: url(:/res/image/card1-lvl1.png);");
+    label->setFixedSize(90, 90);
+    int x = 1236;
+    int y = 30 + 0 * 135;
+    label->move(x, y);
+    label->show();
+    QPushButton *button = new QPushButton("Action", this);
+    button->setGeometry(x, y + 90, 90, 30);
+    connect(button, &QPushButton::clicked, this, &Gamepage::buttonClicked);
+    button->show();
 
-        switch (rands) {
-        case 1:
-            label = new Turret_Q8(this);
-            label->setStyleSheet("background: url(:/res/image/card1.png);");
-            break;
-        case 2:
-            label = new Turret_q8f(this);
-            label->setStyleSheet("background: url(:/res/image/card2.png);");
-            break;
-        case 3:
-            label = new Turret_q8r(this);
-            label->setStyleSheet("background: url(:/res/image/card3.png);");
-            break;
-        case 4:
-            label = new Bomb(this);
-            label->setStyleSheet("background: url(:/res/image/card4.png);");
-            break;
-        case 5:
-            label = new Ice_Bomb(this);
-            label->setStyleSheet("background: url(:/res/image/card5.png);");
-            break;
-        default:
-            label = new Turret_Q8(this);
-            label->setStyleSheet("background: url(:/res/image/card1.png);");
-            break;
-        }
+    QLabel *label2 = new QLabel(this);
+    label2->setStyleSheet("background: url(:/res/image/card2-lvl1.png);");
+    label2->setFixedSize(90, 90);
+    x = 1236;
+    y = 30 + 1 * 135;
+    label2->move(x, y);
+    label2->show();
+    QPushButton *button2 = new QPushButton("Action", this);
+    button2->setGeometry(x, y + 90, 90, 30);
+    connect(button2, &QPushButton::clicked, this, &Gamepage::buttonClicked);
+    button2->show();
 
-        label->setFixedSize(90, 90);
-        label->status = true;
+    QLabel *label3 = new QLabel(this);
+    label3->setStyleSheet("background: url(:/res/image/card3-lvl1.png);");
+    label3->setFixedSize(90, 90);
+    x = 1236;
+    y = 30 + 2 * 135;
+    label3->move(x, y);
+    label3->show();
+    QPushButton *button3 = new QPushButton("Action", this);
+    button3->setGeometry(x, y + 90, 90, 30);
+    connect(button3, &QPushButton::clicked, this, &Gamepage::buttonClicked);
+    button3->show();
 
+    QLabel *label4 = new QLabel(this);
+    label4->setStyleSheet("background: url(:/res/image/card4-lvl1.png);");
+    label4->setFixedSize(90, 90);
+    x = 1236;
+    y = 30 + 3 * 135;
+    label4->move(x, y);
+    label4->show();
+    QPushButton *button4 = new QPushButton("Action", this);
+    button4->setGeometry(x, y + 90, 90, 30);
+    connect(button4, &QPushButton::clicked, this, &Gamepage::buttonClicked);
+    button4->show();
 
-        connect(label, &ClickableLabel::clicked, this, &Gamepage::labelClicked);
-
-
-        int x = 1240;
-        int y = 30 + i * 135;
-        label->move(x, y);
-        label->show();
-
-
-        QPushButton *button = new QPushButton("Action", this);
-        button->setGeometry(x, y + 90, 90, 30);
-        connect(button, &QPushButton::clicked, this, &Gamepage::buttonClicked);
-        button->show();
-
-        labels.append(label);
-    }
+    QLabel *label5 = new QLabel(this);
+    label5->setStyleSheet("background: url(:/res/image/card5-lvl1.png);");
+    label5->setFixedSize(90, 90);
+    x = 1236;
+    y = 30 + 4 * 135;
+    label5->move(x, y);
+    label5->show();
+    QPushButton *button5 = new QPushButton("Action", this);
+    button5->setGeometry(x, y + 90, 90, 30);
+    connect(button, &QPushButton::clicked, this, &Gamepage::buttonClicked);
+    button5->show();
 }
 
 void Gamepage::buttonClicked()

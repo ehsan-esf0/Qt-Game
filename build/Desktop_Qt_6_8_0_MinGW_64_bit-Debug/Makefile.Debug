@@ -208,20 +208,49 @@ compiler_rcc_clean:
 	-$(DEL_FILE) debug\qrc_Image.cpp
 debug/qrc_Image.cpp: ../../Image.qrc \
 		C:/Qt/6.8.0/mingw_64/bin/rcc.exe \
+		../../image/enimi1.png \
+		../../image/Bomb2.png \
+		../../image/card4-lvl4.png \
+		../../image/Bomb.png \
+		../../image/Untitled-5.png \
+		../../image/enimi4.png \
+		../../image/card4-lvl5.png \
+		../../image/card1-lvl3.png \
+		../../image/card2-lvl2.png \
+		../../image/card2-lvl3.png \
+		../../image/tree2.png \
+		../../image/smap1.png \
+		../../image/card1-lvl1.png \
+		../../image/card3.png \
+		../../image/tree3.png \
+		../../image/card4.png \
+		../../image/Untitled-2.png \
+		../../image/card3-lvl4.png \
+		../../image/card5-lvl2.png \
+		../../image/card1.png \
+		../../image/stone.png \
+		../../image/Untitled-3.png \
+		../../image/map2_1.png \
+		../../image/card3-lvl1.png \
+		../../image/smap2.png \
+		../../image/card5.png \
+		../../image/card1-lvl2.png \
 		../../image/map2_2.png \
 		../../image/map2_3.png \
-		../../image/enimi1.png \
 		../../image/stone'.png \
-		../../image/Bomb2.png \
+		../../image/card2-lvl1.png \
+		../../image/card4-lvl3.png \
+		../../image/card5-lvl4.png \
 		../../image/Map.png \
+		../../image/card5-lvl3.png \
 		../../image/Map2.png \
-		../../image/Bomb.png \
+		../../image/card3-lvl5.png \
+		../../image/card1-lvl4.png \
 		../../image/card2.png \
 		../../image/Map5.png \
 		../../image/T.png \
-		../../image/Untitled-5.png \
 		../../image/enimiD.png \
-		../../image/enimi4.png \
+		../../image/card2-lvl4.png \
 		../../image/mainmap2.png \
 		../../image/Map6.png \
 		../../image/enimiR.png \
@@ -231,28 +260,24 @@ debug/qrc_Image.cpp: ../../Image.qrc \
 		../../image/T2.png \
 		../../image/T1.png \
 		../../image/menu-lvl.png \
+		../../image/card2-lvl5.png \
+		../../image/card5-lvl1.png \
+		../../image/card5-lvl5.png \
 		../../image/mainMap.png \
-		../../image/tree2.png \
-		../../image/smap1.png \
-		../../image/card3.png \
+		../../image/card4-lvl2.png \
 		../../image/map2_5.png \
-		../../image/tree3.png \
 		../../image/Map3.png \
-		../../image/card4.png \
 		../../image/iron.png \
 		../../image/enimi3.png \
-		../../image/Untitled-2.png \
 		../../image/enimi2.png \
+		../../image/card3-lvl2.png \
 		../../image/Map7.png \
 		../../image/enimi.png \
-		../../image/card1.png \
-		../../image/stone.png \
+		../../image/card3-lvl3.png \
+		../../image/card4-lvl1.png \
 		../../image/shark.png \
 		../../image/map2_4.png \
-		../../image/Untitled-3.png \
-		../../image/map2_1.png \
-		../../image/smap2.png \
-		../../image/card5.png
+		../../image/card1-lvl5.png
 	C:\Qt\6.8.0\mingw_64\bin\rcc.exe -name Image --no-zstd ..\..\Image.qrc -o debug\qrc_Image.cpp
 
 compiler_moc_predefs_make_all: debug/moc_predefs.h
@@ -7611,7 +7636,9 @@ debug/towerdestroyer.o: ../../Soursces/towerdestroyer.cpp ../../Header/towerdest
 		C:/Qt/6.8.0/mingw_64/include/QtCore/QDebug \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/QMouseEvent \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QGroupBox \
-		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qgroupbox.h
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qgroupbox.h \
+		../../Header/turret_q8f.h \
+		../../Header/turret_q8r.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\towerdestroyer.o ..\..\Soursces\towerdestroyer.cpp
 
 debug/towerdisabler.o: ../../Soursces/towerdisabler.cpp ../../Header/towerdisabler.h \
