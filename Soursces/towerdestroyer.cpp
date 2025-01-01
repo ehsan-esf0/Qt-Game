@@ -1,5 +1,7 @@
 #include "Header/towerdestroyer.h"
 #include "Header/gamepage.h"
+#include "Header/turret_q8f.h"
+#include "Header/turret_q8r.h"
 #include <QDebug>
 #include <cstdlib>
 #include <ctime>
@@ -39,6 +41,27 @@ void TowerDestroyer::attemptToDestroyTower() {
 
     if (tower) {
         Gamepage::turrets.removeAt(randomIndex);
+        if ( auto turret1 = dynamic_cast<Turret_Q8*>(tower) )
+        {
+            turret1->stopShooting();
+            turret1->setActive(false);
+            turret1->hide();
+            turret1->move(2000,1000);
+        }
+        if ( auto turret2 = dynamic_cast<Turret_q8f*>(tower) )
+        {
+            turret2->stopShooting();
+            turret2->setActive(false);
+            turret2->hide();
+            turret2->move(2000,1000);
+        }
+        if ( auto turret3 = dynamic_cast<Turret_q8r*>(tower) )
+        {
+            turret3->stopShooting();
+            turret3->setActive(false);
+            turret3->hide();
+            turret3->move(2000,1000);
+        }
         tower->deleteLater();
         qDebug() << "Random tower destroyed!";
     }
