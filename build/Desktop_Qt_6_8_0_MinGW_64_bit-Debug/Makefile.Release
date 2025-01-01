@@ -1902,8 +1902,7 @@ release/moc_fighter298.cpp: ../../Header/fighter298.h \
 	C:\Qt\6.8.0\mingw_64\bin\moc.exe $(DEFINES) --include "D:/Computer engineering/Qt/project/Battle-of-ships/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/release/moc_predefs.h" -IC:/Qt/6.8.0/mingw_64/mkspecs/win32-g++ -I"D:/Computer engineering/Qt/project/Battle-of-ships" -IC:/Qt/6.8.0/mingw_64/include -IC:/Qt/6.8.0/mingw_64/include/QtWidgets -IC:/Qt/6.8.0/mingw_64/include/QtGui -IC:/Qt/6.8.0/mingw_64/include/QtSql -IC:/Qt/6.8.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++ -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include -IC:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed -IC:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include ..\..\Header\fighter298.h -o release\moc_fighter298.cpp
 
 release/moc_gamepage.cpp: ../../Header/gamepage.h \
-		../../Header/bullet.h \
-		../../Header/enemy.h \
+		../../Header/bomb.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QLabel \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qlabel.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -2097,6 +2096,13 @@ release/moc_gamepage.cpp: ../../Header/gamepage.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qguiapplication_platform.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qpicture.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qtextdocument.h \
+		../../Header/clickablelabel.h \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QWidget \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/Qt \
+		../../Header/enemy.h \
+		../../Header/ice_bomb.h \
+		../../Header/turret_q8f.h \
+		../../Header/bullet.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/QTimer \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qtimer.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qbasictimer.h \
@@ -2107,9 +2113,7 @@ release/moc_gamepage.cpp: ../../Header/gamepage.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qeasingcurve.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/QPointer \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qpointer.h \
-		../../Header/clickablelabel.h \
-		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QWidget \
-		C:/Qt/6.8.0/mingw_64/include/QtCore/Qt \
+		../../Header/turret_q8r.h \
 		../../Header/clickablelabel2.h \
 		../../Header/turret_q8.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QApplication \
@@ -4163,6 +4167,8 @@ release/bomb.o: ../../Soursces/bomb.cpp C:/Qt/6.8.0/mingw_64/include/QtCore/qnam
 		C:/Qt/6.8.0/mingw_64/include/QtCore/Qt \
 		../../Header/enemy.h \
 		../../Header/gamepage.h \
+		../../Header/ice_bomb.h \
+		../../Header/turret_q8f.h \
 		../../Header/bullet.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/QTimer \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/QPropertyAnimation \
@@ -4172,6 +4178,7 @@ release/bomb.o: ../../Soursces/bomb.cpp C:/Qt/6.8.0/mingw_64/include/QtCore/qnam
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qeasingcurve.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/QPointer \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qpointer.h \
+		../../Header/turret_q8r.h \
 		../../Header/clickablelabel2.h \
 		../../Header/turret_q8.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QApplication \
@@ -4395,6 +4402,8 @@ release/bombdisabler.o: ../../Soursces/bombdisabler.cpp ../../Header/bombdisable
 		C:/Qt/6.8.0/mingw_64/include/QtCore/Qt \
 		../../Header/bomb.h \
 		../../Header/gamepage.h \
+		../../Header/ice_bomb.h \
+		../../Header/turret_q8f.h \
 		../../Header/bullet.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/QPropertyAnimation \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qpropertyanimation.h \
@@ -4403,6 +4412,7 @@ release/bombdisabler.o: ../../Soursces/bombdisabler.cpp ../../Header/bombdisable
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qeasingcurve.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/QPointer \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qpointer.h \
+		../../Header/turret_q8r.h \
 		../../Header/clickablelabel2.h \
 		../../Header/turret_q8.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QApplication \
@@ -4420,8 +4430,7 @@ release/bombdisabler.o: ../../Soursces/bombdisabler.cpp ../../Header/bombdisable
 		C:/Qt/6.8.0/mingw_64/include/QtCore/QDebug \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/QMouseEvent \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QGroupBox \
-		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qgroupbox.h \
-		../../Header/ice_bomb.h
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qgroupbox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\bombdisabler.o ..\..\Soursces\bombdisabler.cpp
 
 release/bullet.o: ../../Soursces/bullet.cpp ../../Header/bullet.h \
@@ -4630,9 +4639,13 @@ release/bullet.o: ../../Soursces/bullet.cpp ../../Header/bullet.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/QPointer \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qpointer.h \
 		../../Header/gamepage.h \
+		../../Header/bomb.h \
 		../../Header/clickablelabel.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QWidget \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/Qt \
+		../../Header/ice_bomb.h \
+		../../Header/turret_q8f.h \
+		../../Header/turret_q8r.h \
 		../../Header/clickablelabel2.h \
 		../../Header/turret_q8.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QApplication \
@@ -5244,6 +5257,12 @@ release/enemy.o: ../../Soursces/enemy.cpp ../../Header/enemy.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qpicture.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qtextdocument.h \
 		../../Header/gamepage.h \
+		../../Header/bomb.h \
+		../../Header/clickablelabel.h \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QWidget \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/Qt \
+		../../Header/ice_bomb.h \
+		../../Header/turret_q8f.h \
 		../../Header/bullet.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/QTimer \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qtimer.h \
@@ -5255,9 +5274,7 @@ release/enemy.o: ../../Soursces/enemy.cpp ../../Header/enemy.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qeasingcurve.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/QPointer \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qpointer.h \
-		../../Header/clickablelabel.h \
-		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QWidget \
-		C:/Qt/6.8.0/mingw_64/include/QtCore/Qt \
+		../../Header/turret_q8r.h \
 		../../Header/clickablelabel2.h \
 		../../Header/turret_q8.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QApplication \
@@ -5474,6 +5491,12 @@ release/fighter111.o: ../../Soursces/fighter111.cpp ../../Header/fighter111.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qpicture.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qtextdocument.h \
 		../../Header/gamepage.h \
+		../../Header/bomb.h \
+		../../Header/clickablelabel.h \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QWidget \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/Qt \
+		../../Header/ice_bomb.h \
+		../../Header/turret_q8f.h \
 		../../Header/bullet.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/QTimer \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qtimer.h \
@@ -5485,9 +5508,7 @@ release/fighter111.o: ../../Soursces/fighter111.cpp ../../Header/fighter111.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qeasingcurve.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/QPointer \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qpointer.h \
-		../../Header/clickablelabel.h \
-		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QWidget \
-		C:/Qt/6.8.0/mingw_64/include/QtCore/Qt \
+		../../Header/turret_q8r.h \
 		../../Header/clickablelabel2.h \
 		../../Header/turret_q8.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QApplication \
@@ -5704,6 +5725,12 @@ release/fighter298.o: ../../Soursces/fighter298.cpp ../../Header/fighter298.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qpicture.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qtextdocument.h \
 		../../Header/gamepage.h \
+		../../Header/bomb.h \
+		../../Header/clickablelabel.h \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QWidget \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/Qt \
+		../../Header/ice_bomb.h \
+		../../Header/turret_q8f.h \
 		../../Header/bullet.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/QTimer \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qtimer.h \
@@ -5715,9 +5742,7 @@ release/fighter298.o: ../../Soursces/fighter298.cpp ../../Header/fighter298.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qeasingcurve.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/QPointer \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qpointer.h \
-		../../Header/clickablelabel.h \
-		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QWidget \
-		C:/Qt/6.8.0/mingw_64/include/QtCore/Qt \
+		../../Header/turret_q8r.h \
 		../../Header/clickablelabel2.h \
 		../../Header/turret_q8.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QApplication \
@@ -5739,8 +5764,7 @@ release/fighter298.o: ../../Soursces/fighter298.cpp ../../Header/fighter298.h \
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\fighter298.o ..\..\Soursces\fighter298.cpp
 
 release/gamepage.o: ../../Soursces/gamepage.cpp ../../Header/gamepage.h \
-		../../Header/bullet.h \
-		../../Header/enemy.h \
+		../../Header/bomb.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QLabel \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qlabel.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -5934,6 +5958,13 @@ release/gamepage.o: ../../Soursces/gamepage.cpp ../../Header/gamepage.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qguiapplication_platform.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qpicture.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qtextdocument.h \
+		../../Header/clickablelabel.h \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QWidget \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/Qt \
+		../../Header/enemy.h \
+		../../Header/ice_bomb.h \
+		../../Header/turret_q8f.h \
+		../../Header/bullet.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/QTimer \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qtimer.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qbasictimer.h \
@@ -5944,9 +5975,7 @@ release/gamepage.o: ../../Soursces/gamepage.cpp ../../Header/gamepage.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qeasingcurve.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/QPointer \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qpointer.h \
-		../../Header/clickablelabel.h \
-		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QWidget \
-		C:/Qt/6.8.0/mingw_64/include/QtCore/Qt \
+		../../Header/turret_q8r.h \
 		../../Header/clickablelabel2.h \
 		../../Header/turret_q8.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QApplication \
@@ -5965,18 +5994,14 @@ release/gamepage.o: ../../Soursces/gamepage.cpp ../../Header/gamepage.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/QMouseEvent \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QGroupBox \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qgroupbox.h \
-		../../Header/bomb.h \
 		../../Header/fighter298.h \
 		../../Header/fighter111.h \
-		../../Header/ice_bomb.h \
 		../../Header/mainwindow.h \
 		../../Header/savegamedata.h \
 		../../Header/selectmap.h \
 		../../Header/towerdestroyer.h \
 		../../Header/bombdisabler.h \
 		../../Header/towerdisabler.h \
-		../../Header/turret_q8f.h \
-		../../Header/turret_q8r.h \
 		ui_gamepage.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/QVariant \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QPushButton \
@@ -7043,13 +7068,19 @@ release/mainwindow.o: ../../Soursces/mainwindow.cpp ../../Header/mainwindow.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qguiapplication_platform.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qtabwidget.h \
 		../../Header/gamepage.h \
-		../../Header/bullet.h \
-		../../Header/enemy.h \
+		../../Header/bomb.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QLabel \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qlabel.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qframe.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qpicture.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qtextdocument.h \
+		../../Header/clickablelabel.h \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QWidget \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/Qt \
+		../../Header/enemy.h \
+		../../Header/ice_bomb.h \
+		../../Header/turret_q8f.h \
+		../../Header/bullet.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/QTimer \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qtimer.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qbasictimer.h \
@@ -7060,9 +7091,7 @@ release/mainwindow.o: ../../Soursces/mainwindow.cpp ../../Header/mainwindow.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qeasingcurve.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/QPointer \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qpointer.h \
-		../../Header/clickablelabel.h \
-		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QWidget \
-		C:/Qt/6.8.0/mingw_64/include/QtCore/Qt \
+		../../Header/turret_q8r.h \
 		../../Header/clickablelabel2.h \
 		../../Header/turret_q8.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QApplication \
@@ -7356,13 +7385,18 @@ release/selectmap.o: ../../Soursces/selectmap.cpp ../../Header/selectmap.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qlocale.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qguiapplication_platform.h \
 		../../Header/gamepage.h \
-		../../Header/bullet.h \
-		../../Header/enemy.h \
+		../../Header/bomb.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QLabel \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qlabel.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qframe.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qpicture.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qtextdocument.h \
+		../../Header/clickablelabel.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/Qt \
+		../../Header/enemy.h \
+		../../Header/ice_bomb.h \
+		../../Header/turret_q8f.h \
+		../../Header/bullet.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/QTimer \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qtimer.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qbasictimer.h \
@@ -7373,8 +7407,7 @@ release/selectmap.o: ../../Soursces/selectmap.cpp ../../Header/selectmap.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qeasingcurve.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/QPointer \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qpointer.h \
-		../../Header/clickablelabel.h \
-		C:/Qt/6.8.0/mingw_64/include/QtCore/Qt \
+		../../Header/turret_q8r.h \
 		../../Header/clickablelabel2.h \
 		../../Header/turret_q8.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QApplication \
@@ -7609,6 +7642,11 @@ release/towerdestroyer.o: ../../Soursces/towerdestroyer.cpp ../../Header/towerde
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qbasictimer.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QWidget \
 		../../Header/gamepage.h \
+		../../Header/bomb.h \
+		../../Header/clickablelabel.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/Qt \
+		../../Header/ice_bomb.h \
+		../../Header/turret_q8f.h \
 		../../Header/bullet.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/QPropertyAnimation \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qpropertyanimation.h \
@@ -7617,8 +7655,7 @@ release/towerdestroyer.o: ../../Soursces/towerdestroyer.cpp ../../Header/towerde
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qeasingcurve.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/QPointer \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qpointer.h \
-		../../Header/clickablelabel.h \
-		C:/Qt/6.8.0/mingw_64/include/QtCore/Qt \
+		../../Header/turret_q8r.h \
 		../../Header/clickablelabel2.h \
 		../../Header/turret_q8.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QApplication \
@@ -7636,9 +7673,7 @@ release/towerdestroyer.o: ../../Soursces/towerdestroyer.cpp ../../Header/towerde
 		C:/Qt/6.8.0/mingw_64/include/QtCore/QDebug \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/QMouseEvent \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QGroupBox \
-		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qgroupbox.h \
-		../../Header/turret_q8f.h \
-		../../Header/turret_q8r.h
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qgroupbox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\towerdestroyer.o ..\..\Soursces\towerdestroyer.cpp
 
 release/towerdisabler.o: ../../Soursces/towerdisabler.cpp ../../Header/towerdisabler.h \
@@ -7852,6 +7887,10 @@ release/towerdisabler.o: ../../Soursces/towerdisabler.cpp ../../Header/towerdisa
 		../../Header/clickablelabel.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/Qt \
 		../../Header/gamepage.h \
+		../../Header/bomb.h \
+		../../Header/ice_bomb.h \
+		../../Header/turret_q8f.h \
+		../../Header/turret_q8r.h \
 		../../Header/clickablelabel2.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QApplication \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qapplication.h \
@@ -7868,9 +7907,7 @@ release/towerdisabler.o: ../../Soursces/towerdisabler.cpp ../../Header/towerdisa
 		C:/Qt/6.8.0/mingw_64/include/QtCore/QDebug \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/QMouseEvent \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QGroupBox \
-		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qgroupbox.h \
-		../../Header/turret_q8f.h \
-		../../Header/turret_q8r.h
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qgroupbox.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\towerdisabler.o ..\..\Soursces\towerdisabler.cpp
 
 release/turret_q8.o: ../../Soursces/turret_q8.cpp ../../Header/turret_q8.h \
@@ -8083,6 +8120,10 @@ release/turret_q8.o: ../../Soursces/turret_q8.cpp ../../Header/turret_q8.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QWidget \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/Qt \
 		../../Header/gamepage.h \
+		../../Header/bomb.h \
+		../../Header/ice_bomb.h \
+		../../Header/turret_q8f.h \
+		../../Header/turret_q8r.h \
 		../../Header/clickablelabel2.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QApplication \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qapplication.h \
@@ -8312,6 +8353,9 @@ release/turret_q8f.o: ../../Soursces/turret_q8f.cpp ../../Header/turret_q8f.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/QPointer \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qpointer.h \
 		../../Header/gamepage.h \
+		../../Header/bomb.h \
+		../../Header/ice_bomb.h \
+		../../Header/turret_q8r.h \
 		../../Header/clickablelabel2.h \
 		../../Header/turret_q8.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QApplication \
@@ -8542,6 +8586,9 @@ release/turret_q8r.o: ../../Soursces/turret_q8r.cpp ../../Header/turret_q8r.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QWidget \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/Qt \
 		../../Header/gamepage.h \
+		../../Header/bomb.h \
+		../../Header/ice_bomb.h \
+		../../Header/turret_q8f.h \
 		../../Header/clickablelabel2.h \
 		../../Header/turret_q8.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QApplication \

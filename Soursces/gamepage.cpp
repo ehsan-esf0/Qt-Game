@@ -331,9 +331,9 @@ void  Gamepage::buttonClicked2()
     }
 }
 
-void  Gamepage::buttonClicked3()
+void Gamepage::buttonClicked3()
 {
-    if ( iron - ( 200 * level[2] < 0 )){}
+    if ( iron - ( 200 * level[2]  )< 0){}
     else {
         if ( level[2] <= 5 )
         {
@@ -853,32 +853,6 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                 if (!isPositionOccupied(newRect))
                 {
 
-                    // ClickableLabel2 *deletelabel = new ClickableLabel2(selectedLabel);
-                    // deletelabel->setStyleSheet("background-color: red;border-radius : 5px;");
-                    // deletelabel->setFixedSize(20, 20);
-                    // deletelabel->mod = 1;
-                    // //deletelabel->move(selectedLabel->pos().rx() , selectedLabel->pos().ry());
-
-                    // deletelabel->show();
-
-                    // connect(deletelabel, &ClickableLabel2::clicked, this, &Gamepage::labelClicked2);
-
-                    // ClickableLabel2 *editlabel = new ClickableLabel2(selectedLabel);
-                    // editlabel->setStyleSheet("background-color: green;border-radius : 5px;");
-                    // editlabel->setFixedSize(10, 10);
-                    // editlabel->mod = 2;
-                    // //deletelabel->move(selectedLabel->pos().rx() , selectedLabel->pos().ry());
-
-                    // editlabel->show();
-
-                    // connect(editlabel, &ClickableLabel2::clicked, this, &Gamepage::labelClicked2);
-
-                    //selectedLabel->setEnabled(false);
-
-
-                    //dynamic_cast<Turret_Q8*>(selectedLabel)->getLabel(enimi);
-                    //dynamic_cast<Turret_Q8*>(selectedLabel)->startShotBullet();
-
                     if (auto turret1 = dynamic_cast<Turret_Q8 *>(selectedLabel))
                     {
                         if ( iron - 200 < 0 ){}
@@ -989,3 +963,30 @@ void Gamepage::on_pushButton_2_clicked()
     menu->show();
     this->close();
 }
+
+
+// ClickableLabel2 *deletelabel = new ClickableLabel2(selectedLabel);
+// deletelabel->setStyleSheet("background-color: red;border-radius : 5px;");
+// deletelabel->setFixedSize(20, 20);
+// deletelabel->mod = 1;
+// //deletelabel->move(selectedLabel->pos().rx() , selectedLabel->pos().ry());
+
+// deletelabel->show();
+
+// connect(deletelabel, &ClickableLabel2::clicked, this, &Gamepage::labelClicked2);
+
+// ClickableLabel2 *editlabel = new ClickableLabel2(selectedLabel);
+// editlabel->setStyleSheet("background-color: green;border-radius : 5px;");
+// editlabel->setFixedSize(10, 10);
+// editlabel->mod = 2;
+// //deletelabel->move(selectedLabel->pos().rx() , selectedLabel->pos().ry());
+
+// editlabel->show();
+
+// connect(editlabel, &ClickableLabel2::clicked, this, &Gamepage::labelClicked2);
+
+//selectedLabel->setEnabled(false);
+
+
+//dynamic_cast<Turret_Q8*>(selectedLabel)->getLabel(enimi);
+//dynamic_cast<Turret_Q8*>(selectedLabel)->startShotBullet();
