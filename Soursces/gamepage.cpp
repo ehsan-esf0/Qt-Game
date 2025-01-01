@@ -298,41 +298,53 @@ void Gamepage::createToolbar(int initialCount)
 
 void  Gamepage::buttonClicked1()
 {
-    if ( level[0] <= 5 )
-    {
-        level[0] += 1;
-    }
-    labellvl1->setStyleSheet(QString("background: url(:/res/image/card1-lvl%1.png);").arg(level[0]));
-    for (ClickableLabel *t : Gamepage::turrets) {
-        if (auto turret_Q8 = dynamic_cast<Turret_Q8*>(t)) {
-            turret_Q8->setDamage(turret_Q8->getDamage() * pow(2,(level[0] - 1)));
+    if ( iron - (200 * level[0]) < 0 ){}
+    else {
+        if ( level[0] <= 5 )
+        {
+            iron -= (200 * level[0]);
+            level[0] += 1;
+        }
+        labellvl1->setStyleSheet(QString("background: url(:/res/image/card1-lvl%1.png);").arg(level[0]));
+        for (ClickableLabel *t : Gamepage::turrets) {
+            if (auto turret_Q8 = dynamic_cast<Turret_Q8*>(t)) {
+                turret_Q8->setDamage(turret_Q8->getDamage() * pow(2,(level[0] - 1)));
+            }
         }
     }
 }
 void  Gamepage::buttonClicked2()
 {
-    if ( level[1] <= 5 )
-    {
-        level[1] += 1;
-    }
-    labellvl2->setStyleSheet(QString("background: url(:/res/image/card2-lvl%1.png);").arg(level[1]));
-    for (ClickableLabel *t : Gamepage::turrets) {
-        if (auto turret_q8f = dynamic_cast<Turret_q8f*>(t)) {
-            turret_q8f->setDamage(turret_q8f->getDamage() * pow(2,(level[1] - 1)));
+    if ( iron - (200 * level[1] ) < 0 ){}
+    else {
+        if ( level[1] <= 5 )
+        {
+            iron -= (200 * level[1]);
+            level[1] += 1;
+        }
+        labellvl2->setStyleSheet(QString("background: url(:/res/image/card2-lvl%1.png);").arg(level[1]));
+        for (ClickableLabel *t : Gamepage::turrets) {
+            if (auto turret_q8f = dynamic_cast<Turret_q8f*>(t)) {
+                turret_q8f->setDamage(turret_q8f->getDamage() * pow(2,(level[1] - 1)));
+            }
         }
     }
 }
 
 void  Gamepage::buttonClicked3()
 {
-    if ( level[2] <= 5 )
-    {
-        level[2] += 1;
-    }
-    labellvl3->setStyleSheet(QString("background: url(:/res/image/card3-lvl%1.png);").arg(level[2]));
-    for (ClickableLabel *t : Gamepage::turrets) {
-        if (auto turret_q8r = dynamic_cast<Turret_q8r*>(t)) {
-            turret_q8r->setDamage(turret_q8r->getDamage() * pow(2,(level[2] - 1)));
+    if ( iron - ( 200 * level[2] < 0 )){}
+    else {
+        if ( level[2] <= 5 )
+        {
+            iron -= (200 * level[2]);
+            level[2] += 1;
+        }
+        labellvl3->setStyleSheet(QString("background: url(:/res/image/card3-lvl%1.png);").arg(level[2]));
+        for (ClickableLabel *t : Gamepage::turrets) {
+            if (auto turret_q8r = dynamic_cast<Turret_q8r*>(t)) {
+                turret_q8r->setDamage(turret_q8r->getDamage() * pow(2,(level[2] - 1)));
+            }
         }
     }
 }
