@@ -303,6 +303,11 @@ void  Gamepage::buttonClicked1()
         level[0] += 1;
     }
     labellvl1->setStyleSheet(QString("background: url(:/res/image/card1-lvl%1.png);").arg(level[0]));
+    for (ClickableLabel *t : Gamepage::turrets) {
+        if (auto turret_Q8 = dynamic_cast<Turret_Q8*>(t)) {
+            turret_Q8->setDamage(turret_Q8->getDamage() * pow(2,(level[0] - 1)));
+        }
+    }
 }
 void  Gamepage::buttonClicked2()
 {
@@ -311,6 +316,11 @@ void  Gamepage::buttonClicked2()
         level[1] += 1;
     }
     labellvl2->setStyleSheet(QString("background: url(:/res/image/card2-lvl%1.png);").arg(level[1]));
+    for (ClickableLabel *t : Gamepage::turrets) {
+        if (auto turret_q8f = dynamic_cast<Turret_q8f*>(t)) {
+            turret_q8f->setDamage(turret_q8f->getDamage() * pow(2,(level[1] - 1)));
+        }
+    }
 }
 
 void  Gamepage::buttonClicked3()
@@ -320,6 +330,11 @@ void  Gamepage::buttonClicked3()
         level[2] += 1;
     }
     labellvl3->setStyleSheet(QString("background: url(:/res/image/card3-lvl%1.png);").arg(level[2]));
+    for (ClickableLabel *t : Gamepage::turrets) {
+        if (auto turret_q8r = dynamic_cast<Turret_q8r*>(t)) {
+            turret_q8r->setDamage(turret_q8r->getDamage() * pow(2,(level[2] - 1)));
+        }
+    }
 }
 
 void  Gamepage::buttonClicked4()
@@ -859,6 +874,7 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                             selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2));
                             iron -= 200;
                             turret1->startShotBullet();
+                            turret1->setDamage(turret1->getDamage() * pow(2,(level[0] - 1)));
                             selectedLabel->setFixedSize(90, 60);
                             selectedLabel->setStyleSheet("background: url(:/res/image/T.png);");
                             selectedLabel->status = false;
@@ -874,6 +890,7 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                             selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2));
                             iron -= 200;
                             turret2->startShotBullet();
+                            turret2->setDamage(turret2->getDamage() * pow(2,(level[1] - 1)));
                             selectedLabel->setStyleSheet("background: url(:/res/image/T1.png);");
                             selectedLabel->setFixedSize(90, 60);
                             selectedLabel->status = false;
@@ -889,6 +906,7 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                             selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2));
                             iron -= 400;
                             turret3->startShotBullet();
+                            turret3->setDamage(turret3->getDamage() * pow(2,(level[2] - 1)));
                             selectedLabel->setStyleSheet("background: url(:/res/image/T2.png);");
                             selectedLabel->setFixedSize(90, 60);
                             selectedLabel->status = false;
