@@ -1,5 +1,5 @@
-#include "ice_bomb.h"
-#include "gamepage.h"
+#include "Header/ice_bomb.h"
+#include "Header/gamepage.h"
 #include <QDebug>
 
 Ice_Bomb::Ice_Bomb(QWidget *parent) : ClickableLabel(parent), isActive(true) {
@@ -41,4 +41,5 @@ void Ice_Bomb::handleBombExplosion() {
     qDebug() << "Bomb exploded and slowed down enemies!";
     isActive = false;
     this->hide();
+    this->move(2000 ,1000);
 }

@@ -43,4 +43,5 @@ void Bomb::handleBombExplosion() {
     qDebug() << "Bomb exploded and removed enemies!";
     isActive = false;
     this->hide();
+    this->move(2000 ,1000);
 }
