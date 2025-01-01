@@ -70,5 +70,15 @@
         <file>image/card5-lvl3.png</file>
         <file>image/card5-lvl4.png</file>
         <file>image/card5-lvl5.png</file>
+        <file>image/T1-2.png</file>
+        <file>image/T1-3.png</file>
+        <file>image/T1-4.png</file>
+        <file>image/T-2.png</file>
+        <file>image/T2-2.png</file>
+        <file>image/T2-3.png</file>
+        <file>image/T2-4.png</file>
+        <file>image/T-3.png</file>
+        <file>image/T-4.png</file>
+        <file>image/T-5.png</file>
     </qresource>
 </RCC>

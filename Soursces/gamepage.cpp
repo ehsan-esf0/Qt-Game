@@ -21,6 +21,7 @@
 #include <QTabWidget>
 #include <QVBoxLayout>
 #include "Header/clickablelabel.h"
+#include "QGraphicsOpacityEffect"
 
 QVector<Enemy*> Gamepage::enimi;
 QVector<ClickableLabel*> Gamepage::turrets;
@@ -635,6 +636,7 @@ void Gamepage::createLabelsInGroupBox(int initialCount)
 
 
         label->status = 0;
+        label->select = false;
 
         connect(label, &ClickableLabel::clicked, this, &Gamepage::labelClicked);
 
@@ -695,9 +697,36 @@ void Gamepage::labelClicked()
 {
     selectedLabel = qobject_cast<ClickableLabel*>(sender());
     if (selectedLabel) {
+        for (ClickableLabel *t : Gamepage::turrets ) {
+            if ( t->select == true )
+            {
+                if ( t == selectedLabel )
+                {
+
+                }
+                else {
+                    return;
+                }
+            }
+        }
+        for (ClickableLabel *t : labels ) {
+            if ( t->select == true )
+            {
+                if ( t == selectedLabel )
+                {
+
+                }
+                else {
+                    return;
+                }
+            }
+        }
         if ( selectedLabel->status != -1 )
         {
-            selectedLabel->setStyleSheet("background-color: red;");
+            selectedLabel->select = true;
+            QGraphicsOpacityEffect* opacityEffect = new QGraphicsOpacityEffect(this);
+            opacityEffect->setOpacity(0.5);
+            selectedLabel->setGraphicsEffect(opacityEffect);
         }
     }
 }
@@ -710,6 +739,25 @@ bool Gamepage::isPositionOccupied(QRect rec) {
     }
     return false;
 }
+
+bool Gamepage::isPositionOccupied2(QRect rec , int x ) {
+    qDebug()<<"gi";
+    for (ClickableLabel *t : Gamepage::turrets) {
+        if (t->geometry().intersects(rec)) {
+            if (auto turret_q8 = dynamic_cast<Turret_Q8*>(t)) {
+                if ( x == 1 ){
+                    turret_q8->setActive(false);
+                    turret_q8->stopShooting();
+                    Gamepage::turrets.removeOne(turret_q8);
+                    turret_q8->move(2000,2000);
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
+}
+
 
 void Gamepage::labelClicked2()
 {
@@ -842,7 +890,7 @@ bool Gamepage::checkMap2 ( QMouseEvent *event )
 
 void Gamepage::mousePressEvent(QMouseEvent *event)
 {
-    if (selectedLabel && event->button() == Qt::LeftButton) {
+    if (selectedLabel && event->button() == Qt::LeftButton && selectedLabel->select == true) {
         QPoint previousPosition = selectedLabel->pos();
         QRect newRect(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2), selectedLabel->size());
 
@@ -850,11 +898,24 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
         {
             if ( checkMap(event) )
             {
-                if (!isPositionOccupied(newRect))
+                if (!isPositionOccupied(newRect) || selectedLabel->status != 0)
                 {
 
                     if (auto turret1 = dynamic_cast<Turret_Q8 *>(selectedLabel))
                     {
+                        if ( selectedLabel->status > 0 ){
+                            if ( isPositionOccupied2(newRect , 1) )
+                            {
+                                selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2));
+                                selectedLabel->setStyleSheet("background: url(:/res/image/T-2.png);");
+                                QGraphicsOpacityEffect* opacityEffect = new QGraphicsOpacityEffect(this);
+                                opacityEffect->setOpacity(1);
+                                selectedLabel->setGraphicsEffect(opacityEffect);
+                                selectedLabel->select = false;
+                                turret1->startShotBullet();
+                            }
+                        }
+
                         if ( iron - 200 < 0 ){}
                         else {
                             if ( selectedLabel->status == 0 )
@@ -863,17 +924,36 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                                 Gamepage::turrets.append(selectedLabel);
                                 labels.removeOne(selectedLabel);
                                 iron -= 200;
+                                selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2));
+                                selectedLabel->select = false;
+                                turret1->startShotBullet();
+                                turret1->setDamage(turret1->getDamage() * pow(2,(level[0] - 1)));
+                                selectedLabel->setFixedSize(90, 60);
+                                selectedLabel->setStyleSheet("background: url(:/res/image/T.png);");
+                                QGraphicsOpacityEffect* opacityEffect = new QGraphicsOpacityEffect(this);
+                                opacityEffect->setOpacity(1);
+                                selectedLabel->setGraphicsEffect(opacityEffect);
+                                selectedLabel->status = 1;
+                                selectedLabel = nullptr;
                             }
                         }
-                        selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2));
-                        turret1->startShotBullet();
-                        turret1->setDamage(turret1->getDamage() * pow(2,(level[0] - 1)));
-                        selectedLabel->setFixedSize(90, 60);
-                        selectedLabel->setStyleSheet("background: url(:/res/image/T.png);");
-                        selectedLabel->status = 1;
-                        selectedLabel = nullptr;
+
                     } else if (auto turret2 = dynamic_cast<Turret_q8f *>(selectedLabel))
                     {
+
+                        if ( selectedLabel->status > 0 ){
+                            if ( isPositionOccupied2(newRect , 1) )
+                            {
+                                selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2));
+                                selectedLabel->setStyleSheet("background: url(:/res/image/T-2.png);");
+                                QGraphicsOpacityEffect* opacityEffect = new QGraphicsOpacityEffect(this);
+                                opacityEffect->setOpacity(1);
+                                selectedLabel->setGraphicsEffect(opacityEffect);
+                                selectedLabel->select = false;
+                                turret2->startShotBullet();
+                            }
+                        }
+
                         if ( iron - 200 < 0 ){}
                         else {
                             if ( selectedLabel->status == 0 )
@@ -882,19 +962,37 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                                 Gamepage::turrets.append(selectedLabel);
                                 labels.removeOne(selectedLabel);
                                 iron -= 200;
+                                selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2));
+                                selectedLabel->select = false;
+                                turret2->startShotBullet();
+                                turret2->setDamage(turret2->getDamage() * pow(2,(level[1] - 1)));
+                                selectedLabel->setStyleSheet("background: url(:/res/image/T1.png);");
+                                QGraphicsOpacityEffect* opacityEffect = new QGraphicsOpacityEffect(this);
+                                opacityEffect->setOpacity(1);
+                                selectedLabel->setGraphicsEffect(opacityEffect);
+                                selectedLabel->setFixedSize(90, 60);
+                                selectedLabel->status = 1;
+                                selectedLabel = nullptr;
 
                             }
                         }
 
-                        selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2));
-                        turret2->startShotBullet();
-                        turret2->setDamage(turret2->getDamage() * pow(2,(level[1] - 1)));
-                        selectedLabel->setStyleSheet("background: url(:/res/image/T1.png);");
-                        selectedLabel->setFixedSize(90, 60);
-                        selectedLabel->status = 1;
-                        selectedLabel = nullptr;
                     } else if (auto turret3 = dynamic_cast<Turret_q8r *>(selectedLabel))
                     {
+
+                        if ( selectedLabel->status > 0 ){
+                            if ( isPositionOccupied2(newRect , 1) )
+                            {
+                                selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2));
+                                selectedLabel->setStyleSheet("background: url(:/res/image/T-2.png);");
+                                QGraphicsOpacityEffect* opacityEffect = new QGraphicsOpacityEffect(this);
+                                opacityEffect->setOpacity(1);
+                                selectedLabel->setGraphicsEffect(opacityEffect);
+                                selectedLabel->select = false;
+                                turret3->startShotBullet();
+                            }
+                        }
+
                         if ( iron - 400 < 0 ){}
                         else {
                             if ( selectedLabel->status == 0 )
@@ -903,16 +1001,19 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                                 Gamepage::turrets.append(selectedLabel);
                                 labels.removeOne(selectedLabel);
                                 iron -= 400;
+                                selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2));
+                                selectedLabel->select = false;
+                                turret3->startShotBullet();
+                                turret3->setDamage(turret3->getDamage() * pow(2,(level[2] - 1)));
+                                selectedLabel->setStyleSheet("background: url(:/res/image/T2.png);");
+                                QGraphicsOpacityEffect* opacityEffect = new QGraphicsOpacityEffect(this);
+                                opacityEffect->setOpacity(1);
+                                selectedLabel->setGraphicsEffect(opacityEffect);
+                                selectedLabel->setFixedSize(90, 60);
+                                selectedLabel->status = 1;
+                                selectedLabel = nullptr;
                             }
                         }
-                        labels.removeOne(selectedLabel);
-                        selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2));
-                        turret3->startShotBullet();
-                        turret3->setDamage(turret3->getDamage() * pow(2,(level[2] - 1)));
-                        selectedLabel->setStyleSheet("background: url(:/res/image/T2.png);");
-                        selectedLabel->setFixedSize(90, 60);
-                        selectedLabel->status = 1;
-                        selectedLabel = nullptr;
                     }
                 }
             }
@@ -924,9 +1025,13 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                         if ( iron - 200 < 0 ){}
                         else {
                             selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2 - 20, selectedLabel->height() / 2 - 20));
+                            selectedLabel->select = false;
                             iron -= 200;
                             //connect(selectedLabel, &Bomb::clicked, selectedLabel, &Bomb::checkCollision);
                             selectedLabel->setStyleSheet("background: url(:/res/image/Bomb.png);");
+                            QGraphicsOpacityEffect* opacityEffect = new QGraphicsOpacityEffect(this);
+                            opacityEffect->setOpacity(1);
+                            selectedLabel->setGraphicsEffect(opacityEffect);
                             selectedLabel->setFixedSize(50, 50);
                             selectedLabel->status = 1;
                             Gamepage::bombs.append(selectedLabel);
@@ -939,9 +1044,13 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                         if ( iron - 200 < 0 ){}
                         else {
                             selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2 - 20, selectedLabel->height() / 2 - 20));
+                            selectedLabel->select = false;
                             iron -= 200;
                             //connect(selectedLabel, &Bomb::clicked, selectedLabel, &Bomb::checkCollision);
                             selectedLabel->setStyleSheet("background: url(:/res/image/Bomb2.png);");
+                            QGraphicsOpacityEffect* opacityEffect = new QGraphicsOpacityEffect(this);
+                            opacityEffect->setOpacity(1);
+                            selectedLabel->setGraphicsEffect(opacityEffect);
                             selectedLabel->setFixedSize(50, 50);
                             selectedLabel->status = 1;
                             Gamepage::bombs.append(selectedLabel);

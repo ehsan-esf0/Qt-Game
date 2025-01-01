@@ -215,9 +215,11 @@ debug/qrc_Image.cpp: ../../Image.qrc \
 		../../image/Untitled-5.png \
 		../../image/enimi4.png \
 		../../image/card4-lvl5.png \
+		../../image/T1-4.png \
 		../../image/card1-lvl3.png \
 		../../image/card2-lvl2.png \
 		../../image/card2-lvl3.png \
+		../../image/T2-2.png \
 		../../image/tree2.png \
 		../../image/smap1.png \
 		../../image/card1-lvl1.png \
@@ -225,6 +227,8 @@ debug/qrc_Image.cpp: ../../Image.qrc \
 		../../image/tree3.png \
 		../../image/card4.png \
 		../../image/Untitled-2.png \
+		../../image/T2-4.png \
+		../../image/T-2.png \
 		../../image/card3-lvl4.png \
 		../../image/card5-lvl2.png \
 		../../image/card1.png \
@@ -235,6 +239,7 @@ debug/qrc_Image.cpp: ../../Image.qrc \
 		../../image/smap2.png \
 		../../image/card5.png \
 		../../image/card1-lvl2.png \
+		../../image/T-4.png \
 		../../image/map2_2.png \
 		../../image/map2_3.png \
 		../../image/stone'.png \
@@ -249,10 +254,13 @@ debug/qrc_Image.cpp: ../../Image.qrc \
 		../../image/card2.png \
 		../../image/Map5.png \
 		../../image/T.png \
+		../../image/T1-3.png \
 		../../image/enimiD.png \
+		../../image/T-5.png \
 		../../image/card2-lvl4.png \
 		../../image/mainmap2.png \
 		../../image/Map6.png \
+		../../image/T2-3.png \
 		../../image/enimiR.png \
 		../../image/tree4.png \
 		../../image/Map4.png \
@@ -264,6 +272,7 @@ debug/qrc_Image.cpp: ../../Image.qrc \
 		../../image/card5-lvl1.png \
 		../../image/card5-lvl5.png \
 		../../image/mainMap.png \
+		../../image/T-3.png \
 		../../image/card4-lvl2.png \
 		../../image/map2_5.png \
 		../../image/Map3.png \
@@ -273,6 +282,7 @@ debug/qrc_Image.cpp: ../../Image.qrc \
 		../../image/card3-lvl2.png \
 		../../image/Map7.png \
 		../../image/enimi.png \
+		../../image/T1-2.png \
 		../../image/card3-lvl3.png \
 		../../image/card4-lvl1.png \
 		../../image/shark.png \
