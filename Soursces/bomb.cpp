@@ -14,7 +14,7 @@ Bomb::Bomb(QWidget *parent) : ClickableLabel(parent) {
     connect(collisionTimer, &QTimer::timeout, this, &Bomb::checkCollision);
     collisionTimer->start(100);
     isActive = true;
-    damage = 10;
+    damage = 2000;
 }
 
 void Bomb::checkCollision() {

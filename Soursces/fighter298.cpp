@@ -5,7 +5,7 @@ Fighter298::Fighter298(QWidget *parent) : Enemy(parent) {
     setStyleSheet("background:url(:/res/image/enimi.png);");
     setFixedSize(50, 50);
     isAlive = true;
-    health = 4;
+    health = 100;
     Gamepage::enimi.append(this);
     speed = 4000;
 }

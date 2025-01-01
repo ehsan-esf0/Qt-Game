@@ -8,7 +8,7 @@ Turret_q8f::Turret_q8f(QWidget *parent) : ClickableLabel(parent)
     connect(timer, &QTimer::timeout, this, &Turret_q8f::shotBullet);
     active = true;
     speedshoot = 550;
-    damage = 2;
+    damage = 15;
 }
 
 Turret_q8f::~Turret_q8f()

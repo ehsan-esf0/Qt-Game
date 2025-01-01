@@ -11,7 +11,7 @@ TowerDisabler::TowerDisabler(QWidget *parent) : Enemy(parent) {
     setStyleSheet("background:url(:/res/image/enimi4.png);");
     setFixedSize(50, 50);
     isAlive = true;
-    health = 5;
+    health = 2000;
     speed = 3000;
 
     Gamepage::enimi.append(this);

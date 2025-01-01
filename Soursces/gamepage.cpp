@@ -203,8 +203,8 @@ Gamepage::Gamepage(QWidget *parent) :
 
     timer3 = new QTimer(this);
     connect(timer3, &QTimer::timeout, this, &Gamepage::countIron);
-    timer3->start(1000);
-    iron = 2000;
+    timer3->start(100);
+    iron = 500;
     ironLabel = new QLabel(this);
     QLabel *iconIron = new QLabel(this);
     iconIron->setStyleSheet("background: url(:/res/image/iron.png);");
@@ -228,7 +228,7 @@ Gamepage::Gamepage(QWidget *parent) :
 
 void Gamepage::countIron()
 {
-    iron += 100;
+    iron += 5;
     ironLabel->setText(QString("%1").arg(iron));
 }
 void Gamepage::ironLabelshow()
@@ -733,10 +733,10 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
 
                     if (auto turret1 = dynamic_cast<Turret_Q8 *>(selectedLabel))
                     {
-                        if ( iron - 500 < 0 ){}
+                        if ( iron - 200 < 0 ){}
                         else {
                             selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2));
-                            iron -= 500;
+                            iron -= 200;
                             turret1->startShotBullet();
                             selectedLabel->setFixedSize(90, 60);
                             selectedLabel->setStyleSheet("background: url(:/res/image/T.png);");
@@ -748,10 +748,10 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                         }
                     } else if (auto turret2 = dynamic_cast<Turret_q8f *>(selectedLabel))
                     {
-                        if ( iron - 700 < 0 ){}
+                        if ( iron - 200 < 0 ){}
                         else {
                             selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2));
-                            iron -= 700;
+                            iron -= 200;
                             turret2->startShotBullet();
                             selectedLabel->setStyleSheet("background: url(:/res/image/T1.png);");
                             selectedLabel->setFixedSize(90, 60);
@@ -763,10 +763,10 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                         }
                     } else if (auto turret3 = dynamic_cast<Turret_q8r *>(selectedLabel))
                     {
-                        if ( iron - 1000 < 0 ){}
+                        if ( iron - 400 < 0 ){}
                         else {
                             selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2));
-                            iron -= 1000;
+                            iron -= 400;
                             turret3->startShotBullet();
                             selectedLabel->setStyleSheet("background: url(:/res/image/T2.png);");
                             selectedLabel->setFixedSize(90, 60);
@@ -784,10 +784,10 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                 {
                     if (auto turret1 = dynamic_cast<Bomb *>(selectedLabel))
                     {
-                        if ( iron - 500 < 0 ){}
+                        if ( iron - 200 < 0 ){}
                         else {
                             selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2 - 20, selectedLabel->height() / 2 - 20));
-                            iron -= 500;
+                            iron -= 200;
                             //connect(selectedLabel, &Bomb::clicked, selectedLabel, &Bomb::checkCollision);
                             selectedLabel->setStyleSheet("background: url(:/res/image/Bomb.png);");
                             selectedLabel->setFixedSize(50, 50);
@@ -799,10 +799,10 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                         }
                     }
                     else if (auto turret2 = dynamic_cast<Ice_Bomb *>(selectedLabel)) {
-                        if ( iron - 300 < 0 ){}
+                        if ( iron - 200 < 0 ){}
                         else {
                             selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2 - 20, selectedLabel->height() / 2 - 20));
-                            iron -= 300;
+                            iron -= 200;
                             //connect(selectedLabel, &Bomb::clicked, selectedLabel, &Bomb::checkCollision);
                             selectedLabel->setStyleSheet("background: url(:/res/image/Bomb2.png);");
                             selectedLabel->setFixedSize(50, 50);
