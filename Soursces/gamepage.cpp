@@ -227,7 +227,70 @@ Gamepage::Gamepage(QWidget *parent) :
     speedWave = 0;
     healthWave = 1.1;
 
+    createToolbar(5);
+
 }
+
+void Gamepage::createToolbar(int initialCount)
+{
+    for (int i = 0; i < initialCount; ++i) {
+        ClickableLabel *label;
+        int rands = std::rand() % 5 + 1;
+
+        switch (rands) {
+        case 1:
+            label = new Turret_Q8(this);
+            label->setStyleSheet("background: url(:/res/image/card1.png);");
+            break;
+        case 2:
+            label = new Turret_q8f(this);
+            label->setStyleSheet("background: url(:/res/image/card2.png);");
+            break;
+        case 3:
+            label = new Turret_q8r(this);
+            label->setStyleSheet("background: url(:/res/image/card3.png);");
+            break;
+        case 4:
+            label = new Bomb(this);
+            label->setStyleSheet("background: url(:/res/image/card4.png);");
+            break;
+        case 5:
+            label = new Ice_Bomb(this);
+            label->setStyleSheet("background: url(:/res/image/card5.png);");
+            break;
+        default:
+            label = new Turret_Q8(this);
+            label->setStyleSheet("background: url(:/res/image/card1.png);");
+            break;
+        }
+
+        label->setFixedSize(90, 90);
+        label->status = true;
+
+
+        connect(label, &ClickableLabel::clicked, this, &Gamepage::labelClicked);
+
+
+        int x = 1240;
+        int y = 30 + i * 135;
+        label->move(x, y);
+        label->show();
+
+
+        QPushButton *button = new QPushButton("Action", this);
+        button->setGeometry(x, y + 90, 90, 30);
+        connect(button, &QPushButton::clicked, this, &Gamepage::buttonClicked);
+        button->show();
+
+        labels.append(label);
+    }
+}
+
+void Gamepage::buttonClicked()
+{
+
+}
+
 
 void Gamepage::countIron()
 {
