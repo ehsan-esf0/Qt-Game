@@ -6,7 +6,7 @@
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../../fighter298.h"
+#include "../../../Header/fighter298.h"
 #include <QtGui/qtextcursor.h>
 #include <QtCore/qmetatype.h>
 

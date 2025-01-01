@@ -90,6 +90,8 @@ private:
     QLabel *ironLabel;
     int enemiesExited;
     QLabel *exitCounterLabel;
+    int speedWave;
+    float healthWave;
 };
 
 #endif // GAMEPAGE_H

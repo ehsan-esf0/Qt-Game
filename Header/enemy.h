@@ -16,9 +16,11 @@ public:
     bool isAlive;
     int speed;
     QPoint currentPosition;
+    void setHealth( float x );
+    float getHealth();
 
 protected:
-    int health;
+    float health;
 
 signals:
     void animationFinished();

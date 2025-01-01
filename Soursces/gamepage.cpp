@@ -224,6 +224,9 @@ Gamepage::Gamepage(QWidget *parent) :
     exitCounterLabel->move(1060, 70);
     exitCounterLabel->show();
 
+    speedWave = 0;
+    healthWave = 1.1;
+
 }
 
 void Gamepage::countIron()
@@ -368,7 +371,11 @@ void Gamepage::createBlueSquareLabel()
             break;
         }
     }
-        label->setFixedSize(47, 47);
+    float temp =  label->getHealth();
+    temp *= healthWave;
+    label->setHealth(temp);
+    label->speed -= speedWave;
+    label->setFixedSize(47, 47);
 
     label->setText(QString("%1").arg(labelCount++));
     int x = matrix[{1,1}].first;
@@ -388,6 +395,8 @@ void Gamepage::createBlueSquareLabel()
         labelCount = 1;
         bossCount = 0;
         countWave += 1;
+        speedWave += 200;
+        healthWave += 0.1;
     }
     else {
 

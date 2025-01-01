@@ -33,3 +33,12 @@ void Enemy::restoreSpeed()
     updateAnimationSpeed();
 }
 
+void Enemy::setHealth( float x )
+{
+    health = x;
+}
+
+float Enemy::getHealth()
+{
+    return health;
+}
