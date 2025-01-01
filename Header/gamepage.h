@@ -1,6 +1,10 @@
 #ifndef GAMEPAGE_H
 #define GAMEPAGE_H
 
+#include "Header/bomb.h"
+#include "Header/ice_bomb.h"
+#include "Header/turret_q8f.h"
+#include "Header/turret_q8r.h"
 #include "bullet.h"
 #include "clickablelabel.h"
 #include "clickablelabel2.h"
@@ -44,7 +48,11 @@ public:
     QSequentialAnimationGroup *animationGroup;
     static int enimiInMap;
     void createToolbar(int initialCount);
-    void buttonClicked();
+    void buttonClicked1();
+    void buttonClicked2();
+    void buttonClicked3();
+    void buttonClicked4();
+    void buttonClicked5();
 
 private slots:
     void on_pushButton_2_clicked();
@@ -93,6 +101,12 @@ private:
     QLabel *exitCounterLabel;
     int speedWave;
     float healthWave;
+    QLabel* labellvl1;
+    QLabel* labellvl2;
+    QLabel* labellvl3;
+    QLabel* labellvl4;
+    QLabel* labellvl5;
+    QVector<int> level;
 };
 
 #endif // GAMEPAGE_H
