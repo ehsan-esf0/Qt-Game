@@ -634,7 +634,7 @@ void Gamepage::createLabelsInGroupBox(int initialCount)
         label->setFixedSize(90, 90);
 
 
-        label->status = true;
+        label->status = 0;
 
         connect(label, &ClickableLabel::clicked, this, &Gamepage::labelClicked);
 
@@ -681,7 +681,7 @@ void Gamepage::createNewLabel(QPoint position)
 
 
     label->setFixedSize(90, 90);
-    label->status = true;
+    label->status = 0;
 
     connect(label, &ClickableLabel::clicked, this, &Gamepage::labelClicked);
 
@@ -695,7 +695,7 @@ void Gamepage::labelClicked()
 {
     selectedLabel = qobject_cast<ClickableLabel*>(sender());
     if (selectedLabel) {
-        if ( selectedLabel->status == true )
+        if ( selectedLabel->status != -1 )
         {
             selectedLabel->setStyleSheet("background-color: red;");
         }
@@ -846,7 +846,7 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
         QPoint previousPosition = selectedLabel->pos();
         QRect newRect(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2), selectedLabel->size());
 
-        if ( selectedLabel->status == true )
+        if ( selectedLabel->status != -1 )
         {
             if ( checkMap(event) )
             {
@@ -883,50 +883,62 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                     {
                         if ( iron - 200 < 0 ){}
                         else {
-                            selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2));
-                            iron -= 200;
-                            turret1->startShotBullet();
-                            turret1->setDamage(turret1->getDamage() * pow(2,(level[0] - 1)));
-                            selectedLabel->setFixedSize(90, 60);
-                            selectedLabel->setStyleSheet("background: url(:/res/image/T.png);");
-                            selectedLabel->status = false;
-                            Gamepage::turrets.append(selectedLabel);
-                            selectedLabel = nullptr;
-                            createNewLabel(previousPosition);
-                            labels.removeOne(selectedLabel);
+                            if ( selectedLabel->status == 0 )
+                            {
+                                createNewLabel(previousPosition);
+                                Gamepage::turrets.append(selectedLabel);
+                                labels.removeOne(selectedLabel);
+                                iron -= 200;
+                            }
                         }
+                        selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2));
+                        turret1->startShotBullet();
+                        turret1->setDamage(turret1->getDamage() * pow(2,(level[0] - 1)));
+                        selectedLabel->setFixedSize(90, 60);
+                        selectedLabel->setStyleSheet("background: url(:/res/image/T.png);");
+                        selectedLabel->status = 1;
+                        selectedLabel = nullptr;
                     } else if (auto turret2 = dynamic_cast<Turret_q8f *>(selectedLabel))
                     {
                         if ( iron - 200 < 0 ){}
                         else {
-                            selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2));
-                            iron -= 200;
-                            turret2->startShotBullet();
-                            turret2->setDamage(turret2->getDamage() * pow(2,(level[1] - 1)));
-                            selectedLabel->setStyleSheet("background: url(:/res/image/T1.png);");
-                            selectedLabel->setFixedSize(90, 60);
-                            selectedLabel->status = false;
-                            Gamepage::turrets.append(selectedLabel);
-                            selectedLabel = nullptr;
-                            createNewLabel(previousPosition);
-                            labels.removeOne(selectedLabel);
+                            if ( selectedLabel->status == 0 )
+                            {
+                                createNewLabel(previousPosition);
+                                Gamepage::turrets.append(selectedLabel);
+                                labels.removeOne(selectedLabel);
+                                iron -= 200;
+
+                            }
                         }
+
+                        selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2));
+                        turret2->startShotBullet();
+                        turret2->setDamage(turret2->getDamage() * pow(2,(level[1] - 1)));
+                        selectedLabel->setStyleSheet("background: url(:/res/image/T1.png);");
+                        selectedLabel->setFixedSize(90, 60);
+                        selectedLabel->status = 1;
+                        selectedLabel = nullptr;
                     } else if (auto turret3 = dynamic_cast<Turret_q8r *>(selectedLabel))
                     {
                         if ( iron - 400 < 0 ){}
                         else {
-                            selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2));
-                            iron -= 400;
-                            turret3->startShotBullet();
-                            turret3->setDamage(turret3->getDamage() * pow(2,(level[2] - 1)));
-                            selectedLabel->setStyleSheet("background: url(:/res/image/T2.png);");
-                            selectedLabel->setFixedSize(90, 60);
-                            selectedLabel->status = false;
-                            Gamepage::turrets.append(selectedLabel);
-                            selectedLabel = nullptr;
-                            createNewLabel(previousPosition);
-                            labels.removeOne(selectedLabel);
+                            if ( selectedLabel->status == 0 )
+                            {
+                                createNewLabel(previousPosition);
+                                Gamepage::turrets.append(selectedLabel);
+                                labels.removeOne(selectedLabel);
+                                iron -= 400;
+                            }
                         }
+                        labels.removeOne(selectedLabel);
+                        selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2));
+                        turret3->startShotBullet();
+                        turret3->setDamage(turret3->getDamage() * pow(2,(level[2] - 1)));
+                        selectedLabel->setStyleSheet("background: url(:/res/image/T2.png);");
+                        selectedLabel->setFixedSize(90, 60);
+                        selectedLabel->status = 1;
+                        selectedLabel = nullptr;
                     }
                 }
             }
@@ -942,7 +954,7 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                             //connect(selectedLabel, &Bomb::clicked, selectedLabel, &Bomb::checkCollision);
                             selectedLabel->setStyleSheet("background: url(:/res/image/Bomb.png);");
                             selectedLabel->setFixedSize(50, 50);
-                            selectedLabel->status = false;
+                            selectedLabel->status = 1;
                             Gamepage::bombs.append(selectedLabel);
                             selectedLabel = nullptr;
                             createNewLabel(previousPosition);
@@ -957,7 +969,7 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                             //connect(selectedLabel, &Bomb::clicked, selectedLabel, &Bomb::checkCollision);
                             selectedLabel->setStyleSheet("background: url(:/res/image/Bomb2.png);");
                             selectedLabel->setFixedSize(50, 50);
-                            selectedLabel->status = false;
+                            selectedLabel->status = 1;
                             Gamepage::bombs.append(selectedLabel);
                             selectedLabel = nullptr;
                             createNewLabel(previousPosition);

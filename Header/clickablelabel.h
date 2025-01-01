@@ -10,7 +10,7 @@ class ClickableLabel : public QLabel {
 
 public:
     explicit ClickableLabel(QWidget *parent = nullptr);
-    bool status;
+    int status;
     void setDamage( int x );
     int getDamage();
 signals:
