@@ -8,6 +8,7 @@ Turret_q8f::Turret_q8f(QWidget *parent) : ClickableLabel(parent)
     connect(timer, &QTimer::timeout, this, &Turret_q8f::shotBullet);
     active = true;
     speedshoot = 550;
+    damage = 2;
 }
 
 Turret_q8f::~Turret_q8f()
@@ -27,6 +28,7 @@ void Turret_q8f::shotBullet() {
             Enemy *e = *it;
             if (e->isAlive) {
                 Bullet *b = new Bullet(parentWidget());
+                b->setDamage(damage);
                 b->shoot(this->pos(), QPointer<Enemy>(e));
                 bullet.append(b);
                 return;

@@ -14,6 +14,7 @@ Bomb::Bomb(QWidget *parent) : ClickableLabel(parent) {
     connect(collisionTimer, &QTimer::timeout, this, &Bomb::checkCollision);
     collisionTimer->start(100);
     isActive = true;
+    damage = 10;
 }
 
 void Bomb::checkCollision() {
@@ -29,9 +30,7 @@ void Bomb::checkCollision() {
 
         if (!collidedEnemies.isEmpty()) {
             for (Enemy *enemy : collidedEnemies) {
-                enemy->takeHit(10);
-                Gamepage::enimi.removeOne(enemy);
-                enemy->hide();
+                enemy->takeHit(damage);
             }
 
             emit bombExploded();

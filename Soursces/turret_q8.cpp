@@ -7,6 +7,7 @@ Turret_Q8::Turret_Q8(QWidget *parent) : ClickableLabel(parent) {
     connect(timer, &QTimer::timeout, this, &Turret_Q8::shotBullet);
     active = true;
     speedshoot = 550;
+    damage = 5;
 }
 void Turret_Q8::shotBullet()
 {
@@ -35,6 +36,7 @@ void Turret_Q8::shotBullet()
     if (farthestEnemy)
     {
         Bullet *b = new Bullet(parentWidget());
+        b->setDamage(damage);
         b->shoot(this->pos(), QPointer<Enemy>(farthestEnemy));
         bullet.append(b);
     }

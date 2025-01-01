@@ -17,6 +17,8 @@ signals:
 protected:
     void mousePressEvent(QMouseEvent *event) override;
     int speedshoot;
+    int damage;
+
 };
 
 #endif // CLICKABLELABEL_H

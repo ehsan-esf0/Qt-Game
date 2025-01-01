@@ -37,7 +37,7 @@ void Bullet::moveBullet() {
         if ((currentPos - targetPos).manhattanLength() < 60) {
             moveTimer->stop();
             if (targetLabel) {
-                targetLabel->takeHit(1);
+                targetLabel->takeHit(damage);
             }
             qDebug() << "Bullet hit target!";
             this->deleteLater();
@@ -79,5 +79,9 @@ void Bullet::updateTarget() {
         }
         hide();
         //delete this;
+}
+
+void Bullet::setDamage( int x ){
+    damage = x;
 }
 
