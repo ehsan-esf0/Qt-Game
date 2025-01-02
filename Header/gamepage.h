@@ -87,6 +87,8 @@ private:
     void createLabelMap( int startx , int starty);
     bool checkMap(QMouseEvent *event);
     bool checkMap2 ( QMouseEvent *event );
+    bool checkMap3 ( QMouseEvent *event );
+    void createLabelMapUpdate( int startx , int starty);
     int countWave;
     int wCount;
     int bossCount;

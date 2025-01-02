@@ -14,7 +14,7 @@ public:
     }
     explicit ClickableLabel(QWidget *parent = nullptr);
     int status;
-    int select;
+    //int select;
     void setDamage( int x );
     int getDamage();
 signals:
