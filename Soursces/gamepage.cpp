@@ -530,6 +530,7 @@ void Gamepage::createBlueSquareLabel()
             break;
         }
     }
+
     float temp =  label->getHealth();
     temp *= healthWave;
     label->setHealth(temp);
@@ -739,7 +740,7 @@ bool Gamepage::isPositionOccupied(QRect rec) {
 
 bool Gamepage::isPositionOccupied2(QRect rec , int x , int lvl) {
     for (ClickableLabel *t : Gamepage::turrets) {
-        if (t->geometry().adjusted(-10, -10, 10, 10).intersects(rec)) {
+        if (t->geometry().adjusted(-2, -2, 2, 2).intersects(rec)) {
             if (auto turret_q8 = dynamic_cast<Turret_Q8*>(t)) {
                 if ( x == 1 ){
                     if ( lvl == turret_q8->getLvl() )
@@ -876,7 +877,7 @@ bool Gamepage::checkMap ( QMouseEvent *event )
 
             for (int j = 250 ; j <= 600 ; j += 100 ) {
 
-                if ((i + 25 < event->pos().rx() && event->pos().rx()  < i + 75) && (j + 25  < event->pos().ry() && event->pos().ry()  < j + 75))
+                if ((i + 30 < event->pos().rx() && event->pos().rx()  < i + 65) && (j + 40  < event->pos().ry() && event->pos().ry()  < j + 80))
                 {
                     return true;
                 }
@@ -944,6 +945,8 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                             turret1->setLvl( lvl );
                             selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2 + 50));
                             selectedLabel->setStyleSheet(QString("background: url(:/res/image/T-%1.png);").arg(turret1->getLvl()));
+                            int speed = selectedLabel->getSpeedshoot() - 100;
+                            selectedLabel->setSpeedshoot(speed);
                             QGraphicsOpacityEffect* opacityEffect = new QGraphicsOpacityEffect(this);
                             opacityEffect->setOpacity(1);
                             selectedLabel->setGraphicsEffect(opacityEffect);
@@ -959,6 +962,8 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                             turret2->setLvl( lvl );
                             selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2 + 50));
                             selectedLabel->setStyleSheet(QString("background: url(:/res/image/T1-%1.png);").arg(turret2->getLvl()));
+                            int speed = selectedLabel->getSpeedshoot() - 100;
+                            selectedLabel->setSpeedshoot(speed);
                             QGraphicsOpacityEffect* opacityEffect = new QGraphicsOpacityEffect(this);
                             opacityEffect->setOpacity(1);
                             selectedLabel->setGraphicsEffect(opacityEffect);
@@ -975,6 +980,8 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                             turret3->setLvl( lvl );
                             selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2 + 50));
                             selectedLabel->setStyleSheet(QString("background: url(:/res/image/T2-%1.png);").arg(turret3->getLvl()));
+                            int speed = selectedLabel->getSpeedshoot() - 100;
+                            selectedLabel->setSpeedshoot(speed);
                             QGraphicsOpacityEffect* opacityEffect = new QGraphicsOpacityEffect(this);
                             opacityEffect->setOpacity(1);
                             selectedLabel->setGraphicsEffect(opacityEffect);

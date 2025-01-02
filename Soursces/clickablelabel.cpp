@@ -28,3 +28,12 @@ int ClickableLabel::getLvl()
 {
     return lvl;
 }
+
+void ClickableLabel::setSpeedshoot( int x )
+{
+    speedshoot = x ;
+}
+int ClickableLabel::getSpeedshoot()
+{
+    return speedshoot ;
+}

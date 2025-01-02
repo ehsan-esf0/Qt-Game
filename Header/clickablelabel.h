@@ -16,6 +16,8 @@ public:
     int getDamage();
     void setLvl( int x );
     int getLvl();
+    void setSpeedshoot( int x );
+    int getSpeedshoot();
 signals:
     void clicked();
 
