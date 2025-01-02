@@ -587,6 +587,7 @@ void Gamepage::moveObject( Enemy *label )
                 }
                 Gamepage::enimi.removeOne(label);
                 label->hide();
+                label->takeHit(10000);
                 label->isAlive = false;
             });
 
@@ -695,12 +696,12 @@ void Gamepage::createNewLabel(QPoint position)
 
 void Gamepage::labelClicked()
 {
-    selectedLabel = qobject_cast<ClickableLabel*>(sender());
-    if (selectedLabel) {
+    ClickableLabel* selectedLabelfirst = qobject_cast<ClickableLabel*>(sender());
+    if (selectedLabelfirst) {
         for (ClickableLabel *t : Gamepage::turrets ) {
             if ( t->select == true )
             {
-                if ( t == selectedLabel )
+                if ( t == selectedLabelfirst )
                 {
 
                 }
@@ -712,7 +713,7 @@ void Gamepage::labelClicked()
         for (ClickableLabel *t : labels ) {
             if ( t->select == true )
             {
-                if ( t == selectedLabel )
+                if ( t == selectedLabelfirst )
                 {
 
                 }
@@ -721,12 +722,16 @@ void Gamepage::labelClicked()
                 }
             }
         }
-        if ( selectedLabel->status != -1 )
+        selectedLabel = qobject_cast<ClickableLabel*>(sender());
+        if ( selectedLabel )
         {
-            selectedLabel->select = true;
-            QGraphicsOpacityEffect* opacityEffect = new QGraphicsOpacityEffect(this);
-            opacityEffect->setOpacity(0.5);
-            selectedLabel->setGraphicsEffect(opacityEffect);
+            if ( selectedLabel->status != -1 )
+            {
+                selectedLabel->select = true;
+                QGraphicsOpacityEffect* opacityEffect = new QGraphicsOpacityEffect(this);
+                opacityEffect->setOpacity(0.5);
+                selectedLabel->setGraphicsEffect(opacityEffect);
+            }
         }
     }
 }
