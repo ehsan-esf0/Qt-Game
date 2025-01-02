@@ -240,6 +240,7 @@ Gamepage::Gamepage(QWidget *parent) :
     createToolbar(5);
 
     level = QVector<int>(5, 1);
+    level2 = QVector<int>(5, 1);
 
 }
 
@@ -380,7 +381,7 @@ void  Gamepage::buttonClicked5()
 
 void Gamepage::countIron()
 {
-    iron += 5;
+    iron += 50;
     ironLabel->setText(QString("%1").arg(iron));
 }
 void Gamepage::ironLabelshow()
@@ -736,32 +737,41 @@ bool Gamepage::isPositionOccupied(QRect rec) {
     return false;
 }
 
-bool Gamepage::isPositionOccupied2(QRect rec , int x ) {
+bool Gamepage::isPositionOccupied2(QRect rec , int x , int lvl) {
     for (ClickableLabel *t : Gamepage::turrets) {
-        if (t->geometry().adjusted(-20, -20, 20, 20).intersects(rec)) {
+        if (t->geometry().adjusted(-10, -10, 10, 10).intersects(rec)) {
             if (auto turret_q8 = dynamic_cast<Turret_Q8*>(t)) {
                 if ( x == 1 ){
-                    turret_q8->setActive(false);
-                    turret_q8->stopShooting();
-                    Gamepage::turrets.removeOne(turret_q8);
-                    turret_q8->move(2000,2000);
-                    return true;
+                    if ( lvl == turret_q8->getLvl() )
+                    {
+                        turret_q8->setActive(false);
+                        turret_q8->stopShooting();
+                        Gamepage::turrets.removeOne(turret_q8);
+                        turret_q8->move(2000,2000);
+                        return true;
+                    }
                 }
-            }else if (auto turret_q8 = dynamic_cast<Turret_q8f*>(t)) {
-                if ( x == 1 ){
-                    turret_q8->setActive(false);
-                    turret_q8->stopShooting();
-                    Gamepage::turrets.removeOne(turret_q8);
-                    turret_q8->move(2000,2000);
-                    return true;
+            }else if (auto turret_q8f = dynamic_cast<Turret_q8f*>(t)) {
+                if ( x == 2 ){
+                    if ( lvl == turret_q8f->getLvl() )
+                    {
+                        turret_q8f->setActive(false);
+                        turret_q8f->stopShooting();
+                        Gamepage::turrets.removeOne(turret_q8f);
+                        turret_q8f->move(2000,2000);
+                        return true;
+                    }
                 }
-            }else if (auto turret_q8 = dynamic_cast<Turret_q8r*>(t)) {
-                if ( x == 1 ){
-                    turret_q8->setActive(false);
-                    turret_q8->stopShooting();
-                    Gamepage::turrets.removeOne(turret_q8);
-                    turret_q8->move(2000,2000);
-                    return true;
+            }else if (auto turret_q8r = dynamic_cast<Turret_q8r*>(t)) {
+                if ( x == 3 ){
+                    if ( lvl == turret_q8r->getLvl() )
+                    {
+                        turret_q8r->setActive(false);
+                        turret_q8r->stopShooting();
+                        Gamepage::turrets.removeOne(turret_q8r);
+                        turret_q8r->move(2000,2000);
+                        return true;
+                    }
                 }
             }
         }
@@ -925,40 +935,46 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
         {
             if ( checkMap3(event) )
             {
-                if (auto turret1 = dynamic_cast<Turret_Q8 *>(selectedLabel))
+                if (auto turret1 = dynamic_cast<Turret_Q8*>(selectedLabel))
                 {
                     if ( selectedLabel->status > 0 ){
-                        if ( isPositionOccupied2(newRect , 1) )
+                        if ( isPositionOccupied2(newRect , 1 , turret1->getLvl()) )
                         {
+                            int lvl = turret1->getLvl() + 1;
+                            turret1->setLvl( lvl );
                             selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2 + 50));
-                            selectedLabel->setStyleSheet("background: url(:/res/image/T-2.png);");
+                            selectedLabel->setStyleSheet(QString("background: url(:/res/image/T-%1.png);").arg(turret1->getLvl()));
                             QGraphicsOpacityEffect* opacityEffect = new QGraphicsOpacityEffect(this);
                             opacityEffect->setOpacity(1);
                             selectedLabel->setGraphicsEffect(opacityEffect);
                             turret1->startShotBullet();
                         }
                     }
-                }else if (auto turret2 = dynamic_cast<Turret_q8f *>(selectedLabel))
+                }else if (auto turret2 = dynamic_cast<Turret_q8f*>(selectedLabel))
                 {
                     if ( selectedLabel->status > 0 ){
-                        if ( isPositionOccupied2(newRect , 1) )
+                        if ( isPositionOccupied2(newRect , 2 , turret2->getLvl()) )
                         {
-                                selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2 + 50));
-                                selectedLabel->setStyleSheet("background: url(:/res/image/T1-2.png);");
-                                QGraphicsOpacityEffect* opacityEffect = new QGraphicsOpacityEffect(this);
-                                opacityEffect->setOpacity(1);
-                                selectedLabel->setGraphicsEffect(opacityEffect);
-                                turret2->startShotBullet();
+                            int lvl = turret2->getLvl() + 1;
+                            turret2->setLvl( lvl );
+                            selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2 + 50));
+                            selectedLabel->setStyleSheet(QString("background: url(:/res/image/T1-%1.png);").arg(turret2->getLvl()));
+                            QGraphicsOpacityEffect* opacityEffect = new QGraphicsOpacityEffect(this);
+                            opacityEffect->setOpacity(1);
+                            selectedLabel->setGraphicsEffect(opacityEffect);
+                            turret2->startShotBullet();
                         }
                     }
-                }else if (auto turret3 = dynamic_cast<Turret_q8r *>(selectedLabel))
+                }else if (auto turret3 = dynamic_cast<Turret_q8r*>(selectedLabel))
                 {
 
                     if ( selectedLabel->status > 0 ){
-                        if ( isPositionOccupied2(newRect , 1) )
+                        if ( isPositionOccupied2(newRect , 3 , turret3->getLvl()) )
                         {
+                            int lvl = turret3->getLvl() + 1;
+                            turret3->setLvl( lvl );
                             selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2 + 50));
-                            selectedLabel->setStyleSheet("background: url(:/res/image/T2-2.png);");
+                            selectedLabel->setStyleSheet(QString("background: url(:/res/image/T2-%1.png);").arg(turret3->getLvl()));
                             QGraphicsOpacityEffect* opacityEffect = new QGraphicsOpacityEffect(this);
                             opacityEffect->setOpacity(1);
                             selectedLabel->setGraphicsEffect(opacityEffect);

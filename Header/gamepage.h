@@ -83,7 +83,7 @@ private:
     void createLabelsInGroupBox(int initialCount);
     void createNewLabel(QPoint position);
     bool isPositionOccupied(QRect position);
-    bool isPositionOccupied2(QRect rec, int x);
+    bool isPositionOccupied2(QRect rec, int x , int lvl );
     void createLabelMap( int startx , int starty);
     bool checkMap(QMouseEvent *event);
     bool checkMap2 ( QMouseEvent *event );
@@ -110,6 +110,7 @@ private:
     QLabel* labellvl4;
     QLabel* labellvl5;
     QVector<int> level;
+    QVector<int> level2;
 };
 
 #endif // GAMEPAGE_H

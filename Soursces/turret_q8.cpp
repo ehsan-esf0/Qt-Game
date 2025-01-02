@@ -8,6 +8,7 @@ Turret_Q8::Turret_Q8(QWidget *parent) : ClickableLabel(parent) {
     active = true;
     speedshoot = 550;
     damage = 15;
+    lvl = 1;
 }
 void Turret_Q8::shotBullet()
 {

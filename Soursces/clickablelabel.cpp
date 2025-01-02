@@ -19,3 +19,12 @@ int ClickableLabel::getDamage()
 {
     return damage;
 }
+
+void ClickableLabel::setLvl( int x )
+{
+    lvl = x;
+}
+int ClickableLabel::getLvl()
+{
+    return lvl;
+}
