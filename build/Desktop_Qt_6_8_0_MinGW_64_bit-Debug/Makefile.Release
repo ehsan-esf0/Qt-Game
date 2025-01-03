@@ -216,6 +216,7 @@ release/qrc_Image.cpp: ../../Image.qrc \
 		../../image/enimi4.png \
 		../../image/card4-lvl5.png \
 		../../image/T1-4.png \
+		../../image/End-1.png \
 		../../image/card1-lvl3.png \
 		../../image/card2-lvl2.png \
 		../../image/card2-lvl3.png \
@@ -274,6 +275,7 @@ release/qrc_Image.cpp: ../../Image.qrc \
 		../../image/card5-lvl1.png \
 		../../image/card5-lvl5.png \
 		../../image/mainMap.png \
+		../../image/End-3.png \
 		../../image/T-3.png \
 		../../image/card4-lvl2.png \
 		../../image/map2_5.png \
@@ -289,7 +291,8 @@ release/qrc_Image.cpp: ../../Image.qrc \
 		../../image/card4-lvl1.png \
 		../../image/shark.png \
 		../../image/map2_4.png \
-		../../image/card1-lvl5.png
+		../../image/card1-lvl5.png \
+		../../image/End-2.png
 	C:\Qt\6.8.0\mingw_64\bin\rcc.exe -name Image --no-zstd ..\..\Image.qrc -o release\qrc_Image.cpp
 
 compiler_moc_predefs_make_all: release/moc_predefs.h

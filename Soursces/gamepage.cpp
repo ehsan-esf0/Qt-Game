@@ -475,6 +475,7 @@ void Gamepage::createLabelMap( int startx , int starty)
         }
     }
     labelpanel->show();
+
 }
 
 
