@@ -218,14 +218,29 @@ Gamepage::Gamepage(QWidget *parent) :
     ironLabel = new QLabel(this);
     QLabel *iconIron = new QLabel(this);
     iconIron->setStyleSheet("background: url(:/res/image/iron.png);");
-    iconIron->move(1037,27);
+    iconIron->move(1037,12);
     iconIron->setFixedSize(60,40);
     iconIron->show();
     ironLabel->setText(QString("%1").arg(iron));
     ironLabel->setStyleSheet("font-size : 20px; font-weight : bold;");
-    ironLabel->move(1100, 20);
+    ironLabel->move(1100, 7);
     ironLabel->setFixedSize(100 , 50);
     ironLabel->show();
+
+    heart1 = new QLabel(this);
+    heart1->setFixedSize(30,29);
+    heart1->move(1000, 20);
+    heart1->setStyleSheet("background: url(:/res/image/heart.png);");
+
+    heart2 = new QLabel(this);
+    heart2->setFixedSize(30,29);
+    heart2->move(965, 20);
+    heart2->setStyleSheet("background: url(:/res/image/heart.png);");
+
+    heart3 = new QLabel(this);
+    heart3->setFixedSize(30,29);
+    heart3->move(930, 20);
+    heart3->setStyleSheet("background: url(:/res/image/heart.png);");
 
 
     exitCounterLabel = new QLabel(this);
@@ -624,8 +639,17 @@ void Gamepage::moveObject( Enemy *label )
 
 void Gamepage::onEnemyExited() {
     enemiesExited++;
+    if ( enemiesExited == 1 )
+    {
+        heart1->hide();
+    }
+    if ( enemiesExited == 2 )
+    {
+        heart2->hide();
+    }
     if ( enemiesExited == 3 )
     {
+        heart3->hide();
         ui->label_3->show();
         ui->pushButton_4->show();
         ui->pushButton_3->show();

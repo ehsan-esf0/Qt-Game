@@ -85,5 +85,6 @@
         <file>image/End-1.png</file>
         <file>image/End-2.png</file>
         <file>image/End-3.png</file>
+        <file>image/heart.png</file>
     </qresource>
 </RCC>

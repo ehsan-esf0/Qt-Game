@@ -214,6 +214,7 @@ debug/qrc_Image.cpp: ../../Image.qrc \
 		../../image/Bomb.png \
 		../../image/Untitled-5.png \
 		../../image/enimi4.png \
+		../../image/heart.png \
 		../../image/card4-lvl5.png \
 		../../image/T1-4.png \
 		../../image/End-1.png \

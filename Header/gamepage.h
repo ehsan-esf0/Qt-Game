@@ -115,6 +115,9 @@ private:
     QLabel* labellvl5;
     QVector<int> level;
     QVector<int> level2;
+    QLabel *heart1;
+    QLabel *heart2;
+    QLabel *heart3;
 };
 
 #endif // GAMEPAGE_H
