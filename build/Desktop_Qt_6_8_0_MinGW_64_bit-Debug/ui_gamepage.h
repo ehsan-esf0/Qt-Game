@@ -26,6 +26,7 @@ public:
     QLabel *label_3;
     QPushButton *pushButton;
     QPushButton *pushButton_3;
+    QLabel *label_4;
 
     void setupUi(QWidget *Gamepage)
     {
@@ -52,16 +53,19 @@ public:
         label_2->setStyleSheet(QString::fromUtf8("background : url(:/res/image/menu-lvl.png);"));
         label_3 = new QLabel(Gamepage);
         label_3->setObjectName("label_3");
-        label_3->setGeometry(QRect(480, 0, 401, 111));
+        label_3->setGeometry(QRect(450, 0, 401, 111));
         label_3->setStyleSheet(QString::fromUtf8("background: url(:/res/image/End-1.png);"));
         pushButton = new QPushButton(Gamepage);
         pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(540, 110, 141, 41));
+        pushButton->setGeometry(QRect(510, 110, 141, 41));
         pushButton->setStyleSheet(QString::fromUtf8("background: url(:/res/image/End-3.png);"));
         pushButton_3 = new QPushButton(Gamepage);
         pushButton_3->setObjectName("pushButton_3");
-        pushButton_3->setGeometry(QRect(690, 110, 141, 41));
+        pushButton_3->setGeometry(QRect(660, 110, 141, 41));
         pushButton_3->setStyleSheet(QString::fromUtf8("background: url(:/res/image/End-2.png);"));
+        label_4 = new QLabel(Gamepage);
+        label_4->setObjectName("label_4");
+        label_4->setGeometry(QRect(0, 0, 1361, 721));
 
         retranslateUi(Gamepage);
 
@@ -77,6 +81,7 @@ public:
         label_3->setText(QString());
         pushButton->setText(QString());
         pushButton_3->setText(QString());
+        label_4->setText(QString());
     } // retranslateUi
 
 };

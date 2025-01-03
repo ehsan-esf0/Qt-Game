@@ -242,6 +242,13 @@ Gamepage::Gamepage(QWidget *parent) :
     level = QVector<int>(5, 1);
     level2 = QVector<int>(5, 1);
 
+    ui->label_3->setEnabled(false);
+    ui->pushButton->setEnabled(false);
+    ui->pushButton_3->setEnabled(false);
+    ui->label_3->hide();
+    ui->pushButton->hide();
+    ui->pushButton_3->hide();
+
 }
 
 void Gamepage::createToolbar(int initialCount)
@@ -617,6 +624,34 @@ void Gamepage::moveObject( Enemy *label )
 
 void Gamepage::onEnemyExited() {
     enemiesExited++;
+    if ( enemiesExited == 3 )
+    {
+        ui->label_3->show();
+        ui->pushButton->show();
+        ui->pushButton_3->show();
+        ui->pushButton->setEnabled(true);
+        ui->pushButton_3->setEnabled(true);
+        timer->stop();
+        timer2->stop();
+        timer3->stop();
+        timer4->stop();
+        iron = 0;
+        for ( Enemy *e : Gamepage::enimi ) {
+            e->takeHit(10000);
+        }
+
+        for ( ClickableLabel *a : Gamepage::turrets ) {
+            a->setSpeedshoot(0);
+        }
+        QGraphicsOpacityEffect* opacityEffect = new QGraphicsOpacityEffect(this);
+        opacityEffect->setOpacity(0.5);
+        ui->label_4->setStyleSheet("background-color:black;");
+        ui->label_4->raise();
+        ui->pushButton_3->raise();
+        ui->pushButton->raise();
+        ui->pushButton_3->raise();
+        ui->label_4->setGraphicsEffect(opacityEffect);
+    }
     exitCounterLabel->setText(QString("Enemies exited: %1").arg(enemiesExited));
 }
 
