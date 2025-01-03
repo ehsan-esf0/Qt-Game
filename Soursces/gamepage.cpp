@@ -1198,3 +1198,11 @@ void Gamepage::on_pushButton_4_clicked()
     this->close();
 }
 
+
+void Gamepage::on_pushButton_3_clicked()
+{
+    Gamepage *m = new Gamepage();
+    m->show();
+    this->close();
+}
+
