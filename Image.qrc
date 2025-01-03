@@ -80,5 +80,7 @@
         <file>image/T-3.png</file>
         <file>image/T-4.png</file>
         <file>image/T-5.png</file>
+        <file>image/B-1.png</file>
+        <file>image/B2.png</file>
     </qresource>
 </RCC>

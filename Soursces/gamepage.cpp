@@ -311,7 +311,7 @@ void  Gamepage::buttonClicked1()
 {
     if ( iron - (200 * level[0]) < 0 ){}
     else {
-        if ( level[0] <= 5 )
+        if ( level[0] < 5 )
         {
             iron -= (200 * level[0]);
             level[0] += 1;
@@ -328,7 +328,7 @@ void  Gamepage::buttonClicked2()
 {
     if ( iron - (200 * level[1] ) < 0 ){}
     else {
-        if ( level[1] <= 5 )
+        if ( level[1] < 5 )
         {
             iron -= (200 * level[1]);
             level[1] += 1;
@@ -346,7 +346,7 @@ void Gamepage::buttonClicked3()
 {
     if ( iron - ( 200 * level[2]  )< 0){}
     else {
-        if ( level[2] <= 5 )
+        if ( level[2] < 5 )
         {
             iron -= (200 * level[2]);
             level[2] += 1;
@@ -403,7 +403,7 @@ void Gamepage::createLabelMapUpdate( int startx , int starty)
     QLabel *labelpanelUp = new QLabel(this);
     labelpanelUp->move( startx , starty );
     labelpanelUp->setFixedSize( 50 , 15 );
-    labelpanelUp->setStyleSheet("background-color:red;border-radius:5px");
+    labelpanelUp->setStyleSheet("background-color:rgb(255, 185, 20);border-radius:5px");
     labelpanelUp->show();
 }
 
@@ -877,7 +877,7 @@ bool Gamepage::checkMap ( QMouseEvent *event )
 
             for (int j = 250 ; j <= 600 ; j += 100 ) {
 
-                if ((i + 30 < event->pos().rx() && event->pos().rx()  < i + 65) && (j + 40  < event->pos().ry() && event->pos().ry()  < j + 80))
+                if ((i + 30 < event->pos().rx() && event->pos().rx()  < i + 65) && (j + 50  < event->pos().ry() && event->pos().ry()  < j + 80))
                 {
                     return true;
                 }
@@ -962,6 +962,10 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                             turret2->setLvl( lvl );
                             selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2 + 50));
                             selectedLabel->setStyleSheet(QString("background: url(:/res/image/T1-%1.png);").arg(turret2->getLvl()));
+                            if ( turret2->getLvl() == 5 )
+                            {
+                                selectedLabel->setStyleSheet("background: url(:/res/image/T1-5.png);");
+                            }
                             int speed = selectedLabel->getSpeedshoot() - 100;
                             selectedLabel->setSpeedshoot(speed);
                             QGraphicsOpacityEffect* opacityEffect = new QGraphicsOpacityEffect(this);
@@ -980,6 +984,10 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                             turret3->setLvl( lvl );
                             selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2 + 50));
                             selectedLabel->setStyleSheet(QString("background: url(:/res/image/T2-%1.png);").arg(turret3->getLvl()));
+                            if ( turret3->getLvl() == 5 )
+                            {
+                                selectedLabel->setStyleSheet("background: url(:/res/image/T1-5.png);");
+                            }
                             int speed = selectedLabel->getSpeedshoot() - 100;
                             selectedLabel->setSpeedshoot(speed);
                             QGraphicsOpacityEffect* opacityEffect = new QGraphicsOpacityEffect(this);
