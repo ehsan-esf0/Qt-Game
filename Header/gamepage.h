@@ -58,6 +58,8 @@ private slots:
     void on_pushButton_2_clicked();
     void onEnemyExited();
 
+    void on_pushButton_4_clicked();
+
 private:
     std::map<std::pair<int, int>, std::pair<int, int>> matrix;
     void addMatrix();

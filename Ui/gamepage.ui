@@ -97,7 +97,7 @@ font-size : 20px;
     <string/>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="pushButton_4">
    <property name="geometry">
     <rect>
      <x>510</x>

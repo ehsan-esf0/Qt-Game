@@ -243,10 +243,10 @@ Gamepage::Gamepage(QWidget *parent) :
     level2 = QVector<int>(5, 1);
 
     ui->label_3->setEnabled(false);
-    ui->pushButton->setEnabled(false);
+    ui->pushButton_4->setEnabled(false);
     ui->pushButton_3->setEnabled(false);
     ui->label_3->hide();
-    ui->pushButton->hide();
+    ui->pushButton_4->hide();
     ui->pushButton_3->hide();
 
 }
@@ -627,9 +627,9 @@ void Gamepage::onEnemyExited() {
     if ( enemiesExited == 3 )
     {
         ui->label_3->show();
-        ui->pushButton->show();
+        ui->pushButton_4->show();
         ui->pushButton_3->show();
-        ui->pushButton->setEnabled(true);
+        ui->pushButton_4->setEnabled(true);
         ui->pushButton_3->setEnabled(true);
         timer->stop();
         timer2->stop();
@@ -648,7 +648,7 @@ void Gamepage::onEnemyExited() {
         ui->label_4->setStyleSheet("background-color:black;");
         ui->label_4->raise();
         ui->pushButton_3->raise();
-        ui->pushButton->raise();
+        ui->pushButton_4->raise();
         ui->pushButton_3->raise();
         ui->label_4->setGraphicsEffect(opacityEffect);
     }
@@ -1190,3 +1190,11 @@ void Gamepage::on_pushButton_2_clicked()
 
 //dynamic_cast<Turret_Q8*>(selectedLabel)->getLabel(enimi);
 //dynamic_cast<Turret_Q8*>(selectedLabel)->startShotBullet();
+
+void Gamepage::on_pushButton_4_clicked()
+{
+    MainWindow *m = new MainWindow();
+    m->show();
+    this->close();
+}
+

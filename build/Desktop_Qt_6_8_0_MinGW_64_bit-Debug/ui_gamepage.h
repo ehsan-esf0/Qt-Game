@@ -24,7 +24,7 @@ public:
     QPushButton *pushButton_2;
     QLabel *label_2;
     QLabel *label_3;
-    QPushButton *pushButton;
+    QPushButton *pushButton_4;
     QPushButton *pushButton_3;
     QLabel *label_4;
 
@@ -55,10 +55,10 @@ public:
         label_3->setObjectName("label_3");
         label_3->setGeometry(QRect(450, 0, 401, 111));
         label_3->setStyleSheet(QString::fromUtf8("background: url(:/res/image/End-1.png);"));
-        pushButton = new QPushButton(Gamepage);
-        pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(510, 110, 141, 41));
-        pushButton->setStyleSheet(QString::fromUtf8("background: url(:/res/image/End-3.png);"));
+        pushButton_4 = new QPushButton(Gamepage);
+        pushButton_4->setObjectName("pushButton_4");
+        pushButton_4->setGeometry(QRect(510, 110, 141, 41));
+        pushButton_4->setStyleSheet(QString::fromUtf8("background: url(:/res/image/End-3.png);"));
         pushButton_3 = new QPushButton(Gamepage);
         pushButton_3->setObjectName("pushButton_3");
         pushButton_3->setGeometry(QRect(660, 110, 141, 41));
@@ -79,7 +79,7 @@ public:
         pushButton_2->setText(QString());
         label_2->setText(QString());
         label_3->setText(QString());
-        pushButton->setText(QString());
+        pushButton_4->setText(QString());
         pushButton_3->setText(QString());
         label_4->setText(QString());
     } // retranslateUi
