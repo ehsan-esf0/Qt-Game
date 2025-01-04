@@ -712,7 +712,7 @@ void Gamepage::createLabelsInGroupBox(int initialCount)
         }
 
         label->setFixedSize(90, 90);
-
+        label->select = false;
 
         label->status = 0;
 
@@ -779,9 +779,40 @@ void Gamepage::labelClicked()
     {
         if ( selectedLabel->status != -1 )
         {
+            for ( ClickableLabel *t : Gamepage::turrets )
+            {
+                if ( t->select == true )
+                {
+                    t->select = false;
+                    QGraphicsOpacityEffect* opacityEffect = new QGraphicsOpacityEffect(this);
+                    opacityEffect->setOpacity(1);
+                    t->setGraphicsEffect(opacityEffect);
+                }
+            }
+            for ( ClickableLabel *t : Gamepage::bombs )
+            {
+                if ( t->select == true )
+                {
+                    t->select = false;
+                    QGraphicsOpacityEffect* opacityEffect = new QGraphicsOpacityEffect(this);
+                    opacityEffect->setOpacity(1);
+                    t->setGraphicsEffect(opacityEffect);
+                }
+            }
+            for ( ClickableLabel *t : labels )
+            {
+                if ( t->select == true )
+                {
+                    t->select = false;
+                    QGraphicsOpacityEffect* opacityEffect = new QGraphicsOpacityEffect(this);
+                    opacityEffect->setOpacity(1);
+                    t->setGraphicsEffect(opacityEffect);
+                }
+            }
             QGraphicsOpacityEffect* opacityEffect = new QGraphicsOpacityEffect(this);
             opacityEffect->setOpacity(0.5);
             selectedLabel->setGraphicsEffect(opacityEffect);
+            selectedLabel->select = true;
         }
     }
 }

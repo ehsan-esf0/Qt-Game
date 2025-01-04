@@ -11,7 +11,7 @@ class ClickableLabel : public QLabel {
 public:
     explicit ClickableLabel(QWidget *parent = nullptr);
     int status;
-    //int select;
+    int select;
     void setDamage( int x );
     int getDamage();
     void setLvl( int x );
