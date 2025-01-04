@@ -669,9 +669,9 @@ void Gamepage::onEnemyExited() {
         opacityEffect->setOpacity(0.7);
         ui->label_4->setStyleSheet("background-color:black;");
         ui->label_4->raise();
-        ui->pushButton_3->raise();
         ui->pushButton_4->raise();
         ui->pushButton_3->raise();
+        ui->label_3->raise();
         ui->label_4->setGraphicsEffect(opacityEffect);
     }
     exitCounterLabel->setText(QString("Enemies exited: %1").arg(enemiesExited));
