@@ -26,7 +26,7 @@ private slots:
 
     void on_checkBox_3_clicked();
 
-    void on_horizontalScrollBar_actionTriggered(int action);
+    void on_horizontalScrollBar_actionTriggered();
 
     void on_progressBar_valueChanged(int value);
 

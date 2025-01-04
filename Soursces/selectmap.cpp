@@ -76,7 +76,7 @@ void selectMap::on_checkBox_3_clicked()
 }
 
 
-void selectMap::on_horizontalScrollBar_actionTriggered(int action)
+void selectMap::on_horizontalScrollBar_actionTriggered()
 {
 
 }

@@ -252,8 +252,6 @@ Gamepage::Gamepage(QWidget *parent) :
     speedWave = 0;
     healthWave = 1.1;
 
-    createToolbar(5);
-
     level = QVector<int>(5, 1);
     level2 = QVector<int>(5, 1);
 
@@ -266,7 +264,7 @@ Gamepage::Gamepage(QWidget *parent) :
 
 }
 
-void Gamepage::createToolbar(int initialCount)
+void Gamepage::createToolbar()
 {
     labellvl1 = new QLabel(this);
     labellvl1->setStyleSheet("background: url(:/res/image/card1-lvl1.png);");
@@ -668,7 +666,7 @@ void Gamepage::onEnemyExited() {
             a->setSpeedshoot(0);
         }
         QGraphicsOpacityEffect* opacityEffect = new QGraphicsOpacityEffect(this);
-        opacityEffect->setOpacity(0.5);
+        opacityEffect->setOpacity(0.7);
         ui->label_4->setStyleSheet("background-color:black;");
         ui->label_4->raise();
         ui->pushButton_3->raise();

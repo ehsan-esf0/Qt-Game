@@ -47,7 +47,7 @@ public:
     void moveObject2( Enemy *label );
     QSequentialAnimationGroup *animationGroup;
     static int enimiInMap;
-    void createToolbar(int initialCount);
+    void createToolbar();
     void buttonClicked1();
     void buttonClicked2();
     void buttonClicked3();

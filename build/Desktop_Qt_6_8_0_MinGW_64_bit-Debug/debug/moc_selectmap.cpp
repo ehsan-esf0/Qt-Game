@@ -6,7 +6,7 @@
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../../selectmap.h"
+#include "../../../Header/selectmap.h"
 #include <QtCore/qmetatype.h>
 
 #include <QtCore/qtmochelpers.h>
@@ -43,7 +43,6 @@ constexpr auto qt_meta_stringdata_CLASSselectMapENDCLASS = QtMocHelpers::stringD
     "on_checkBox_2_clicked",
     "on_checkBox_3_clicked",
     "on_horizontalScrollBar_actionTriggered",
-    "action",
     "on_progressBar_valueChanged",
     "value"
 );
@@ -71,8 +70,8 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSselectMapENDCLASS[] = {
        4,    0,   58,    2, 0x08,    3 /* Private */,
        5,    0,   59,    2, 0x08,    4 /* Private */,
        6,    0,   60,    2, 0x08,    5 /* Private */,
-       7,    1,   61,    2, 0x08,    6 /* Private */,
-       9,    1,   64,    2, 0x08,    8 /* Private */,
+       7,    0,   61,    2, 0x08,    6 /* Private */,
+       8,    1,   62,    2, 0x08,    7 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -80,8 +79,8 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSselectMapENDCLASS[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,    8,
-    QMetaType::Void, QMetaType::Int,   10,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,    9,
 
        0        // eod
 };
@@ -107,7 +106,6 @@ Q_CONSTINIT const QMetaObject selectMap::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_horizontalScrollBar_actionTriggered'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<int, std::false_type>,
         // method 'on_progressBar_valueChanged'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<int, std::false_type>
@@ -126,7 +124,7 @@ void selectMap::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         case 2: _t->on_checkBox_clicked(); break;
         case 3: _t->on_checkBox_2_clicked(); break;
         case 4: _t->on_checkBox_3_clicked(); break;
-        case 5: _t->on_horizontalScrollBar_actionTriggered((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 5: _t->on_horizontalScrollBar_actionTriggered(); break;
         case 6: _t->on_progressBar_valueChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         default: ;
         }
