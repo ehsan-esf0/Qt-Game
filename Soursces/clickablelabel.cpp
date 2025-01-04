@@ -37,3 +37,12 @@ int ClickableLabel::getSpeedshoot()
 {
     return speedshoot ;
 }
+
+void ClickableLabel::setCode( int x )
+{
+    code = x ;
+}
+int ClickableLabel::getCode()
+{
+    return code ;
+}

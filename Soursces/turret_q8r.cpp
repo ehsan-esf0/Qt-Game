@@ -13,6 +13,7 @@ Turret_q8r::Turret_q8r(QWidget *parent) : ClickableLabel(parent)
     speedshoot = 550;
     damage = 30;
     lvl = 1;
+    code = std::rand() % 1000 + 1;
 }
 
 Turret_q8r::~Turret_q8r()

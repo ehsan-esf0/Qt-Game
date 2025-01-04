@@ -18,6 +18,8 @@ public:
     int getLvl();
     void setSpeedshoot( int x );
     int getSpeedshoot();
+    void setCode( int x );
+    int getCode();
 signals:
     void clicked();
 
@@ -26,6 +28,7 @@ protected:
     int speedshoot;
     int damage;
     int lvl;
+    int code;
 
 };
 

@@ -796,13 +796,17 @@ bool Gamepage::isPositionOccupied(QRect rec) {
     return false;
 }
 
-bool Gamepage::isPositionOccupied2(QRect rec , int x , int lvl) {
+bool Gamepage::isPositionOccupied2(QRect rec , int x , int lvl , int code ) {
     for (ClickableLabel *t : Gamepage::turrets) {
         if (t->geometry().adjusted(-2, -2, 2, 2).intersects(rec)) {
             if (auto turret_q8 = dynamic_cast<Turret_Q8*>(t)) {
                 if ( x == 1 ){
                     if ( lvl == turret_q8->getLvl() )
                     {
+                        if ( code == turret_q8->getCode() )
+                        {
+                            return false;
+                        }
                         turret_q8->setActive(false);
                         turret_q8->stopShooting();
                         Gamepage::turrets.removeOne(turret_q8);
@@ -814,6 +818,10 @@ bool Gamepage::isPositionOccupied2(QRect rec , int x , int lvl) {
                 if ( x == 2 ){
                     if ( lvl == turret_q8f->getLvl() )
                     {
+                        if ( code == turret_q8f->getCode() )
+                        {
+                            return false;
+                        }
                         turret_q8f->setActive(false);
                         turret_q8f->stopShooting();
                         Gamepage::turrets.removeOne(turret_q8f);
@@ -825,6 +833,10 @@ bool Gamepage::isPositionOccupied2(QRect rec , int x , int lvl) {
                 if ( x == 3 ){
                     if ( lvl == turret_q8r->getLvl() )
                     {
+                        if ( code == turret_q8r->getCode() )
+                        {
+                            return false;
+                        }
                         turret_q8r->setActive(false);
                         turret_q8r->stopShooting();
                         Gamepage::turrets.removeOne(turret_q8r);
@@ -997,7 +1009,7 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                 if (auto turret1 = dynamic_cast<Turret_Q8*>(selectedLabel))
                 {
                     if ( selectedLabel->status > 0 ){
-                        if ( isPositionOccupied2(newRect , 1 , turret1->getLvl()) )
+                        if ( isPositionOccupied2(newRect , 1 , turret1->getLvl() , turret1->getCode() ))
                         {
                             int lvl = turret1->getLvl() + 1;
                             turret1->setLvl( lvl );
@@ -1014,7 +1026,7 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                 }else if (auto turret2 = dynamic_cast<Turret_q8f*>(selectedLabel))
                 {
                     if ( selectedLabel->status > 0 ){
-                        if ( isPositionOccupied2(newRect , 2 , turret2->getLvl()) )
+                        if ( isPositionOccupied2(newRect , 2 , turret2->getLvl() , turret2->getCode() ) )
                         {
                             int lvl = turret2->getLvl() + 1;
                             turret2->setLvl( lvl );
@@ -1036,7 +1048,7 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                 {
 
                     if ( selectedLabel->status > 0 ){
-                        if ( isPositionOccupied2(newRect , 3 , turret3->getLvl()) )
+                        if ( isPositionOccupied2(newRect , 3 , turret3->getLvl() , turret3->getCode() ) )
                         {
                             int lvl = turret3->getLvl() + 1;
                             turret3->setLvl( lvl );
