@@ -17,6 +17,7 @@ debug/towerdestroyer.o
 debug/towerdisabler.o
 debug/turret_q8.o
 debug/turret_q8f.o
+debug/turret_q8m.o
 debug/turret_q8r.o
 debug/qrc_Image.o
 debug/moc_bomb.o
@@ -36,3 +37,4 @@ debug/moc_towerdestroyer.o
 debug/moc_towerdisabler.o
 debug/moc_turret_q8f.o
 debug/moc_turret_q8r.o
+debug/moc_turret_q8m.o

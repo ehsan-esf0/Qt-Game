@@ -17,6 +17,7 @@ release/towerdestroyer.o
 release/towerdisabler.o
 release/turret_q8.o
 release/turret_q8f.o
+release/turret_q8m.o
 release/turret_q8r.o
 release/qrc_Image.o
 release/moc_bomb.o
@@ -36,3 +37,4 @@ release/moc_towerdestroyer.o
 release/moc_towerdisabler.o
 release/moc_turret_q8f.o
 release/moc_turret_q8r.o
+release/moc_turret_q8m.o

@@ -53,6 +53,7 @@ public:
     void buttonClicked3();
     void buttonClicked4();
     void buttonClicked5();
+    void buttonClicked6();
 
 private slots:
     void on_pushButton_2_clicked();
@@ -113,6 +114,7 @@ private:
     QLabel* labellvl3;
     QLabel* labellvl4;
     QLabel* labellvl5;
+    QLabel* labellvl6;
     QVector<int> level;
     QVector<int> level2;
     QLabel *heart1;

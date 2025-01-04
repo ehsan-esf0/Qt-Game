@@ -84,8 +84,8 @@ font-size : 20px;
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>420</x>
-     <y>290</y>
+     <x>410</x>
+     <y>280</y>
      <width>401</width>
      <height>111</height>
     </rect>
@@ -100,8 +100,8 @@ font-size : 20px;
   <widget class="QPushButton" name="pushButton_4">
    <property name="geometry">
     <rect>
-     <x>630</x>
-     <y>400</y>
+     <x>620</x>
+     <y>390</y>
      <width>138</width>
      <height>43</height>
     </rect>
@@ -117,8 +117,8 @@ background-color:transparent;</string>
   <widget class="QPushButton" name="pushButton_3">
    <property name="geometry">
     <rect>
-     <x>480</x>
-     <y>400</y>
+     <x>470</x>
+     <y>390</y>
      <width>138</width>
      <height>43</height>
     </rect>
@@ -136,7 +136,7 @@ background-color:transparent;
    <property name="geometry">
     <rect>
      <x>-80</x>
-     <y>0</y>
+     <y>-10</y>
      <width>1361</width>
      <height>721</height>
     </rect>
@@ -145,6 +145,13 @@ background-color:transparent;
     <string/>
    </property>
   </widget>
+  <zorder>label_4</zorder>
+  <zorder>label</zorder>
+  <zorder>pushButton_2</zorder>
+  <zorder>label_2</zorder>
+  <zorder>label_3</zorder>
+  <zorder>pushButton_4</zorder>
+  <zorder>pushButton_3</zorder>
  </widget>
  <resources/>
  <connections/>

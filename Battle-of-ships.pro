@@ -28,6 +28,7 @@ SOURCES += \
     Soursces/towerdisabler.cpp \
     Soursces/turret_q8.cpp \
     Soursces/turret_q8f.cpp \
+    Soursces/turret_q8m.cpp \
     Soursces/turret_q8r.cpp
 
 HEADERS += \
@@ -49,7 +50,8 @@ HEADERS += \
     Header/towerdisabler.h \
     Header/turret_q8.h \
     Header/turret_q8f.h \
-    Header/turret_q8r.h
+    Header/turret_q8r.h \
+    Header/turret_q8m.h \
 
 FORMS += \
     Ui\gamepage.ui \

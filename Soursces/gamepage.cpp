@@ -4,6 +4,7 @@
 #include "Header/fighter111.h"
 #include "Header/ice_bomb.h"
 #include "Header/mainwindow.h"
+#include "Header/turret_q8m.h"
 #include "qpropertyanimation.h"
 #include "Header/savegamedata.h"
 #include "Header/selectmap.h"
@@ -252,8 +253,8 @@ Gamepage::Gamepage(QWidget *parent) :
     speedWave = 0;
     healthWave = 1.1;
 
-    level = QVector<int>(5, 1);
-    level2 = QVector<int>(5, 1);
+    level = QVector<int>(6, 1);
+    level2 = QVector<int>(6, 1);
 
     ui->label_3->setEnabled(false);
     ui->pushButton_4->setEnabled(false);
@@ -262,6 +263,7 @@ Gamepage::Gamepage(QWidget *parent) :
     ui->pushButton_4->hide();
     ui->pushButton_3->hide();
 
+    createToolbar();
 }
 
 void Gamepage::createToolbar()
@@ -270,11 +272,11 @@ void Gamepage::createToolbar()
     labellvl1->setStyleSheet("background: url(:/res/image/card1-lvl1.png);");
     labellvl1->setFixedSize(90, 90);
     int x = 1236;
-    int y = 30 + 0 * 135;
+    int y = 10 + 0 * 115;
     labellvl1->move(x, y);
     labellvl1->show();
     QPushButton *button = new QPushButton("Action", this);
-    button->setGeometry(x, y + 90, 90, 30);
+    button->setGeometry(x, y + 90, 90, 20);
     connect(button, &QPushButton::clicked, this, &Gamepage::buttonClicked1);
     button->show();
 
@@ -282,11 +284,11 @@ void Gamepage::createToolbar()
     labellvl2->setStyleSheet("background: url(:/res/image/card2-lvl1.png);");
     labellvl2->setFixedSize(90, 90);
     x = 1236;
-    y = 30 + 1 * 135;
+    y = 10 + 1 * 115;
     labellvl2->move(x, y);
     labellvl2->show();
     QPushButton *button2 = new QPushButton("Action", this);
-    button2->setGeometry(x, y + 90, 90, 30);
+    button2->setGeometry(x, y + 90, 90, 20);
     connect(button2, &QPushButton::clicked, this, &Gamepage::buttonClicked2);
     button2->show();
 
@@ -294,11 +296,11 @@ void Gamepage::createToolbar()
     labellvl3->setStyleSheet("background: url(:/res/image/card3-lvl1.png);");
     labellvl3->setFixedSize(90, 90);
     x = 1236;
-    y = 30 + 2 * 135;
+    y = 10 + 2 * 115;
     labellvl3->move(x, y);
     labellvl3->show();
     QPushButton *button3 = new QPushButton("Action", this);
-    button3->setGeometry(x, y + 90, 90, 30);
+    button3->setGeometry(x, y + 90, 90, 20);
     connect(button3, &QPushButton::clicked, this, &Gamepage::buttonClicked3);
     button3->show();
 
@@ -306,11 +308,11 @@ void Gamepage::createToolbar()
     labellvl4->setStyleSheet("background: url(:/res/image/card4-lvl1.png);");
     labellvl4->setFixedSize(90, 90);
     x = 1236;
-    y = 30 + 3 * 135;
+    y = 10 + 3 * 115;
     labellvl4->move(x, y);
     labellvl4->show();
     QPushButton *button4 = new QPushButton("Action", this);
-    button4->setGeometry(x, y + 90, 90, 30);
+    button4->setGeometry(x, y + 90, 90, 20);
     connect(button4, &QPushButton::clicked, this, &Gamepage::buttonClicked4);
     button4->show();
 
@@ -318,13 +320,25 @@ void Gamepage::createToolbar()
     labellvl5->setStyleSheet("background: url(:/res/image/card5-lvl1.png);");
     labellvl5->setFixedSize(90, 90);
     x = 1236;
-    y = 30 + 4 * 135;
+    y = 10 + 4 * 115;
     labellvl5->move(x, y);
     labellvl5->show();
     QPushButton *button5 = new QPushButton("Action", this);
-    button5->setGeometry(x, y + 90, 90, 30);
+    button5->setGeometry(x, y + 90, 90, 20);
     connect(button5, &QPushButton::clicked, this, &Gamepage::buttonClicked5);
     button5->show();
+
+    labellvl6 = new QLabel(this);
+    labellvl6->setStyleSheet("background: url(:/res/image/card6-lvl1.png);");
+    labellvl6->setFixedSize(90, 90);
+    x = 1236;
+    y = 10 + 5 * 115;
+    labellvl6->move(x, y);
+    labellvl6->show();
+    QPushButton *button6 = new QPushButton("Action", this);
+    button6->setGeometry(x, y + 90, 90, 20);
+    connect(button6, &QPushButton::clicked, this, &Gamepage::buttonClicked6);
+    button6->show();
 }
 
 void  Gamepage::buttonClicked1()
@@ -398,6 +412,24 @@ void  Gamepage::buttonClicked5()
     labellvl5->setStyleSheet(QString("background: url(:/res/image/card5-lvl%1.png);").arg(level[4]));
 }
 
+void Gamepage::buttonClicked6()
+{
+    if ( iron - ( 200 * level[5]  )< 0){}
+    else {
+        if ( level[5] < 5 )
+        {
+            iron -= (200 * level[5]);
+            level[5] += 1;
+        }
+        labellvl6->setStyleSheet(QString("background: url(:/res/image/card6-lvl%1.png);").arg(level[5]));
+        for (ClickableLabel *t : Gamepage::turrets) {
+            qDebug() << "hi";
+            if (auto turret_q8m = dynamic_cast<Turret_q8m*>(t)) {
+                turret_q8m->setDamage(turret_q8m->getDamage() * pow(2,(level[5] - 1)));
+            }
+        }
+    }
+}
 
 void Gamepage::countIron()
 {
@@ -682,7 +714,7 @@ void Gamepage::createLabelsInGroupBox(int initialCount)
 {
     for (int i = 0; i < initialCount; ++i) {
         ClickableLabel *label;
-        int rands = std::rand() % 5 + 1;
+        int rands = std::rand() % 6 + 1;
 
         switch (rands) {
         case 1:
@@ -704,6 +736,10 @@ void Gamepage::createLabelsInGroupBox(int initialCount)
         case 5:
             label = new Ice_Bomb(this);
             label->setStyleSheet("background: url(:/res/image/card5.png);");
+            break;
+        case 6:
+            label = new Turret_q8m(this);
+            label->setStyleSheet("background: url(:/res/image/card6.png);");
             break;
         default:
             label = new Turret_Q8(this);
@@ -730,7 +766,7 @@ void Gamepage::createLabelsInGroupBox(int initialCount)
 void Gamepage::createNewLabel(QPoint position)
 {
     ClickableLabel *label;
-    int rands = std::rand() % 5 + 1;
+    int rands = std::rand() % 6 + 1;
 
     switch (rands) {
     case 1:
@@ -752,6 +788,10 @@ void Gamepage::createNewLabel(QPoint position)
     case 5:
         label = new Ice_Bomb(this);
         label->setStyleSheet("background: url(:/res/image/card5.png);");
+        break;
+    case 6:
+        label = new Turret_q8m(this);
+        label->setStyleSheet("background: url(:/res/image/card6.png);");
         break;
     default:
         label = new Turret_Q8(this);
@@ -872,6 +912,22 @@ bool Gamepage::isPositionOccupied2(QRect rec , int x , int lvl , int code ) {
                         turret_q8r->stopShooting();
                         Gamepage::turrets.removeOne(turret_q8r);
                         turret_q8r->move(2000,2000);
+                        return true;
+                    }
+                }
+            }
+            else if (auto turret_q8m = dynamic_cast<Turret_q8m*>(t)) {
+                if ( x == 3 ){
+                    if ( lvl == turret_q8m->getLvl() )
+                    {
+                        if ( code == turret_q8m->getCode() )
+                        {
+                            return false;
+                        }
+                        turret_q8m->setActive(false);
+                        turret_q8m->stopShooting();
+                        Gamepage::turrets.removeOne(turret_q8m);
+                        turret_q8m->move(2000,2000);
                         return true;
                     }
                 }
@@ -1098,6 +1154,29 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                         }
                     }
                 }
+                else if (auto turret4 = dynamic_cast<Turret_q8m*>(selectedLabel))
+                {
+
+                    if ( selectedLabel->status > 0 ){
+                        if ( isPositionOccupied2(newRect , 3 , turret4->getLvl() , turret4->getCode() ) )
+                        {
+                            int lvl = turret4->getLvl() + 1;
+                            turret4->setLvl( lvl );
+                            selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2 + 50));
+                            selectedLabel->setStyleSheet(QString("background: url(:/res/image/T3-%1.png);").arg(turret4->getLvl()));
+                            if ( turret4->getLvl() == 5 )
+                            {
+                                selectedLabel->setStyleSheet("background: url(:/res/image/T1-5.png);");
+                            }
+                            int speed = selectedLabel->getSpeedshoot() - 100;
+                            selectedLabel->setSpeedshoot(speed);
+                            QGraphicsOpacityEffect* opacityEffect = new QGraphicsOpacityEffect(this);
+                            opacityEffect->setOpacity(1);
+                            selectedLabel->setGraphicsEffect(opacityEffect);
+                            turret4->startShotBullet();
+                        }
+                    }
+                }
             }else if ( checkMap(event) )
             {
                 if (!isPositionOccupied(newRect) || selectedLabel->status != 0)
@@ -1164,6 +1243,29 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                                 turret3->startShotBullet();
                                 turret3->setDamage(turret3->getDamage() * pow(2,(level[2] - 1)));
                                 selectedLabel->setStyleSheet("background: url(:/res/image/T2.png);");
+                                QGraphicsOpacityEffect* opacityEffect = new QGraphicsOpacityEffect(this);
+                                opacityEffect->setOpacity(1);
+                                selectedLabel->setGraphicsEffect(opacityEffect);
+                                selectedLabel->setFixedSize(90, 60);
+                                selectedLabel->status = 1;
+                                selectedLabel = nullptr;
+                            }
+                        }
+                    }
+                    else if (auto turret4 = dynamic_cast<Turret_q8m *>(selectedLabel))
+                    {
+                        if ( iron - 300 < 0 ){}
+                        else {
+                            if ( selectedLabel->status == 0 )
+                            {
+                                createNewLabel(previousPosition);
+                                Gamepage::turrets.append(selectedLabel);
+                                labels.removeOne(selectedLabel);
+                                iron -= 300;
+                                selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2));
+                                turret4->startShotBullet();
+                                turret4->setDamage(turret4->getDamage() * pow(2,(level[2] - 1)));
+                                selectedLabel->setStyleSheet("background: url(:/res/image/T3.png);");
                                 QGraphicsOpacityEffect* opacityEffect = new QGraphicsOpacityEffect(this);
                                 opacityEffect->setOpacity(1);
                                 selectedLabel->setGraphicsEffect(opacityEffect);
