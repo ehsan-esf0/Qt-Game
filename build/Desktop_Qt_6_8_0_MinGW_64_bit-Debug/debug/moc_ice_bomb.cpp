@@ -39,7 +39,10 @@ constexpr auto qt_meta_stringdata_CLASSIce_BombENDCLASS = QtMocHelpers::stringDa
     "Ice_Bomb",
     "bombExploded",
     "",
-    "handleBombExplosion"
+    "Release",
+    "handleBombExplosion",
+    "animateBombLabel",
+    "deleteBomb"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -52,23 +55,29 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSIce_BombENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+       5,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       1,       // signalCount
+       2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   26,    2, 0x06,    1 /* Public */,
+       1,    0,   44,    2, 0x06,    1 /* Public */,
+       3,    0,   45,    2, 0x06,    2 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       3,    0,   27,    2, 0x08,    2 /* Private */,
+       4,    0,   46,    2, 0x08,    3 /* Private */,
+       5,    0,   47,    2, 0x08,    4 /* Private */,
+       6,    0,   48,    2, 0x08,    5 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
+    QMetaType::Void,
 
  // slots: parameters
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
 
        0        // eod
@@ -85,7 +94,13 @@ Q_CONSTINIT const QMetaObject Ice_Bomb::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<Ice_Bomb, std::true_type>,
         // method 'bombExploded'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'Release'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'handleBombExplosion'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'animateBombLabel'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'deleteBomb'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -98,7 +113,10 @@ void Ice_Bomb::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         (void)_t;
         switch (_id) {
         case 0: _t->bombExploded(); break;
-        case 1: _t->handleBombExplosion(); break;
+        case 1: _t->Release(); break;
+        case 2: _t->handleBombExplosion(); break;
+        case 3: _t->animateBombLabel(); break;
+        case 4: _t->deleteBomb(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -107,6 +125,13 @@ void Ice_Bomb::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
             using _t = void (Ice_Bomb::*)();
             if (_t _q_method = &Ice_Bomb::bombExploded; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 0;
+                return;
+            }
+        }
+        {
+            using _t = void (Ice_Bomb::*)();
+            if (_t _q_method = &Ice_Bomb::Release; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+                *result = 1;
                 return;
             }
         }
@@ -133,13 +158,13 @@ int Ice_Bomb::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 5;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
+        if (_id < 5)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 2;
+        _id -= 5;
     }
     return _id;
 }
@@ -148,5 +173,11 @@ int Ice_Bomb::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 void Ice_Bomb::bombExploded()
 {
     QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
+}
+
+// SIGNAL 1
+void Ice_Bomb::Release()
+{
+    QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
 }
 QT_WARNING_POP

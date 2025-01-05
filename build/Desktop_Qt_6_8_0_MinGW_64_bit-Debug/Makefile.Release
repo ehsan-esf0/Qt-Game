@@ -223,6 +223,7 @@ release/qrc_Image.cpp: ../../Image.qrc \
 		../../image/startboom.png \
 		../../image/card6-lvl2.png \
 		../../image/Bomb.png \
+		../../image/BombR1-ice.png \
 		../../image/bullet2.png \
 		../../image/Untitled-5.png \
 		../../image/enimi4.png \

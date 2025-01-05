@@ -13,14 +13,18 @@ public:
     explicit Ice_Bomb(QWidget *parent = nullptr);
     void checkCollision();
     bool isActive;
+    void ReleaseTheBomb();
 
 signals:
     void bombExploded();
+    void Release();
 
 private slots:
     void handleBombExplosion();
+    void animateBombLabel();
+    void deleteBomb();
 private:
-
+    QLabel* bombLabel;
 };
 
 #endif // BOMB_H

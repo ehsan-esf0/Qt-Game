@@ -4,6 +4,7 @@
 
 Ice_Bomb::Ice_Bomb(QWidget *parent) : ClickableLabel(parent), isActive(true) {
     connect(this, &Ice_Bomb::bombExploded, this, &Ice_Bomb::handleBombExplosion);
+    connect(this, &Ice_Bomb::Release, this, &Ice_Bomb::ReleaseTheBomb);
 
     setStyleSheet("background: url(:/res/image/bomb.png);");
     setFixedSize(50, 50);
@@ -11,6 +12,31 @@ Ice_Bomb::Ice_Bomb(QWidget *parent) : ClickableLabel(parent), isActive(true) {
     QTimer *collisionTimer = new QTimer(this);
     connect(collisionTimer, &QTimer::timeout, this, &Ice_Bomb::checkCollision);
     collisionTimer->start(100);
+    bombLabel = new QLabel(qobject_cast<Gamepage*>(parentWidget()));
+}
+
+void Ice_Bomb::ReleaseTheBomb()
+{
+    bombLabel->setStyleSheet("background: url(:/res/image/BombR1-ice.png);");
+    bombLabel->setFixedSize(50, 70);
+    bombLabel->move(this->x(), this->y() - 300);
+    bombLabel->show();
+    animateBombLabel();
+}
+
+void Ice_Bomb::animateBombLabel() {
+    QPropertyAnimation *animation = new QPropertyAnimation(bombLabel, "geometry");
+    animation->setDuration(150);
+    animation->setStartValue(QRect(bombLabel->x(), bombLabel->y(), bombLabel->width(), bombLabel->height()));
+    animation->setEndValue(QRect(this->x(), this->y() + 10, bombLabel->width(), bombLabel->height()));
+    animation->start();
+    connect(animation , &QPropertyAnimation::finished , this , &Ice_Bomb::deleteBomb);
+}
+
+void Ice_Bomb::deleteBomb()
+{
+    bombLabel->hide();
+    bombLabel->move(1000,2000);
 }
 
 void Ice_Bomb::checkCollision() {
@@ -19,6 +45,7 @@ void Ice_Bomb::checkCollision() {
 
         for (Enemy *enemy : Gamepage::enimi) {
             if (this->geometry().adjusted(-50, -50, 50, 50).intersects(enemy->geometry())) {
+                emit Release();
                 collidedEnemies.append(enemy);
             }
         }
