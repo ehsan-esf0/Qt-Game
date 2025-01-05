@@ -11,7 +11,7 @@ class Bullet : public QLabel {
     Q_OBJECT
 
 public:
-    explicit Bullet(QWidget *parent = nullptr);
+    explicit Bullet(QWidget *parent = nullptr, int numberColor = 1 );
     void shoot(const QPoint &start, QPointer<Enemy> targetLabel);
     void updateTarget();
     void setDamage( int x );

@@ -353,6 +353,7 @@ void  Gamepage::buttonClicked1()
         labellvl1->setStyleSheet(QString("background: url(:/res/image/card1-lvl%1.png);").arg(level[0]));
         for (ClickableLabel *t : Gamepage::turrets) {
             if (auto turret_Q8 = dynamic_cast<Turret_Q8*>(t)) {
+                turret_Q8->setLvlDamage(level[0]);
                 turret_Q8->setDamage(turret_Q8->getDamage() * pow(2,(level[0] - 1)));
             }
         }
@@ -370,6 +371,7 @@ void  Gamepage::buttonClicked2()
         labellvl2->setStyleSheet(QString("background: url(:/res/image/card2-lvl%1.png);").arg(level[1]));
         for (ClickableLabel *t : Gamepage::turrets) {
             if (auto turret_q8f = dynamic_cast<Turret_q8f*>(t)) {
+                turret_q8f->setLvlDamage(level[1]);
                 turret_q8f->setDamage(turret_q8f->getDamage() * pow(2,(level[1] - 1)));
             }
         }
@@ -388,6 +390,7 @@ void Gamepage::buttonClicked3()
         labellvl3->setStyleSheet(QString("background: url(:/res/image/card3-lvl%1.png);").arg(level[2]));
         for (ClickableLabel *t : Gamepage::turrets) {
             if (auto turret_q8r = dynamic_cast<Turret_q8r*>(t)) {
+                turret_q8r->setLvlDamage(level[2]);
                 turret_q8r->setDamage(turret_q8r->getDamage() * pow(2,(level[2] - 1)));
             }
         }
@@ -425,6 +428,7 @@ void Gamepage::buttonClicked6()
         for (ClickableLabel *t : Gamepage::turrets) {
             qDebug() << "hi";
             if (auto turret_q8m = dynamic_cast<Turret_q8m*>(t)) {
+                turret_q8m->setLvlDamage(level[5]);
                 turret_q8m->setDamage(turret_q8m->getDamage() * pow(2,(level[5] - 1)));
             }
         }

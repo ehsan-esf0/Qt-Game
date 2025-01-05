@@ -223,6 +223,7 @@ debug/qrc_Image.cpp: ../../Image.qrc \
 		../../image/startboom.png \
 		../../image/card6-lvl2.png \
 		../../image/Bomb.png \
+		../../image/bullet2.png \
 		../../image/Untitled-5.png \
 		../../image/enimi4.png \
 		../../image/heart.png \
@@ -233,6 +234,7 @@ debug/qrc_Image.cpp: ../../Image.qrc \
 		../../image/card2-lvl2.png \
 		../../image/card2-lvl3.png \
 		../../image/B-1.png \
+		../../image/bullet4.png \
 		../../image/T2-2.png \
 		../../image/tree2.png \
 		../../image/smap1.png \
@@ -295,6 +297,7 @@ debug/qrc_Image.cpp: ../../Image.qrc \
 		../../image/T-3.png \
 		../../image/startboom2.png \
 		../../image/card4-lvl2.png \
+		../../image/bullet3.png \
 		../../image/map2_5.png \
 		../../image/boom3.png \
 		../../image/Map3.png \
@@ -311,6 +314,7 @@ debug/qrc_Image.cpp: ../../Image.qrc \
 		../../image/T1-2.png \
 		../../image/card6.png \
 		../../image/card3-lvl3.png \
+		../../image/bullet5.png \
 		../../image/card4-lvl1.png \
 		../../image/shark.png \
 		../../image/map2_4.png \

@@ -1,8 +1,13 @@
 #include "Header/bullet.h"
 #include "Header/gamepage.h"
 
-Bullet::Bullet(QWidget *parent) : QLabel(parent), animation(new QPropertyAnimation(this, "pos")), moveTimer(new QTimer(this)), checkTimer(new QTimer(this)) {
-    setStyleSheet("background-color: black;border-radius: 5%;");
+Bullet::Bullet(QWidget *parent , int numberColor ) : QLabel(parent), animation(new QPropertyAnimation(this, "pos")), moveTimer(new QTimer(this)), checkTimer(new QTimer(this)) {
+    if ( numberColor == 1 )
+    {
+        setStyleSheet("background-color: black;border-radius: 5%;");
+    }else {
+        setStyleSheet(QString("background:url(:/res/image/bullet%1.png);").arg(numberColor));
+    }
     setFixedSize(10, 10);
     connect(moveTimer, &QTimer::timeout, this, &Bullet::moveBullet);
     connect(animation, &QPropertyAnimation::finished, this, &Bullet::onAnimationFinished);

@@ -13,6 +13,7 @@ Turret_q8r::Turret_q8r(QWidget *parent) : ClickableLabel(parent)
     speedshoot = 550;
     damage = 30;
     lvl = 1;
+    lvlDamage = 1;
     code = std::rand() % 1000 + 1;
 }
 
@@ -42,7 +43,7 @@ void Turret_q8r::shotBullet() {
             startBoom->move(this->pos().x() + 85 , this->pos().y() + 16);
             startBoom->show();
             QTimer::singleShot(80, startBoom, &QLabel::hide);
-            Bullet *b = new Bullet(parentWidget());
+            Bullet *b = new Bullet(parentWidget() , lvlDamage);
             b->setDamage(damage);
             b->shoot(this->pos(), QPointer<Enemy>(e));
             bullet.append(b);

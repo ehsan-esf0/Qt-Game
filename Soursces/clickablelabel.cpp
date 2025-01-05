@@ -46,3 +46,7 @@ int ClickableLabel::getCode()
 {
     return code ;
 }
+void ClickableLabel::setLvlDamage(int x)
+{
+    lvlDamage = x;
+}

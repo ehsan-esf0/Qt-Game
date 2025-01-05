@@ -103,5 +103,9 @@
         <file>image/startboom.png</file>
         <file>image/startboom2.png</file>
         <file>image/startboom3.png</file>
+        <file>image/bullet2.png</file>
+        <file>image/bullet3.png</file>
+        <file>image/bullet4.png</file>
+        <file>image/bullet5.png</file>
     </qresource>
 </RCC>
