@@ -8,7 +8,7 @@
 #include "Header/ice_bomb.h"
 
 BombDisabler::BombDisabler(QWidget *parent) : Enemy(parent) {
-    setStyleSheet("background:url(:/res/image/enimi2.png);");
+    setPixmap(QPixmap(":/res/image/enimi2.png"));
     setFixedSize(50, 50);
     isAlive = true;
     health = 2000;

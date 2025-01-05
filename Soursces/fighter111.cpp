@@ -3,7 +3,7 @@
 
 
 fighter111::fighter111(QWidget *parent) : Enemy(parent) {
-    setStyleSheet("background:url(:/res/image/enimi1.png);");
+    setPixmap(QPixmap(":/res/image/enimi1.png"));
     setFixedSize(50, 50);
     isAlive = true;
     health = 50;

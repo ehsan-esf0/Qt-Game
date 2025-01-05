@@ -29,7 +29,8 @@ SOURCES += \
     Soursces/turret_q8.cpp \
     Soursces/turret_q8f.cpp \
     Soursces/turret_q8m.cpp \
-    Soursces/turret_q8r.cpp
+    Soursces/turret_q8r.cpp \
+    Soursces/baseenemy.cpp
 
 HEADERS += \
     Header/bomb.h \
@@ -52,6 +53,7 @@ HEADERS += \
     Header/turret_q8f.h \
     Header/turret_q8r.h \
     Header/turret_q8m.h \
+    Header/baseenemy.h \
 
 FORMS += \
     Ui\gamepage.ui \

@@ -19,6 +19,7 @@ release/turret_q8.o
 release/turret_q8f.o
 release/turret_q8m.o
 release/turret_q8r.o
+release/baseenemy.o
 release/qrc_Image.o
 release/moc_bomb.o
 release/moc_bombdisabler.o
@@ -38,3 +39,4 @@ release/moc_towerdisabler.o
 release/moc_turret_q8f.o
 release/moc_turret_q8r.o
 release/moc_turret_q8m.o
+release/moc_baseenemy.o

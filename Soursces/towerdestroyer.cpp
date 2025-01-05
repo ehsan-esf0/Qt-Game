@@ -7,7 +7,7 @@
 #include <ctime>
 
 TowerDestroyer::TowerDestroyer(QWidget *parent) : Enemy(parent) {
-    setStyleSheet("background:url(:/res/image/enimi3.png);");
+    setPixmap(QPixmap(":/res/image/enimi3.png"));
     setFixedSize(50, 50);
     isAlive = true;
     health = 2000;

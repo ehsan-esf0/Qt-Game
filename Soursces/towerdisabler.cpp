@@ -8,7 +8,7 @@
 #include "Header/turret_q8r.h"
 
 TowerDisabler::TowerDisabler(QWidget *parent) : Enemy(parent) {
-    setStyleSheet("background:url(:/res/image/enimi4.png);");
+    setPixmap(QPixmap(":/res/image/enimi4.png"));
     setFixedSize(50, 50);
     isAlive = true;
     health = 2000;

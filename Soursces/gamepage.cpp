@@ -23,6 +23,7 @@
 #include <QVBoxLayout>
 #include "Header/clickablelabel.h"
 #include "QGraphicsOpacityEffect"
+#include "QTransform"
 
 QVector<Enemy*> Gamepage::enimi;
 QVector<ClickableLabel*> Gamepage::turrets;
@@ -644,20 +645,32 @@ void Gamepage::moveObject( Enemy *label )
     animation0->setDuration(label->speed);
     animation0->setStartValue(QRect(label->currentPosition.x(), label->currentPosition.y(), label->width(), label->height()));
     animation0->setEndValue(QRect(matrix[{1,2}].first, matrix[{1,2}].second, label->width(), label->height()));
+    animation0->start();
+    label->setRotationAngle(0);
+
     QPropertyAnimation *animation1 = new QPropertyAnimation(label, "geometry");
     animation1->setDuration(label->speed * 2);
     animation1->setStartValue(QRect(matrix[{1,2}].first, matrix[{1,2}].second, label->width(), label->height()));
     animation1->setEndValue(QRect(matrix[{2,1}].first, matrix[{2,1}].second, label->width(), label->height()));
+
+    connect(animation0, &QPropertyAnimation::finished, this, [animation1, label](){
+        label->setRotationAngle(90);
+        animation1->start();
+    });
+
+
     QPropertyAnimation *animation6 = new QPropertyAnimation(label, "geometry");
     animation6->setDuration(label->speed);
     animation6->setStartValue(QRect(matrix[{2,1}].first, matrix[{2,1}].second, label->width(), label->height()));
     animation6->setEndValue(QRect(matrix[{2,2}].first, matrix[{2,2}].second, label->width(), label->height()));
 
-    animationGroup->addAnimation(animation0);
-    animationGroup->addAnimation(animation1);
-    animationGroup->addAnimation(animation6);
 
-    connect(animationGroup, &QSequentialAnimationGroup::finished, this, [ label]()
+    connect(animation1, &QPropertyAnimation::finished, this, [animation6, label](){
+        label->setRotationAngle(180);
+        animation6->start();
+    });
+
+    connect(animation6, &QPropertyAnimation::finished, this, [ label]()
             {
                 //label->deleteLater();
                 if ( label->isAlive == true ){
@@ -668,8 +681,6 @@ void Gamepage::moveObject( Enemy *label )
                 label->takeHit(10000);
                 label->isAlive = false;
             });
-
-    animationGroup->start();
 }
 
 void Gamepage::onEnemyExited() {

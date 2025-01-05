@@ -3,7 +3,7 @@
 #include <QMovie>
 
 Fighter298::Fighter298(QWidget *parent) : Enemy(parent) {
-    setStyleSheet("background:url(:/res/image/enimi.png);");
+    setPixmap(QPixmap(":/res/image/enimi.png"));
     setFixedSize(50, 50);
     isAlive = true;
     health = 100;

@@ -2,8 +2,9 @@
 #define ENEMY_H
 
 #include <QLabel>
+#include "Header/BaseEnemy.h"
 
-class Enemy : public QLabel {
+class Enemy : public BaseEnemy {
     Q_OBJECT
 
 public:
@@ -18,12 +19,18 @@ public:
     QPoint currentPosition;
     void setHealth( float x );
     float getHealth();
+    void setRotationAngle(int angle);
+    void setPixmap(const QPixmap &pixmap);
+    void paintEvent(QPaintEvent *event) override;
 
 protected:
     float health;
 
 signals:
     void animationFinished();
+private:
+    int rotationAngle;
+    QPixmap enemyPixmap;
 };
 
 #endif // ENEMY_H
