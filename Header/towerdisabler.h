@@ -22,6 +22,7 @@ private:
 
 protected:
     void takeHit(int hit) override;
+    void playDeathAnimation();
 };
 
 #endif // TOWERDISABLER_H

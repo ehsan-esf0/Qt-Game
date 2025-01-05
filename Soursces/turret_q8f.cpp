@@ -29,6 +29,12 @@ void Turret_q8f::shotBullet() {
         for (auto it = Gamepage::enimi.rbegin(); it != Gamepage::enimi.rend(); ++it) {
             Enemy *e = *it;
             if (e->isAlive) {
+                QLabel *startBoom = new QLabel(qobject_cast<Gamepage*>(parentWidget()));
+                startBoom->setFixedSize(29,17);
+                startBoom->setStyleSheet("background: url(:/res/image/startboom2.png);");
+                startBoom->move(this->pos().x() + 85 , this->pos().y() + 20);
+                startBoom->show();
+                QTimer::singleShot(80, startBoom, &QLabel::hide);
                 Bullet *b = new Bullet(parentWidget());
                 b->setDamage(damage);
                 b->shoot(this->pos(), QPointer<Enemy>(e));

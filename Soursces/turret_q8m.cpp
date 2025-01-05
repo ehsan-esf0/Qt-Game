@@ -38,6 +38,12 @@ void Turret_q8m::shotBullet()
     }
     if (maxHealthEnemy)
     {
+        QLabel *startBoom = new QLabel(qobject_cast<Gamepage*>(parentWidget()));
+        startBoom->setFixedSize(30,23);
+        startBoom->setStyleSheet("background: url(:/res/image/startboom3.png);");
+        startBoom->move(this->pos().x() + 85 , this->pos().y() + 16);
+        startBoom->show();
+        QTimer::singleShot(80, startBoom, &QLabel::hide);
         Bullet *b = new Bullet(parentWidget());
         b->setDamage(damage);
         b->shoot(this->pos(), QPointer<Enemy>(maxHealthEnemy));

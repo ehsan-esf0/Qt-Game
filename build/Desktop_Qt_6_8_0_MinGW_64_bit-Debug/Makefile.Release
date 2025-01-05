@@ -220,6 +220,7 @@ release/qrc_Image.cpp: ../../Image.qrc \
 		../../image/card6-lvl5.png \
 		../../image/card4-lvl4.png \
 		../../image/boom.png \
+		../../image/startboom.png \
 		../../image/card6-lvl2.png \
 		../../image/Bomb.png \
 		../../image/Untitled-5.png \
@@ -292,13 +293,16 @@ release/qrc_Image.cpp: ../../Image.qrc \
 		../../image/mainMap.png \
 		../../image/End-3.png \
 		../../image/T-3.png \
+		../../image/startboom2.png \
 		../../image/card4-lvl2.png \
 		../../image/map2_5.png \
+		../../image/boom3.png \
 		../../image/Map3.png \
 		../../image/T3-3.png \
 		../../image/iron.png \
 		../../image/card6-lvl4.png \
 		../../image/enimi3.png \
+		../../image/startboom3.png \
 		../../image/enimi2.png \
 		../../image/card3-lvl2.png \
 		../../image/Map7.png \

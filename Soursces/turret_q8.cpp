@@ -37,6 +37,12 @@ void Turret_Q8::shotBullet()
     }
     if (farthestEnemy)
     {
+        QLabel *startBoom = new QLabel(qobject_cast<Gamepage*>(parentWidget()));
+        startBoom->setFixedSize(40,37);
+        startBoom->setStyleSheet("background: url(:/res/image/startboom.png);");
+        startBoom->move(this->pos().x() + 85 , this->pos().y() + 10);
+        startBoom->show();
+        QTimer::singleShot(80, startBoom, &QLabel::hide);
         Bullet *b = new Bullet(parentWidget());
         b->setDamage(damage);
         b->shoot(this->pos(), QPointer<Enemy>(farthestEnemy));

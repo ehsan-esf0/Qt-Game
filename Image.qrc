@@ -99,5 +99,9 @@
         <file>C:/Users/User/Downloads/041591917_main_xxl.gif</file>
         <file>image/boom.png</file>
         <file>image/boom2.png</file>
+        <file>image/boom3.png</file>
+        <file>image/startboom.png</file>
+        <file>image/startboom2.png</file>
+        <file>image/startboom3.png</file>
     </qresource>
 </RCC>
