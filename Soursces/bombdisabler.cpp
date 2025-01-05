@@ -61,7 +61,7 @@ void BombDisabler::takeHit(int hit) {
         Gamepage::enimi.removeOne(this);
         playDeathAnimation();
 
-        QTimer::singleShot(3000, this, &BombDisabler::hide);
+        QTimer::singleShot(300, this, &BombDisabler::hide);
     }
 }
 

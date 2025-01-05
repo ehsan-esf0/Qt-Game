@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <scxml xmlns="http://www.w3.org/2005/07/scxml" version="1.0" binding="early" xmlns:qt="http://www.qt.io/2015/02/scxml-ext" name="chartGame" qt:editorversion="14.0.2">
     <state id="ClickableLabel">
-        <qt:editorinfo scenegeometry="394.30;143.98;296.74;93.98;142;100" geometry="394.30;143.98;-97.56;-50;142;100"/>
+        <qt:editorinfo geometry="394.30;143.98;-97.56;-50;142;100" scenegeometry="394.30;143.98;296.74;93.98;142;100"/>
         <transition type="external" event="Transition_14" target="Turret_Q8">
             <qt:editorinfo movePointCond="11.21;-4.81"/>
         </transition>
@@ -11,12 +11,12 @@
         </transition>
     </state>
     <state id="Turret_Q8">
-        <qt:editorinfo scenegeometry="195.48;292.42;135.48;242.42;120;100" geometry="195.48;292.42;-60;-50;120;100"/>
+        <qt:editorinfo geometry="195.48;292.42;-60;-50;120;100" scenegeometry="195.48;292.42;135.48;242.42;120;100"/>
     </state>
     <state id="Turret_Q8r">
-        <qt:editorinfo scenegeometry="397.37;313.26;337.37;263.26;120;100" geometry="397.37;313.26;-60;-50;120;100"/>
+        <qt:editorinfo geometry="397.37;313.26;-60;-50;120;100" scenegeometry="397.37;313.26;337.37;263.26;120;100"/>
     </state>
     <state id="Turret_Q8f">
-        <qt:editorinfo scenegeometry="612.08;292.42;552.08;242.42;120;100" geometry="612.08;292.42;-60;-50;120;100"/>
+        <qt:editorinfo geometry="612.08;292.42;-60;-50;120;100" scenegeometry="612.08;292.42;552.08;242.42;120;100"/>
     </state>
 </scxml>

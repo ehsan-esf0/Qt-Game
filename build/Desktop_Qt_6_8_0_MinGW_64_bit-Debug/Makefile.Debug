@@ -275,6 +275,7 @@ debug/qrc_Image.cpp: ../../Image.qrc \
 		../../image/Map5.png \
 		../../image/T.png \
 		../../image/T1-3.png \
+		../../image/BombR.png \
 		../../image/enimiD.png \
 		../../image/T-5.png \
 		../../image/card2-lvl4.png \
@@ -295,6 +296,7 @@ debug/qrc_Image.cpp: ../../Image.qrc \
 		../../image/mainMap.png \
 		../../image/End-3.png \
 		../../image/T-3.png \
+		../../image/BombR1.png \
 		../../image/startboom2.png \
 		../../image/card4-lvl2.png \
 		../../image/bullet3.png \
@@ -4324,6 +4326,25 @@ debug/bomb.o: ../../Soursces/bomb.cpp C:/Qt/6.8.0/mingw_64/include/QtCore/qnames
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qscopeguard.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qobject_impl.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qbindingstorage.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qpropertyanimation.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qvariantanimation.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qabstractanimation.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qeasingcurve.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qvariant.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qdebug.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qtextstream.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qcontiguouscache.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qsharedpointer.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qshareddata.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qsharedpointer_impl.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qmap.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qshareddata_impl.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qset.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qhash.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qvarlengtharray.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/q23utility.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qsequentialanimationgroup.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qanimationgroup.h \
 		../../Header/bomb.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QLabel \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qlabel.h \
@@ -4338,7 +4359,6 @@ debug/bomb.o: ../../Soursces/bomb.cpp C:/Qt/6.8.0/mingw_64/include/QtCore/qnames
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qwindowdefs.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qwindowdefs_win.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qmargins.h \
-		C:/Qt/6.8.0/mingw_64/include/QtCore/q23utility.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qaction.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qkeysequence.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qicon.h \
@@ -4350,7 +4370,6 @@ debug/bomb.o: ../../Soursces/bomb.cpp C:/Qt/6.8.0/mingw_64/include/QtCore/qnames
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qcolor.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qrgb.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qrgba64.h \
-		C:/Qt/6.8.0/mingw_64/include/QtCore/qshareddata.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qimage.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qpixelformat.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qtransform.h \
@@ -4359,17 +4378,6 @@ debug/bomb.o: ../../Soursces/bomb.cpp C:/Qt/6.8.0/mingw_64/include/QtCore/qnames
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qspan.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/q20iterator.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qline.h \
-		C:/Qt/6.8.0/mingw_64/include/QtCore/qvariant.h \
-		C:/Qt/6.8.0/mingw_64/include/QtCore/qdebug.h \
-		C:/Qt/6.8.0/mingw_64/include/QtCore/qtextstream.h \
-		C:/Qt/6.8.0/mingw_64/include/QtCore/qcontiguouscache.h \
-		C:/Qt/6.8.0/mingw_64/include/QtCore/qsharedpointer.h \
-		C:/Qt/6.8.0/mingw_64/include/QtCore/qsharedpointer_impl.h \
-		C:/Qt/6.8.0/mingw_64/include/QtCore/qmap.h \
-		C:/Qt/6.8.0/mingw_64/include/QtCore/qshareddata_impl.h \
-		C:/Qt/6.8.0/mingw_64/include/QtCore/qset.h \
-		C:/Qt/6.8.0/mingw_64/include/QtCore/qhash.h \
-		C:/Qt/6.8.0/mingw_64/include/QtCore/qvarlengtharray.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qpalette.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qbrush.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qfont.h \
@@ -4428,10 +4436,6 @@ debug/bomb.o: ../../Soursces/bomb.cpp C:/Qt/6.8.0/mingw_64/include/QtCore/qnames
 		../../Header/bullet.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/QTimer \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/QPropertyAnimation \
-		C:/Qt/6.8.0/mingw_64/include/QtCore/qpropertyanimation.h \
-		C:/Qt/6.8.0/mingw_64/include/QtCore/qvariantanimation.h \
-		C:/Qt/6.8.0/mingw_64/include/QtCore/qabstractanimation.h \
-		C:/Qt/6.8.0/mingw_64/include/QtCore/qeasingcurve.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/QPointer \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qpointer.h \
 		../../Header/turret_q8r.h \

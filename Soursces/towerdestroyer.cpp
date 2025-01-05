@@ -75,7 +75,7 @@ void TowerDestroyer::takeHit(int hit) {
         Gamepage::enimi.removeOne(this);
         playDeathAnimation();
 
-        QTimer::singleShot(3000, this, &TowerDestroyer::hide);
+        QTimer::singleShot(300, this, &TowerDestroyer::hide);
     }
 }
 
