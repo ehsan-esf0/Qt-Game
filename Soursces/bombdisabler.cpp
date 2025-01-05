@@ -59,9 +59,16 @@ void BombDisabler::takeHit(int hit) {
     {
         isAlive = false;
         Gamepage::enimi.removeOne(this);
-        //this->deleteLater();
-        this->hide();
+        playDeathAnimation();
+
+        QTimer::singleShot(3000, this, &BombDisabler::hide);
     }
 }
 
+void BombDisabler::playDeathAnimation() {
+    QLabel *label = new QLabel(this);
+    label->setFixedSize(50,50);
+    label->setStyleSheet("background:url(:/res/image/boom3.png);");
+    label->show();
+}
 

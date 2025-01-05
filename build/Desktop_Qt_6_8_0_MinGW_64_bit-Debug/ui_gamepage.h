@@ -68,7 +68,7 @@ public:
 ""));
         label_4 = new QLabel(Gamepage);
         label_4->setObjectName("label_4");
-        label_4->setGeometry(QRect(-80, -10, 1361, 721));
+        label_4->setGeometry(QRect(-10, -10, 1361, 721));
         label_4->raise();
         label->raise();
         pushButton_2->raise();

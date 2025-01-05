@@ -15,10 +15,11 @@ public:
     void takeHit(int hit) override;
 
 private slots:
-    void disableNearbyBombs();  // اسلات برای غیرفعال کردن بمب‌های نزدیک
+    void disableNearbyBombs();
 
 private:
-    QTimer *disableTimer;  // تایمر برای بررسی برخورد با بمب‌ها
+    QTimer *disableTimer;
+    void playDeathAnimation();
 };
 
 #endif // BOMBDISABLER_H

@@ -14,6 +14,7 @@ public:
     void takeHit(int hit) override;
 
 private:
+    void playDeathAnimation();
 };
 
 #endif // ENEMY_H

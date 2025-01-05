@@ -1,5 +1,6 @@
 #include "Header/fighter298.h"
 #include "Header/gamepage.h"
+#include <QMovie>
 
 Fighter298::Fighter298(QWidget *parent) : Enemy(parent) {
     setStyleSheet("background:url(:/res/image/enimi.png);");
@@ -14,14 +15,23 @@ Fighter298::~Fighter298() {
     //Gamepage::enimi.removeOne(this);
 }
 
+
 void Fighter298::takeHit(int hit) {
     health -= hit;
     if (health <= 0)
     {
         isAlive = false;
         Gamepage::enimi.removeOne(this);
-        //this->deleteLater();
-        this->hide();
+        playDeathAnimation();
+
+        QTimer::singleShot(300, this, &Fighter298::hide);
     }
+}
+
+void Fighter298::playDeathAnimation() {
+    QLabel *label = new QLabel(this);
+    label->setFixedSize(50,50);
+    label->setStyleSheet("background:url(:/res/image/boom.png);");
+    label->show();
 }
 

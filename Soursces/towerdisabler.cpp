@@ -71,7 +71,9 @@ void TowerDisabler::takeHit(int hit) {
     if (health <= 0) {
         isAlive = false;
         Gamepage::enimi.removeOne(this);
-        this->hide();
+        playDeathAnimation();
+
+        QTimer::singleShot(3000, this, &TowerDisabler::hide);
 
         for (ClickableLabel *tower : disabledTowers) {
             if (auto turret1 = dynamic_cast<Turret_Q8*>(tower)) {
@@ -90,4 +92,12 @@ void TowerDisabler::takeHit(int hit) {
         }
         qDebug() << "TowerDisabler died and re-enabled turrets!";
     }
+}
+
+
+void TowerDisabler::playDeathAnimation() {
+    QLabel *label = new QLabel(this);
+    label->setFixedSize(50,50);
+    label->setStyleSheet("background:url(:/res/image/boom3.png);");
+    label->show();
 }

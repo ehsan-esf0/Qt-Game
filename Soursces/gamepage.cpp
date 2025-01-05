@@ -590,7 +590,8 @@ void Gamepage::createBlueSquareLabel()
     label->speed -= speedWave;
     label->setFixedSize(47, 47);
 
-    label->setText(QString("%1").arg(labelCount++));
+    //label->setText(QString("%1").arg(labelCount++));
+    labelCount++;
     int x = matrix[{1,1}].first;
     int y = matrix[{1,1}].second;
     label->move(x, y);

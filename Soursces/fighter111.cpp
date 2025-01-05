@@ -21,9 +21,15 @@ void fighter111::takeHit(int hit) {
     {
         isAlive = false;
         Gamepage::enimi.removeOne(this);
-        //this->deleteLater();
-        this->hide();
+        playDeathAnimation();
+
+        QTimer::singleShot(300, this, &fighter111::hide);
     }
 }
 
-
+void fighter111::playDeathAnimation() {
+    QLabel *label = new QLabel(this);
+    label->setFixedSize(50,50);
+    label->setStyleSheet("background:url(:/res/image/boom2.png);");
+    label->show();
+}

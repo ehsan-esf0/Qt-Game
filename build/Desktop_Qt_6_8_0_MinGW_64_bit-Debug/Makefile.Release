@@ -214,10 +214,12 @@ compiler_rcc_clean:
 	-$(DEL_FILE) release\qrc_Image.cpp
 release/qrc_Image.cpp: ../../Image.qrc \
 		C:/Qt/6.8.0/mingw_64/bin/rcc.exe \
+		C:/Users/User/Downloads/041591917_main_xxl.gif \
 		../../image/enimi1.png \
 		../../image/Bomb2.png \
 		../../image/card6-lvl5.png \
 		../../image/card4-lvl4.png \
+		../../image/boom.png \
 		../../image/card6-lvl2.png \
 		../../image/Bomb.png \
 		../../image/Untitled-5.png \
@@ -263,6 +265,7 @@ release/qrc_Image.cpp: ../../Image.qrc \
 		../../image/Map.png \
 		../../image/card5-lvl3.png \
 		../../image/Map2.png \
+		../../image/boom2.png \
 		../../image/card3-lvl5.png \
 		../../image/card1-lvl4.png \
 		../../image/card2.png \
@@ -6005,7 +6008,22 @@ release/fighter298.o: ../../Soursces/fighter298.cpp ../../Header/fighter298.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/QDebug \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/QMouseEvent \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QGroupBox \
-		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qgroupbox.h
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qgroupbox.h \
+		C:/Qt/6.8.0/mingw_64/include/QtGui/QMovie \
+		C:/Qt/6.8.0/mingw_64/include/QtGui/qmovie.h \
+		C:/Qt/6.8.0/mingw_64/include/QtGui/qimagereader.h \
+		C:/Qt/6.8.0/mingw_64/include/QtGui/qimageiohandler.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qplugin.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qjsonobject.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qjsonvalue.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qcborvalue.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qcborcommon.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qdatetime.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qcalendar.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qregularexpression.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/quuid.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/q20algorithm.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qfactoryinterface.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\fighter298.o ..\..\Soursces\fighter298.cpp
 
 release/gamepage.o: ../../Soursces/gamepage.cpp ../../Header/gamepage.h \

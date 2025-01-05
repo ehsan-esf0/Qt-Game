@@ -19,6 +19,7 @@ private slots:
 
 private:
     QTimer *destructionTimer;
+    void playDeathAnimation();
 };
 
 #endif // TOWERDESTROYER_H
