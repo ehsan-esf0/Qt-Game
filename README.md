@@ -1,4 +1,5 @@
-![Game](https://github.com/user-attachments/assets/b734419a-f57e-4a77-a217-3d5518367f7e)
+![Game](https://github.com/user-attachments/assets/ce91f498-aebb-4899-bcc9-9ccbe5ff4924)
+4a77-a217-3d5518367f7e)
 🛩️ This is a greedy game where you have to hit the enemy planes as much as you can to get more points 🛩️
 
 ☠️ If 3 planes leave the map, the game ends and you have to try again ☠️
