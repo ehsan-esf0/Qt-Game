@@ -27,6 +27,7 @@ public:
     QPushButton *pushButton_4;
     QPushButton *pushButton_3;
     QLabel *label_4;
+    QLabel *label_5;
 
     void setupUi(QWidget *Gamepage)
     {
@@ -69,6 +70,10 @@ public:
         label_4 = new QLabel(Gamepage);
         label_4->setObjectName("label_4");
         label_4->setGeometry(QRect(-10, -10, 1361, 721));
+        label_5 = new QLabel(Gamepage);
+        label_5->setObjectName("label_5");
+        label_5->setGeometry(QRect(435, 430, 361, 91));
+        label_5->setStyleSheet(QString::fromUtf8("background: url(:/res/image/End-4.png);"));
         label_4->raise();
         label->raise();
         pushButton_2->raise();
@@ -76,6 +81,7 @@ public:
         label_3->raise();
         pushButton_4->raise();
         pushButton_3->raise();
+        label_5->raise();
 
         retranslateUi(Gamepage);
 
@@ -92,6 +98,7 @@ public:
         pushButton_4->setText(QString());
         pushButton_3->setText(QString());
         label_4->setText(QString());
+        label_5->setText(QString());
     } // retranslateUi
 
 };

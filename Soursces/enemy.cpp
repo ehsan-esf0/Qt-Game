@@ -12,16 +12,17 @@ Enemy::~Enemy() {
 }
 
 void Enemy::takeHit(int hit) {
+
 }
 
 void Enemy::setRotationAngle(int angle) {
     rotationAngle = angle;
-    update(); // نقاشی مجدد ویجت
+    update();
 }
 
 void Enemy::setPixmap(const QPixmap &pixmap) {
     enemyPixmap = pixmap;
-    update(); // نقاشی مجدد ویجت
+    update();
 }
 
 void Enemy::paintEvent(QPaintEvent *event) {
@@ -30,12 +31,12 @@ void Enemy::paintEvent(QPaintEvent *event) {
     if (!enemyPixmap.isNull()) {
         QPainter painter(this);
         QTransform transform;
-        transform.translate(width() / 2, height() / 2); // انتقال مرکز چرخش به مرکز ویجت
+        transform.translate(width() / 2, height() / 2);
         transform.rotate(rotationAngle);
-        transform.translate(-width() / 2, -height() / 2); // بازگرداندن مرکز چرخش
+        transform.translate(-width() / 2, -height() / 2);
         painter.setTransform(transform);
 
-        painter.drawPixmap(0, 0, enemyPixmap.scaled(width(), height())); // تصویر چرخیده شده
+        painter.drawPixmap(0, 0, enemyPixmap.scaled(width(), height()));
     }
 }
 

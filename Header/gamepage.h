@@ -40,6 +40,8 @@ public:
     static QVector<Enemy*> enimi;
     static QVector<ClickableLabel*> turrets;
     static QVector<ClickableLabel*> bombs;
+    static int numberEemey;
+    static int Score;
     void startNewWave();
     void ironLabelshow();
     void updateEnemies();

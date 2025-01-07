@@ -62,6 +62,8 @@ void BombDisabler::takeHit(int hit) {
         playDeathAnimation();
 
         QTimer::singleShot(300, this, &BombDisabler::hide);
+        Gamepage::numberEemey += 1;
+
     }
 }
 

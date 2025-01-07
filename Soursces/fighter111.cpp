@@ -24,6 +24,7 @@ void fighter111::takeHit(int hit) {
         playDeathAnimation();
 
         QTimer::singleShot(300, this, &fighter111::hide);
+        Gamepage::numberEemey += 1;
     }
 }
 

@@ -268,6 +268,7 @@ debug/qrc_Image.cpp: ../../Image.qrc \
 		../../image/T-4.png \
 		../../image/map2_2.png \
 		../../image/map2_3.png \
+		../../image/End-4.png \
 		../../image/stone'.png \
 		../../image/card2-lvl1.png \
 		../../image/card4-lvl3.png \

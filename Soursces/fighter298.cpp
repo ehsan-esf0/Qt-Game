@@ -1,6 +1,7 @@
 #include "Header/fighter298.h"
 #include "Header/gamepage.h"
 #include <QMovie>
+#include <QDebug>
 
 Fighter298::Fighter298(QWidget *parent) : Enemy(parent) {
     setPixmap(QPixmap(":/res/image/enimi.png"));
@@ -25,6 +26,8 @@ void Fighter298::takeHit(int hit) {
         playDeathAnimation();
 
         QTimer::singleShot(300, this, &Fighter298::hide);
+        Gamepage::numberEemey += 1;
+        qDebug() << Gamepage::numberEemey;
     }
 }
 

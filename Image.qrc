@@ -110,5 +110,6 @@
         <file>image/BombR.png</file>
         <file>image/BombR1.png</file>
         <file>image/BombR1-ice.png</file>
+        <file>image/End-4.png</file>
     </qresource>
 </RCC>

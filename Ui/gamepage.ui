@@ -145,6 +145,22 @@ background-color:transparent;
     <string/>
    </property>
   </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>435</x>
+     <y>430</y>
+     <width>361</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background: url(:/res/image/End-4.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
   <zorder>label_4</zorder>
   <zorder>label</zorder>
   <zorder>pushButton_2</zorder>
@@ -152,6 +168,7 @@ background-color:transparent;
   <zorder>label_3</zorder>
   <zorder>pushButton_4</zorder>
   <zorder>pushButton_3</zorder>
+  <zorder>label_5</zorder>
  </widget>
  <resources/>
  <connections/>

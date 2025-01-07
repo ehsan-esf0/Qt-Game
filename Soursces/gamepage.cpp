@@ -28,6 +28,8 @@
 QVector<Enemy*> Gamepage::enimi;
 QVector<ClickableLabel*> Gamepage::turrets;
 QVector<ClickableLabel*> Gamepage::bombs;
+ int Gamepage::numberEemey = 0;
+ int Gamepage::Score = 0;
 
 void Gamepage::addMatrix()
 {
@@ -263,6 +265,7 @@ Gamepage::Gamepage(QWidget *parent) :
     ui->label_3->hide();
     ui->pushButton_4->hide();
     ui->pushButton_3->hide();
+    ui->label_5->hide();
 
     createToolbar();
 }
@@ -678,7 +681,6 @@ void Gamepage::moveObject( Enemy *label )
                 }
                 Gamepage::enimi.removeOne(label);
                 label->hide();
-                label->takeHit(10000);
                 label->isAlive = false;
             });
 }
@@ -697,6 +699,7 @@ void Gamepage::onEnemyExited() {
     {
         heart3->hide();
         ui->label_3->show();
+        ui->label_5->show();
         ui->pushButton_4->show();
         ui->pushButton_3->show();
         ui->pushButton_4->setEnabled(true);
@@ -705,14 +708,7 @@ void Gamepage::onEnemyExited() {
         timer2->stop();
         timer3->stop();
         timer4->stop();
-        iron = 0;
-        for ( Enemy *e : Gamepage::enimi ) {
-            e->takeHit(10000);
-        }
 
-        for ( ClickableLabel *a : Gamepage::turrets ) {
-            a->setSpeedshoot(0);
-        }
         QGraphicsOpacityEffect* opacityEffect = new QGraphicsOpacityEffect(this);
         opacityEffect->setOpacity(0.7);
         ui->label_4->setStyleSheet("background-color:black;");
@@ -721,6 +717,23 @@ void Gamepage::onEnemyExited() {
         ui->pushButton_3->raise();
         ui->label_3->raise();
         ui->label_4->setGraphicsEffect(opacityEffect);
+        ui->label_5->raise();
+        QLabel *numberEnemyLabel = new QLabel(this);
+        numberEnemyLabel->move(490,460);
+        numberEnemyLabel->setText(QString("The number of kill %1").arg(numberEemey));
+        numberEnemyLabel->setStyleSheet("background:transparent; font-size:25px;font-weight: bold; color: black; text-shadow: 1px 1px 2px white;");
+        numberEnemyLabel->show();
+        numberEnemyLabel->raise();
+
+
+        iron = 0;
+        for ( Enemy *e : Gamepage::enimi ) {
+            e->takeHit(10000);
+        }
+
+        for ( ClickableLabel *a : Gamepage::turrets ) {
+            a->setSpeedshoot(0);
+        }
     }
     exitCounterLabel->setText(QString("Enemies exited: %1").arg(enemiesExited));
 }

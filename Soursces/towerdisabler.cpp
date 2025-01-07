@@ -74,6 +74,8 @@ void TowerDisabler::takeHit(int hit) {
         playDeathAnimation();
 
         QTimer::singleShot(300, this, &TowerDisabler::hide);
+        Gamepage::numberEemey += 1;
+
 
         for (ClickableLabel *tower : disabledTowers) {
             if (auto turret1 = dynamic_cast<Turret_Q8*>(tower)) {
