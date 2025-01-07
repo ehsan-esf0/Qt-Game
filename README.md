@@ -2,9 +2,6 @@
 
 ☠️ If 3 planes leave the map, the game ends and you have to try again ☠️
 
-
-![Game](https://github.com/user-attachments/assets/ce91f498-aebb-4899-bcc9-9ccbe5ff4924)
-
 Game defense system 
 The game has two types of defense system, shooter and bomb 💣
 
@@ -90,6 +87,11 @@ If you drag two agents of the same level on top of each other, the level will in
 ![T-3](https://github.com/user-attachments/assets/00e22a62-5b20-4d29-bc0e-b276817688da)
 ![T-5](https://github.com/user-attachments/assets/2b9dd789-f33e-4e3d-8217-0ba5015c6d8d)
 ![T-4](https://github.com/user-attachments/assets/761fa16e-ff02-4c99-8949-ca0a01239425)
+
+
+Game image:
+
+![Game](https://github.com/user-attachments/assets/1db6ec20-fab9-498d-b4c8-3648571ffdc0)
 
 
 
