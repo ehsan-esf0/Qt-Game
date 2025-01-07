@@ -1,3 +1,4 @@
+![Game](https://github.com/user-attachments/assets/b734419a-f57e-4a77-a217-3d5518367f7e)
 🛩️ This is a greedy game where you have to hit the enemy planes as much as you can to get more points 🛩️
 
 ☠️ If 3 planes leave the map, the game ends and you have to try again ☠️
@@ -24,6 +25,11 @@ Shooters: There are four types :D
 4️⃣A shooter that fires at the enemy that has the most health. This shooter is defined in the turret_q8m class.
 
 Bomb: There are two types :D
+
+
+![card4](https://github.com/user-attachments/assets/0e252bcb-7a91-4bb8-91a9-41e2cd7cc212)
+![card5](https://github.com/user-attachments/assets/868e720a-0382-42cf-9252-a517d50190a2)
+
 
 1️⃣Bomb: This bomb destroys enemies in its range, the definition of bomb is in bomb class.
 
