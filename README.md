@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/08c8f2f3-72dd-4567-8474-ee548ac1f7b4)![image](https://github.com/user-attachments/assets/84fd2217-2684-4964-9a19-e0f402ece220)🛩️ This is a greedy game where you have to hit the enemy planes as much as you can to get more points 🛩️
+🛩️ This is a greedy game where you have to hit the enemy planes as much as you can to get more points 🛩️
 
 ☠️ If 3 planes leave the map, the game ends and you have to try again ☠️
 
@@ -6,9 +6,14 @@ Game defense system
 The game has two types of defense system, shooter and bomb 💣
 
 Shooters: There are four types :D
-![T](https://github.com/user-attachments/assets/26be98a2-5308-4561-932f-eb100618ef12)
+![card1](https://github.com/user-attachments/assets/032ab31a-071b-414d-a6dd-cfdea21f82b4)
+![card2](https://github.com/user-attachments/assets/55e43697-f40b-458d-83c4-cf0a41a63094)
+![card3](https://github.com/user-attachments/assets/ad96adc7-c9e8-4069-9554-3dc39b7669b9)
+![card6](https://github.com/user-attachments/assets/5c955d03-c705-49dc-be35-23aa5704d36c)
+
 
 1️⃣A shooter that fires at the enemy that is ahead of all others. This shooter is defined in the turret_q8 class.
+
 
 2️⃣The shooter that shoots at the last enemy, the one that is behind everyone, this shooter is defined in the turret_q8f class.
 
