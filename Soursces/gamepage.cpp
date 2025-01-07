@@ -66,6 +66,10 @@ Gamepage::Gamepage(QWidget *parent) :
     ui(new Ui::Gamepage)
     ,   selectedLabel(nullptr)
 {
+    enimi.clear();
+    turrets.clear();
+    bombs.clear();
+    numberEemey = 0;
     //enimi.clear();
     enemiesExited = 0;
     ui->setupUi(this);
@@ -1355,6 +1359,7 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
 
 void Gamepage::on_pushButton_2_clicked()
 {
+    this->deleteLater();
     MainWindow *menu = new MainWindow();
     menu->show();
     this->close();
@@ -1389,6 +1394,7 @@ void Gamepage::on_pushButton_2_clicked()
 
 void Gamepage::on_pushButton_4_clicked()
 {
+    this->deleteLater();
     MainWindow *m = new MainWindow();
     m->show();
     this->close();
@@ -1397,6 +1403,7 @@ void Gamepage::on_pushButton_4_clicked()
 
 void Gamepage::on_pushButton_3_clicked()
 {
+    this->deleteLater();
     Gamepage *m = new Gamepage();
     m->show();
     this->close();

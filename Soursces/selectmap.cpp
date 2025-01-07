@@ -10,6 +10,7 @@ selectMap::selectMap(QWidget *parent)
     , ui(new Ui::selectMap)
 {
     ui->setupUi(this);
+
     switch (saveGameData::mapNumber) {
     case 1:
         ui->checkBox->setChecked(true);
@@ -27,11 +28,8 @@ selectMap::selectMap(QWidget *parent)
 
     if ( saveGameData::speed != 0 )
     {
-        ui->progressBar->setValue(saveGameData::speed);
-        ui->horizontalScrollBar->setValue(saveGameData::speed);
     }
     else {
-        saveGameData::speed = ui->progressBar->value();
     }
 }
 
@@ -86,7 +84,7 @@ void selectMap::on_progressBar_valueChanged(int value)
 {
     saveGameData::speed = value;
     QString number = QString::number(saveGameData::speed);
-    ui->label_4->setText(number);
+
 
 }
 

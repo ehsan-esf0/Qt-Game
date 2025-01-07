@@ -49,10 +49,12 @@ public:
             LoginPage->setObjectName("LoginPage");
         LoginPage->resize(409, 484);
         LoginPage->setMaximumSize(QSize(409, 484));
-        LoginPage->setStyleSheet(QString::fromUtf8("background : rgb(117, 225, 255);"));
+        LoginPage->setStyleSheet(QString::fromUtf8("background:url(:/res/image/Untitled-3.png);\n"
+""));
         tabWidget = new QTabWidget(LoginPage);
         tabWidget->setObjectName("tabWidget");
         tabWidget->setGeometry(QRect(10, 10, 391, 461));
+        tabWidget->setStyleSheet(QString::fromUtf8(""));
         tab = new QWidget();
         tab->setObjectName("tab");
         username = new QLineEdit(tab);
@@ -145,7 +147,7 @@ public:
         label_7->setAlignment(Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter);
         label_8 = new QLabel(Tab2);
         label_8->setObjectName("label_8");
-        label_8->setGeometry(QRect(50, 180, 281, 141));
+        label_8->setGeometry(QRect(50, 180, 281, 31));
         label_8->setStyleSheet(QString::fromUtf8("color : red;\n"
 "font-size : 15px;\n"
 ""));

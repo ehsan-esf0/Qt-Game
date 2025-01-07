@@ -20,7 +20,8 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background : rgb(117, 225, 255);</string>
+   <string notr="true">background:url(:/res/image/Untitled-3.png);
+</string>
   </property>
   <widget class="QTabWidget" name="tabWidget">
    <property name="geometry">
@@ -30,6 +31,9 @@
      <width>391</width>
      <height>461</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
    </property>
    <property name="currentIndex">
     <number>1</number>
@@ -305,7 +309,7 @@ font-size : 20px;
        <x>50</x>
        <y>180</y>
        <width>281</width>
-       <height>141</height>
+       <height>31</height>
       </rect>
      </property>
      <property name="styleSheet">
