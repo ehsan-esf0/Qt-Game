@@ -20,7 +20,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background:url(:/res/image/Untitled-3.png);
+   <string notr="true">background-color:rgb(245,245,207);
 </string>
   </property>
   <widget class="QTabWidget" name="tabWidget">
@@ -29,14 +29,16 @@
      <x>10</x>
      <y>10</y>
      <width>391</width>
-     <height>461</height>
+     <height>481</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true"/>
+    <string notr="true">font: 20pt &quot;Tw Cen MT Condensed Extra Bold&quot;;
+font-color:black;
+</string>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
@@ -45,7 +47,7 @@
     <widget class="QLineEdit" name="username">
      <property name="geometry">
       <rect>
-       <x>20</x>
+       <x>150</x>
        <y>80</y>
        <width>221</width>
        <height>41</height>
@@ -55,7 +57,7 @@
     <widget class="QLineEdit" name="password">
      <property name="geometry">
       <rect>
-       <x>20</x>
+       <x>150</x>
        <y>140</y>
        <width>221</width>
        <height>41</height>
@@ -73,106 +75,24 @@
      </property>
      <property name="styleSheet">
       <string notr="true">background-color : rgb(170, 0, 255);
-font-color : 20px;
-font-size : 18px;
+font: 20pt &quot;Tw Cen MT Condensed Extra Bold&quot;;
+font-color:black;
+border-radius:20%;
+
 </string>
      </property>
      <property name="text">
       <string>Sign in</string>
      </property>
     </widget>
-    <widget class="QLabel" name="labeu">
-     <property name="geometry">
-      <rect>
-       <x>250</x>
-       <y>80</y>
-       <width>121</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color : black;
-font-size : 20px;
-</string>
-     </property>
-     <property name="text">
-      <string>نام کاربری</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_2">
-     <property name="geometry">
-      <rect>
-       <x>250</x>
-       <y>130</y>
-       <width>121</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color : black;
-font-size : 20px;
-</string>
-     </property>
-     <property name="text">
-      <string>رمز عبور</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_3">
-     <property name="geometry">
-      <rect>
-       <x>150</x>
-       <y>10</y>
-       <width>121</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color : black;
-font-size : 20px;
-</string>
-     </property>
-     <property name="text">
-      <string>فرم ثبت نام</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
-     </property>
-    </widget>
     <widget class="QLineEdit" name="password_3">
      <property name="geometry">
       <rect>
-       <x>20</x>
+       <x>150</x>
        <y>200</y>
        <width>221</width>
        <height>41</height>
       </rect>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_4">
-     <property name="geometry">
-      <rect>
-       <x>250</x>
-       <y>190</y>
-       <width>121</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color : black;
-font-size : 20px;
-</string>
-     </property>
-     <property name="text">
-      <string>تکرار رمز عبور</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
     <widget class="QLabel" name="label_5">
@@ -217,6 +137,70 @@ font-size : 15px;
       <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
+    <widget class="QLabel" name="label_10">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>80</y>
+       <width>131</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+font: 20pt &quot;Tw Cen MT Condensed Extra Bold&quot;;
+
+</string>
+     </property>
+     <property name="text">
+      <string>Username</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_11">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>140</y>
+       <width>131</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 20pt &quot;Tw Cen MT Condensed Extra Bold&quot;;
+font-color:rgb(170, 0, 255);
+</string>
+     </property>
+     <property name="text">
+      <string>Password</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_12">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>10</y>
+       <width>191</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 30pt &quot;Tw Cen MT Condensed Extra Bold&quot;;
+font-color:black;
+</string>
+     </property>
+     <property name="text">
+      <string>Sign page</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="Tab2">
     <attribute name="title">
@@ -225,8 +209,8 @@ font-size : 15px;
     <widget class="QLineEdit" name="username_2">
      <property name="geometry">
       <rect>
-       <x>30</x>
-       <y>60</y>
+       <x>150</x>
+       <y>100</y>
        <width>221</width>
        <height>41</height>
       </rect>
@@ -235,8 +219,8 @@ font-size : 15px;
     <widget class="QLineEdit" name="password_2">
      <property name="geometry">
       <rect>
-       <x>30</x>
-       <y>120</y>
+       <x>150</x>
+       <y>150</y>
        <width>221</width>
        <height>41</height>
       </rect>
@@ -253,8 +237,10 @@ font-size : 15px;
      </property>
      <property name="styleSheet">
       <string notr="true">background-color : rgb(170, 0, 255);
-font-color : 20px;
-font-size : 18px;
+font: 20pt &quot;Tw Cen MT Condensed Extra Bold&quot;;
+font-color:black;
+border-radius:20%;
+
 </string>
      </property>
      <property name="text">
@@ -264,19 +250,19 @@ font-size : 18px;
     <widget class="QLabel" name="label_6">
      <property name="geometry">
       <rect>
-       <x>260</x>
-       <y>60</y>
-       <width>121</width>
-       <height>41</height>
+       <x>0</x>
+       <y>90</y>
+       <width>131</width>
+       <height>51</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">color : black;
-font-size : 20px;
+      <string notr="true">font: 20pt &quot;Tw Cen MT Condensed Extra Bold&quot;;
+font-color:black;
 </string>
      </property>
      <property name="text">
-      <string>نام کاربری</string>
+      <string>Username</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
@@ -285,19 +271,19 @@ font-size : 20px;
     <widget class="QLabel" name="label_7">
      <property name="geometry">
       <rect>
-       <x>260</x>
-       <y>110</y>
-       <width>121</width>
+       <x>0</x>
+       <y>150</y>
+       <width>131</width>
        <height>41</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">color : black;
-font-size : 20px;
+      <string notr="true">font: 20pt &quot;Tw Cen MT Condensed Extra Bold&quot;;
+font-color:black;
 </string>
      </property>
      <property name="text">
-      <string>رمز عبور</string>
+      <string>Password</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
@@ -307,9 +293,9 @@ font-size : 20px;
      <property name="geometry">
       <rect>
        <x>50</x>
-       <y>180</y>
+       <y>220</y>
        <width>281</width>
-       <height>31</height>
+       <height>121</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -335,6 +321,27 @@ font-size : 15px;
      </property>
      <property name="text">
       <string>ورود سریع</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_13">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>10</y>
+       <width>211</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 30pt &quot;Tw Cen MT Condensed Extra Bold&quot;;
+font-color:black;
+</string>
+     </property>
+     <property name="text">
+      <string>Login page</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
      </property>
     </widget>
    </widget>
