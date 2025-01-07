@@ -19,7 +19,6 @@ Shooters: There are four types :D
 
 1️⃣A shooter that fires at the enemy that is ahead of all others. This shooter is defined in the turret_q8 class.
 
-
 2️⃣The shooter that shoots at the last enemy, the one that is behind everyone, this shooter is defined in the turret_q8f class.
 
 3️⃣A shooter that shoots enemies randomly, this shooter is defined in the turret_q8r class.
@@ -41,6 +40,28 @@ Bomb: There are two types :D
 
 ⚒️Defense systems need iron to be placed on the map, which increases with time in the game. This system is written in the main class of the gamepage.⚒️
 
+![iron](https://github.com/user-attachments/assets/b3e835f2-a20d-4d57-a344-f7532fe222dd)
+
+Enemies of the game : 
+Normal enemies have two types
+These two enemies differ in speed and health
+
+
+![enimi](https://github.com/user-attachments/assets/1fe9c68f-2951-4de2-884e-0bbfa5dddcf5) 
+![enimi1](https://github.com/user-attachments/assets/7321bbb4-3ada-490b-9edf-606bc8ede869)
+
+Game bosses : 
+1️⃣TowerDisabler disables the agents of this boss and keeps it inactive until it dies.
+
+2️⃣towerdestroyer This boss destroys game agents.
+
+3️⃣bombdisabler This boss neutralizes any bomb it sees in its path.
+
+The classes in which the bosses are defined are the special names of the bosses themselves
+
+![enimi3](https://github.com/user-attachments/assets/523057a2-4694-4e06-b017-fe23c5de6281)
+![enimi4](https://github.com/user-attachments/assets/7cb7d7fd-5cf2-47c4-a41e-022c79c95058)
+![enimi2](https://github.com/user-attachments/assets/51d350cf-20f7-4886-95e0-c5d1e3408582)
 
 
 
