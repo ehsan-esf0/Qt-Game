@@ -63,5 +63,33 @@ The classes in which the bosses are defined are the special names of the bosses 
 ![enimi4](https://github.com/user-attachments/assets/7cb7d7fd-5cf2-47c4-a41e-022c79c95058)
 ![enimi2](https://github.com/user-attachments/assets/51d350cf-20f7-4886-95e0-c5d1e3408582)
 
+Agent upgrade system :
+In the bar on the right side of the game screen, the level of the agent is shown, which increases the power of the agents by upgrading them. Each agent has 5 levels
+
+
+![card1-lvl5](https://github.com/user-attachments/assets/cf0f6fdd-74fa-46dd-9cd8-0f82dde176d6)
+![card1-lvl4](https://github.com/user-attachments/assets/54f02f10-275a-46a7-a976-8e81626c913c)
+![card1-lvl3](https://github.com/user-attachments/assets/cd071ad6-1066-48bf-bf97-1951ba14fe66)
+![card1-lvl2](https://github.com/user-attachments/assets/71b558fc-1ce0-4f98-bf09-639eddddfa85)
+![card1-lvl1](https://github.com/user-attachments/assets/9456d07c-28ff-43d5-85a8-867166ff4fa9)
+
+By improving the power, the shape of the bullets will change
+
+![bullet5](https://github.com/user-attachments/assets/00d3c6de-529f-41b8-bedd-b9d9df74c5a8)
+![bullet4](https://github.com/user-attachments/assets/ba6e65ef-4be9-4562-929a-f03b470a873c)
+![bullet3](https://github.com/user-attachments/assets/ecdc7ea1-0d96-4426-be32-1013793d3cdc)
+![bullet2](https://github.com/user-attachments/assets/b96397fa-b5f4-425d-901d-aa372f804853)
+
+Agent mutation system :
+If you drag two agents of the same level on top of each other, the level will increase and the shooting speed will increase 
+(there is a button below the agents, you need to select the agent and click on that button)
+
+
+![T](https://github.com/user-attachments/assets/0dfe6766-37db-4f1f-b234-7f0462056b3a)
+![T-2](https://github.com/user-attachments/assets/97dbe90f-2c50-4b51-b842-41630e9d4704)
+![T-3](https://github.com/user-attachments/assets/00e22a62-5b20-4d29-bc0e-b276817688da)
+![T-5](https://github.com/user-attachments/assets/2b9dd789-f33e-4e3d-8217-0ba5015c6d8d)
+![T-4](https://github.com/user-attachments/assets/761fa16e-ff02-4c99-8949-ca0a01239425)
+
 
 
