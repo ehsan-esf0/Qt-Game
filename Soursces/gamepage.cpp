@@ -683,7 +683,6 @@ void Gamepage::moveObject( Enemy *label )
 
         animation6->start();
 
-
     }else {
         animation0->setDuration(label->speed);
         animation0->setStartValue(QRect(label->currentPosition.x(), label->currentPosition.y(), label->width(), label->height()));
