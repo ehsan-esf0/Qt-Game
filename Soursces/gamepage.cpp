@@ -627,7 +627,7 @@ void Gamepage::createBlueSquareLabel()
     else {
 
         timer->setInterval(rand() % 600 + 400);
-        ui->label->setText("مبارزه");
+        ui->label->setText("fight");
     }
 
     connect(label, &Enemy::animationFinished, this , &Gamepage::onEnemyExited);
@@ -637,7 +637,7 @@ void Gamepage::createBlueSquareLabel()
 
 void Gamepage::timeLabelText()
 {
-    ui->label->setText(QString(" %1 تا موج بعدی حمله ").arg( icount-- ));
+    ui->label->setText(QString("Until the next wave %1 ").arg( icount-- ));
 
     if ( icount ==  0 )
     {
@@ -649,33 +649,69 @@ void Gamepage::moveObject( Enemy *label )
 {
     animationGroup = new QSequentialAnimationGroup(this);
     QPropertyAnimation *animation0 = new QPropertyAnimation(label, "geometry");
-    animation0->setDuration(label->speed);
-    animation0->setStartValue(QRect(label->currentPosition.x(), label->currentPosition.y(), label->width(), label->height()));
-    animation0->setEndValue(QRect(matrix[{1,2}].first, matrix[{1,2}].second, label->width(), label->height()));
-    animation0->start();
-    label->setRotationAngle(0);
-
     QPropertyAnimation *animation1 = new QPropertyAnimation(label, "geometry");
-    animation1->setDuration(label->speed * 2);
-    animation1->setStartValue(QRect(matrix[{1,2}].first, matrix[{1,2}].second, label->width(), label->height()));
-    animation1->setEndValue(QRect(matrix[{2,1}].first, matrix[{2,1}].second, label->width(), label->height()));
-
-    connect(animation0, &QPropertyAnimation::finished, this, [animation1, label](){
-        label->setRotationAngle(90);
-        animation1->start();
-    });
-
-
     QPropertyAnimation *animation6 = new QPropertyAnimation(label, "geometry");
-    animation6->setDuration(label->speed);
-    animation6->setStartValue(QRect(matrix[{2,1}].first, matrix[{2,1}].second, label->width(), label->height()));
-    animation6->setEndValue(QRect(matrix[{2,2}].first, matrix[{2,2}].second, label->width(), label->height()));
 
 
-    connect(animation1, &QPropertyAnimation::finished, this, [animation6, label](){
-        label->setRotationAngle(180);
+    if ( label->y() == 100 )
+    {
+
+        animation1->setDuration(label->speed * 2);
+        animation1->setStartValue(QRect(label->x(), label->y(), label->width(), label->height()));
+        animation1->setEndValue(QRect(matrix[{2,1}].first, matrix[{2,1}].second, label->width(), label->height()));
+
+        animation1->start();
+
+
+        animation6->setDuration(label->speed);
+        animation6->setStartValue(QRect(matrix[{2,1}].first, matrix[{2,1}].second, label->width(), label->height()));
+        animation6->setEndValue(QRect(matrix[{2,2}].first, matrix[{2,2}].second, label->width(), label->height()));
+
+
+        connect(animation1, &QPropertyAnimation::finished, this, [animation6, label](){
+            label->setRotationAngle(180);
+            animation6->start();
+        });
+
+    }
+    else if ( label->x() == 1100 ) {
+
+
+        animation6->setDuration(label->speed);
+        animation6->setStartValue(QRect(label->x(), label->y(), label->width(), label->height()));
+        animation6->setEndValue(QRect(matrix[{2,2}].first, matrix[{2,2}].second, label->width(), label->height()));
+
         animation6->start();
-    });
+
+
+    }else {
+        animation0->setDuration(label->speed);
+        animation0->setStartValue(QRect(label->currentPosition.x(), label->currentPosition.y(), label->width(), label->height()));
+        animation0->setEndValue(QRect(matrix[{1,2}].first, matrix[{1,2}].second, label->width(), label->height()));
+        animation0->start();
+        label->setRotationAngle(0);
+
+        animation1->setDuration(label->speed * 2);
+        animation1->setStartValue(QRect(matrix[{1,2}].first, matrix[{1,2}].second, label->width(), label->height()));
+        animation1->setEndValue(QRect(matrix[{2,1}].first, matrix[{2,1}].second, label->width(), label->height()));
+
+        connect(animation0, &QPropertyAnimation::finished, this, [animation1, label](){
+            label->setRotationAngle(90);
+            animation1->start();
+        });
+
+
+        animation6->setDuration(label->speed);
+        animation6->setStartValue(QRect(matrix[{2,1}].first, matrix[{2,1}].second, label->width(), label->height()));
+        animation6->setEndValue(QRect(matrix[{2,2}].first, matrix[{2,2}].second, label->width(), label->height()));
+
+
+        connect(animation1, &QPropertyAnimation::finished, this, [animation6, label](){
+            label->setRotationAngle(180);
+            animation6->start();
+        });
+    }
+
 
     connect(animation6, &QPropertyAnimation::finished, this, [ label]()
             {
@@ -1154,7 +1190,7 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                             selectedLabel->setStyleSheet(QString("background: url(:/res/image/T1-%1.png);").arg(turret2->getLvl()));
                             if ( turret2->getLvl() == 5 )
                             {
-                                selectedLabel->setStyleSheet("background: url(:/res/image/T1-5.png);");
+                                selectedLabel->setStyleSheet("background: url(:/res/image/T-5.png);");
                             }
                             int speed = selectedLabel->getSpeedshoot() - 100;
                             selectedLabel->setSpeedshoot(speed);
@@ -1176,7 +1212,7 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                             selectedLabel->setStyleSheet(QString("background: url(:/res/image/T2-%1.png);").arg(turret3->getLvl()));
                             if ( turret3->getLvl() == 5 )
                             {
-                                selectedLabel->setStyleSheet("background: url(:/res/image/T1-5.png);");
+                                selectedLabel->setStyleSheet("background: url(:/res/image/T-5.png);");
                             }
                             int speed = selectedLabel->getSpeedshoot() - 100;
                             selectedLabel->setSpeedshoot(speed);
@@ -1199,7 +1235,7 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                             selectedLabel->setStyleSheet(QString("background: url(:/res/image/T3-%1.png);").arg(turret4->getLvl()));
                             if ( turret4->getLvl() == 5 )
                             {
-                                selectedLabel->setStyleSheet("background: url(:/res/image/T1-5.png);");
+                                selectedLabel->setStyleSheet("background: url(:/res/image/T-5.png);");
                             }
                             int speed = selectedLabel->getSpeedshoot() - 100;
                             selectedLabel->setSpeedshoot(speed);
