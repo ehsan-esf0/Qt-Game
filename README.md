@@ -45,7 +45,7 @@ These two enemies differ in speed and health
 
 
 ![enimi](https://github.com/user-attachments/assets/1fe9c68f-2951-4de2-884e-0bbfa5dddcf5) 
-![enimi1](https://github.com/user-attachments/assets/d2722906-afa2-4b89-ad36-7469df363786)
+![enimi1](https://github.com/user-attachments/assets/15353182-42f9-41ec-a992-51ba5a00225c)
 
 Game bosses : 
 
