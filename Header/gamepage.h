@@ -67,6 +67,7 @@ private slots:
 
 private:
     std::map<std::pair<int, int>, std::pair<int, int>> matrix;
+    std::map<std::pair<int, int>, std::pair<int, int>> matrix2;
     void addMatrix();
     Ui::Gamepage *ui;
     static std::vector <int> cartbar;
@@ -95,6 +96,7 @@ private:
     bool checkMap(QMouseEvent *event);
     bool checkMap2 ( QMouseEvent *event );
     bool checkMap3 ( QMouseEvent *event );
+    QPoint checkEvent( QMouseEvent *event );
     void createLabelMapUpdate( int startx , int starty);
     int countWave;
     int wCount;

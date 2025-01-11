@@ -59,6 +59,23 @@ void Gamepage::addMatrix()
         matrix[{2,2}] = {1100 ,600};
         break;
     }
+
+    matrix2[{0,0}] = {500 ,300};
+    matrix2[{0,1}] = {500 ,410};
+    matrix2[{0,2}] = {500 ,520};
+    matrix2[{0,3}] = {500 ,630};
+    matrix2[{1,0}] = {610 ,300};
+    matrix2[{1,1}] = {610 ,410};
+    matrix2[{1,2}] = {610 ,520};
+    matrix2[{1,3}] = {610 ,630};
+    matrix2[{2,0}] = {720 ,300};
+    matrix2[{2,1}] = {720 ,410};
+    matrix2[{2,2}] = {720 ,520};
+    matrix2[{2,3}] = {720 ,630};
+    matrix2[{3,0}] = {830 ,300};
+    matrix2[{3,1}] = {830 ,410};
+    matrix2[{3,2}] = {830 ,520};
+    matrix2[{3,3}] = {830 ,630};
 }
 
 Gamepage::Gamepage(QWidget *parent) :
@@ -1102,7 +1119,7 @@ bool Gamepage::checkMap ( QMouseEvent *event )
 
             for (int j = 250 ; j <= 600 ; j += 100 ) {
 
-                if ((i + 30 < event->pos().rx() && event->pos().rx()  < i + 65) && (j + 50  < event->pos().ry() && event->pos().ry()  < j + 80))
+                if ((i < event->pos().rx() && event->pos().rx()  < i + 100) && (j < event->pos().ry() && event->pos().ry()  < j + 80))
                 {
                     return true;
                 }
@@ -1150,6 +1167,83 @@ bool Gamepage::checkMap3 ( QMouseEvent *event )
     return false;
 }
 
+QPoint Gamepage::checkEvent( QMouseEvent *event )
+{
+    if ( event->pos().rx() <= 550  )
+    {
+        if ( event->pos().ry() <= 350 )
+        {
+            return QPoint(matrix2[{0,0}].first , matrix2[{0,0}].second);
+        }
+        else if ( event->pos().ry() <= 460 )
+        {
+            return QPoint(matrix2[{0,1}].first , matrix2[{0,1}].second);
+        }
+        else if ( event->pos().ry() <= 570 )
+        {
+            return QPoint(matrix2[{0,2}].first , matrix2[{0,2}].second);
+        }
+        else if ( event->pos().ry() <= 680 )
+        {
+            return QPoint(matrix2[{0,3}].first , matrix2[{0,3}].second);
+        }
+    }else if (event->pos().rx() <= 660) {
+
+        if ( event->pos().ry() <= 350 )
+        {
+            return QPoint(matrix2[{1,0}].first , matrix2[{1,0}].second);
+        }
+        else if ( event->pos().ry() <= 460 )
+        {
+            return QPoint(matrix2[{1,1}].first , matrix2[{1,1}].second);
+        }
+        else if ( event->pos().ry() <= 570 )
+        {
+            return QPoint(matrix2[{1,2}].first , matrix2[{1,2}].second);
+        }
+        else if ( event->pos().ry() <= 680 )
+        {
+            return QPoint(matrix2[{1,3}].first , matrix2[{1,3}].second);
+        }
+    }else if (event->pos().rx() <= 770) {
+
+        if ( event->pos().ry() <= 350 )
+        {
+            return QPoint(matrix2[{2,0}].first , matrix2[{2,0}].second);
+        }
+        else if ( event->pos().ry() <= 460 )
+        {
+            return QPoint(matrix2[{2,1}].first , matrix2[{2,1}].second);
+        }
+        else if ( event->pos().ry() <= 570 )
+        {
+            return QPoint(matrix2[{2,2}].first , matrix2[{2,2}].second);
+        }
+        else if ( event->pos().ry() <= 680 )
+        {
+            return QPoint(matrix2[{2,3}].first , matrix2[{2,3}].second);
+        }
+    }else if (event->pos().rx() <= 880) {
+
+        if ( event->pos().ry() <= 350 )
+        {
+            return QPoint(matrix2[{3,0}].first , matrix2[{3,0}].second);
+        }
+        else if ( event->pos().ry() <= 460 )
+        {
+            return QPoint(matrix2[{3,1}].first , matrix2[{3,1}].second);
+        }
+        else if ( event->pos().ry() <= 570 )
+        {
+            return QPoint(matrix2[{3,2}].first , matrix2[{3,2}].second);
+        }
+        else if ( event->pos().ry() <= 680 )
+        {
+            return QPoint(matrix2[{3,3}].first , matrix2[{3,3}].second);
+        }
+    }
+}
+
 
 void Gamepage::mousePressEvent(QMouseEvent *event)
 {
@@ -1168,7 +1262,7 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                         {
                             int lvl = turret1->getLvl() + 1;
                             turret1->setLvl( lvl );
-                            selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2 + 50));
+                            selectedLabel->move(checkEvent(event) - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2 + 7));
                             selectedLabel->setStyleSheet(QString("background: url(:/res/image/T-%1.png);").arg(turret1->getLvl()));
                             int speed = selectedLabel->getSpeedshoot() - 100;
                             selectedLabel->setSpeedshoot(speed);
@@ -1185,7 +1279,7 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                         {
                             int lvl = turret2->getLvl() + 1;
                             turret2->setLvl( lvl );
-                            selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2 + 50));
+                            selectedLabel->move(checkEvent(event) - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2+ 7));
                             selectedLabel->setStyleSheet(QString("background: url(:/res/image/T1-%1.png);").arg(turret2->getLvl()));
                             if ( turret2->getLvl() == 5 )
                             {
@@ -1207,7 +1301,7 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                         {
                             int lvl = turret3->getLvl() + 1;
                             turret3->setLvl( lvl );
-                            selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2 + 50));
+                            selectedLabel->move(checkEvent(event) - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2+ 7));
                             selectedLabel->setStyleSheet(QString("background: url(:/res/image/T2-%1.png);").arg(turret3->getLvl()));
                             if ( turret3->getLvl() == 5 )
                             {
@@ -1230,7 +1324,7 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                         {
                             int lvl = turret4->getLvl() + 1;
                             turret4->setLvl( lvl );
-                            selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2 + 50));
+                            selectedLabel->move(checkEvent(event) - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2+ 7));
                             selectedLabel->setStyleSheet(QString("background: url(:/res/image/T3-%1.png);").arg(turret4->getLvl()));
                             if ( turret4->getLvl() == 5 )
                             {
@@ -1260,7 +1354,9 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                                 Gamepage::turrets.append(selectedLabel);
                                 labels.removeOne(selectedLabel);
                                 iron -= 200;
-                                selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2));
+
+                                selectedLabel->move(checkEvent(event) - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2));
+
                                 turret1->startShotBullet();
                                 turret1->setDamage(turret1->getDamage() * pow(2,(level[0] - 1)));
                                 selectedLabel->setFixedSize(90, 60);
@@ -1283,7 +1379,7 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                                 Gamepage::turrets.append(selectedLabel);
                                 labels.removeOne(selectedLabel);
                                 iron -= 200;
-                                selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2));
+                                selectedLabel->move(checkEvent(event) - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2));
                                 turret2->startShotBullet();
                                 turret2->setDamage(turret2->getDamage() * pow(2,(level[1] - 1)));
                                 selectedLabel->setStyleSheet("background: url(:/res/image/T1.png);");
@@ -1307,7 +1403,7 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                                 Gamepage::turrets.append(selectedLabel);
                                 labels.removeOne(selectedLabel);
                                 iron -= 400;
-                                selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2));
+                                selectedLabel->move(checkEvent(event) - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2));
                                 turret3->startShotBullet();
                                 turret3->setDamage(turret3->getDamage() * pow(2,(level[2] - 1)));
                                 selectedLabel->setStyleSheet("background: url(:/res/image/T2.png);");
@@ -1330,7 +1426,7 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                                 Gamepage::turrets.append(selectedLabel);
                                 labels.removeOne(selectedLabel);
                                 iron -= 300;
-                                selectedLabel->move(event->pos() - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2));
+                                selectedLabel->move(checkEvent(event) - QPoint(selectedLabel->width() / 2, selectedLabel->height() / 2));
                                 turret4->startShotBullet();
                                 turret4->setDamage(turret4->getDamage() * pow(2,(level[2] - 1)));
                                 selectedLabel->setStyleSheet("background: url(:/res/image/T3.png);");
