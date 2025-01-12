@@ -14,6 +14,8 @@ public:
     void checkCollision();
     bool isActive;
     void ReleaseTheBomb();
+    void setRange( int x);
+    int getRange();
 
 signals:
     void bombExploded();
@@ -25,7 +27,7 @@ private slots:
     void deleteBomb();
 
 private:
-
+    int range;
     QLabel* bombLabel;
 
 };

@@ -300,7 +300,7 @@ void Gamepage::createToolbar()
     int y = 10 + 0 * 115;
     labellvl1->move(x, y);
     labellvl1->show();
-    QPushButton *button = new QPushButton("Action", this);
+    QPushButton *button = new QPushButton("Lvl up", this);
     button->setGeometry(x, y + 90, 90, 20);
     connect(button, &QPushButton::clicked, this, &Gamepage::buttonClicked1);
     button->show();
@@ -312,7 +312,7 @@ void Gamepage::createToolbar()
     y = 10 + 1 * 115;
     labellvl2->move(x, y);
     labellvl2->show();
-    QPushButton *button2 = new QPushButton("Action", this);
+    QPushButton *button2 = new QPushButton("Lvl up", this);
     button2->setGeometry(x, y + 90, 90, 20);
     connect(button2, &QPushButton::clicked, this, &Gamepage::buttonClicked2);
     button2->show();
@@ -324,7 +324,7 @@ void Gamepage::createToolbar()
     y = 10 + 2 * 115;
     labellvl3->move(x, y);
     labellvl3->show();
-    QPushButton *button3 = new QPushButton("Action", this);
+    QPushButton *button3 = new QPushButton("Lvl up", this);
     button3->setGeometry(x, y + 90, 90, 20);
     connect(button3, &QPushButton::clicked, this, &Gamepage::buttonClicked3);
     button3->show();
@@ -336,7 +336,7 @@ void Gamepage::createToolbar()
     y = 10 + 3 * 115;
     labellvl4->move(x, y);
     labellvl4->show();
-    QPushButton *button4 = new QPushButton("Action", this);
+    QPushButton *button4 = new QPushButton("Lvl up", this);
     button4->setGeometry(x, y + 90, 90, 20);
     connect(button4, &QPushButton::clicked, this, &Gamepage::buttonClicked4);
     button4->show();
@@ -348,7 +348,7 @@ void Gamepage::createToolbar()
     y = 10 + 4 * 115;
     labellvl5->move(x, y);
     labellvl5->show();
-    QPushButton *button5 = new QPushButton("Action", this);
+    QPushButton *button5 = new QPushButton("Lvl up", this);
     button5->setGeometry(x, y + 90, 90, 20);
     connect(button5, &QPushButton::clicked, this, &Gamepage::buttonClicked5);
     button5->show();
@@ -360,7 +360,7 @@ void Gamepage::createToolbar()
     y = 10 + 5 * 115;
     labellvl6->move(x, y);
     labellvl6->show();
-    QPushButton *button6 = new QPushButton("Action", this);
+    QPushButton *button6 = new QPushButton("Lvl up", this);
     button6->setGeometry(x, y + 90, 90, 20);
     connect(button6, &QPushButton::clicked, this, &Gamepage::buttonClicked6);
     button6->show();
@@ -424,16 +424,22 @@ void Gamepage::buttonClicked3()
 
 void  Gamepage::buttonClicked4()
 {
-    if ( level[3] <= 5 )
+    if ( level[3] < 5 )
     {
+        iron -= (200 * level[3]);
         level[3] += 1;
     }
     labellvl4->setStyleSheet(QString("background: url(:/res/image/card4-lvl%1.png);").arg(level[3]));
+    for (ClickableLabel *t : Gamepage::bombs) {
+        if (auto bomb = dynamic_cast<Bomb*>(t)) {
+            bomb->setRange(level[3] * 25 + 40);
+        }
+    }
 }
 
 void  Gamepage::buttonClicked5()
 {
-    if ( level[4] <= 5 )
+    if ( level[4] < 5 )
     {
         level[4] += 1;
     }
@@ -1456,6 +1462,7 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                             opacityEffect->setOpacity(1);
                             selectedLabel->setGraphicsEffect(opacityEffect);
                             selectedLabel->setFixedSize(50, 50);
+                            turret1->setRange(level[3] * 25 + 40);
                             selectedLabel->status = 1;
                             Gamepage::bombs.append(selectedLabel);
                             selectedLabel = nullptr;

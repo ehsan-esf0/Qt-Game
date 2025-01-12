@@ -18,6 +18,8 @@ Bomb::Bomb(QWidget *parent) : ClickableLabel(parent) {
     isActive = true;
     damage = 2000;
     bombLabel = new QLabel(qobject_cast<Gamepage*>(parentWidget()));
+
+    range = 50;
 }
 
 void Bomb::ReleaseTheBomb()
@@ -50,7 +52,7 @@ void Bomb::checkCollision() {
         QList<Enemy*> collidedEnemies;
 
         for (Enemy *enemy : Gamepage::enimi) {
-            if (this->geometry().adjusted(-50, -50, 50, 50).intersects(enemy->geometry())) {
+            if (this->geometry().adjusted(-range, -range, range, range).intersects(enemy->geometry())) {
                 emit Release();
                 collidedEnemies.append(enemy);
             }
@@ -78,4 +80,11 @@ void Bomb::handleBombExplosion() {
     isActive = false;
     this->hide();
     this->move(2000, 1000);
+}
+
+void Bomb::setRange( int x){
+    range = x;
+}
+int Bomb::getRange(){
+    return range;
 }
