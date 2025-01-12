@@ -44,7 +44,7 @@ void Ice_Bomb::checkCollision() {
         QList<Enemy*> collidedEnemies;
 
         for (Enemy *enemy : Gamepage::enimi) {
-            if (this->geometry().adjusted(-50, -50, 50, 50).intersects(enemy->geometry())) {
+            if (this->geometry().adjusted(-range, -range, range, range).intersects(enemy->geometry())) {
                 emit Release();
                 collidedEnemies.append(enemy);
             }
@@ -69,4 +69,11 @@ void Ice_Bomb::handleBombExplosion() {
     isActive = false;
     this->hide();
     this->move(2000 ,1000);
+}
+
+void Ice_Bomb::setRange( int x){
+    range = x;
+}
+int Ice_Bomb::getRange(){
+    return range;
 }

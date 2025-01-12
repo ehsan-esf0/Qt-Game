@@ -441,9 +441,15 @@ void  Gamepage::buttonClicked5()
 {
     if ( level[4] < 5 )
     {
+        iron -= (200 * level[4]);
         level[4] += 1;
     }
     labellvl5->setStyleSheet(QString("background: url(:/res/image/card5-lvl%1.png);").arg(level[4]));
+    for (ClickableLabel *t : Gamepage::bombs) {
+        if (auto bomb = dynamic_cast<Ice_Bomb*>(t)) {
+            bomb->setRange(level[4] * 25 + 40);
+        }
+    }
 }
 
 void Gamepage::buttonClicked6()
@@ -1481,6 +1487,7 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                             opacityEffect->setOpacity(1);
                             selectedLabel->setGraphicsEffect(opacityEffect);
                             selectedLabel->setFixedSize(50, 50);
+                            turret2->setRange(level[4] * 25 + 40);
                             selectedLabel->status = 1;
                             Gamepage::bombs.append(selectedLabel);
                             selectedLabel = nullptr;
