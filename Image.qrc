@@ -112,5 +112,8 @@
         <file>image/BombR1-ice.png</file>
         <file>image/End-4.png</file>
         <file>image/S-map.png</file>
+        <file>image/ice.png</file>
+        <file>image/ice2.png</file>
+        <file>image/ice3.png</file>
     </qresource>
 </RCC>

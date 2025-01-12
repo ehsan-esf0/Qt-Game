@@ -57,8 +57,16 @@ void Ice_Bomb::checkCollision() {
 
 
                 QTimer::singleShot(3000, enemy, &Enemy::restoreSpeed);
-            }
 
+                QLabel *label = new QLabel(enemy);
+                label->setFixedSize(50,50);
+                label->setStyleSheet("background:url(:/res/image/ice3.png);");
+                label->show();
+
+                QTimer::singleShot(3000, enemy, [label]() {
+                    label->hide();
+                });
+            }
             emit bombExploded();
         }
     }

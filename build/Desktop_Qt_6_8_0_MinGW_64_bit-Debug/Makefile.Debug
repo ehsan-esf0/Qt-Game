@@ -230,11 +230,13 @@ debug/qrc_Image.cpp: ../../Image.qrc \
 		../../image/startboom.png \
 		../../image/card6-lvl2.png \
 		../../image/Bomb.png \
+		../../image/ice3.png \
 		../../image/BombR1-ice.png \
 		../../image/bullet2.png \
 		../../image/Untitled-5.png \
 		../../image/enimi4.png \
 		../../image/heart.png \
+		../../image/ice.png \
 		../../image/card4-lvl5.png \
 		../../image/T1-4.png \
 		../../image/End-1.png \
@@ -247,6 +249,7 @@ debug/qrc_Image.cpp: ../../Image.qrc \
 		../../image/tree2.png \
 		../../image/smap1.png \
 		../../image/card1-lvl1.png \
+		../../image/ice2.png \
 		../../image/card3.png \
 		../../image/tree3.png \
 		../../image/card4.png \
