@@ -650,7 +650,7 @@ void Gamepage::createBlueSquareLabel()
         labelCount = 1;
         bossCount = 0;
         countWave += 1;
-        speedWave += 200;
+        speedWave += 100;
         healthWave += 0.1;
     }
     else {
@@ -1319,7 +1319,7 @@ void Gamepage::mousePressEvent(QMouseEvent *event)
                             {
                                 selectedLabel->setStyleSheet("background: url(:/res/image/T-5.png);");
                             }
-                            int speed = selectedLabel->getSpeedshoot() - 100;
+                            int speed = selectedLabel->getSpeedshoot() - 200;
                             selectedLabel->setSpeedshoot(speed);
                             QGraphicsOpacityEffect* opacityEffect = new QGraphicsOpacityEffect(this);
                             opacityEffect->setOpacity(1);

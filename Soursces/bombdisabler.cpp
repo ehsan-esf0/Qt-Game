@@ -38,6 +38,7 @@ void BombDisabler::disableNearbyBombs() {
                 if (bomb1->isActive) {
                     bomb1->isActive = false;
                     bomb1->hide();
+                    bomb1->move(1000,2000);
                     Gamepage::bombs.removeOne(bomb1);
                     qDebug() << "Bomb destroyed!";
                 }
@@ -45,6 +46,7 @@ void BombDisabler::disableNearbyBombs() {
                 if (bomb2->isActive) {
                     bomb2->isActive = false;
                     bomb2->hide();
+                    bomb2->move(1000,2000);
                     Gamepage::bombs.removeOne(bomb2);
                     qDebug() << "Ice bomb destroyed!";
                 }
