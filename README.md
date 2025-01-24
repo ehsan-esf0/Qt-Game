@@ -83,19 +83,13 @@ Agent mutation system :
 If you drag two agents of the same level on top of each other, the level will increase and the shooting speed will increase 
 (there is a button below the agents, you need to select the agent and click on that button)
 
-turret_q8 :
+
 ![T](https://github.com/user-attachments/assets/0dfe6766-37db-4f1f-b234-7f0462056b3a)
 ![T-2](https://github.com/user-attachments/assets/97dbe90f-2c50-4b51-b842-41630e9d4704)
 ![T-3](https://github.com/user-attachments/assets/00e22a62-5b20-4d29-bc0e-b276817688da)
 ![T-5](https://github.com/user-attachments/assets/2b9dd789-f33e-4e3d-8217-0ba5015c6d8d)
 ![T-4](https://github.com/user-attachments/assets/761fa16e-ff02-4c99-8949-ca0a01239425)
 
-turret_q8f :
-![card1-lvl5](https://github.com/user-attachments/assets/cf0f6fdd-74fa-46dd-9cd8-0f82dde176d6)
-![T1-4](https://github.com/user-attachments/assets/943dc42a-f874-43ea-b053-89095d465df0)
-![T1-3](https://github.com/user-attachments/assets/cd79f1f9-b4e5-4a0e-8ace-9d9d7f2ec47f)
-![T1-2](https://github.com/user-attachments/assets/f6021062-201e-40b2-b750-2c713ae24f61)
-![T1](https://github.com/user-attachments/assets/b84503d4-b145-4180-ab15-485685d93ac3)
 
 Game image:
 
