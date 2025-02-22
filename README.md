@@ -13,18 +13,41 @@ There are four types of shooters:
 1️⃣ **Shooter (turret_q8)**: Fires at the enemy that is ahead of all others.
 
 ![card1](https://github.com/user-attachments/assets/032ab31a-071b-414d-a6dd-cfdea21f82b4)
+![card1-lvl1](https://github.com/user-attachments/assets/5c8bbd71-6625-4c1e-aa6f-3e5383dcb62d)
+![card1-lvl2](https://github.com/user-attachments/assets/9291d066-32d1-490a-afe7-ad0f1d88ef60)
+![card1-lvl3](https://github.com/user-attachments/assets/4c90f683-617b-4d01-9db7-1d43ae5e706e)
+![card1-lvl4](https://github.com/user-attachments/assets/3bf48fa5-2314-4603-ab6f-d26ebc481237)
+![card1-lvl5](https://github.com/user-attachments/assets/6b9e4622-9e89-4d93-b791-a62e3dfa5216)
+
 
 2️⃣ **Shooter (turret_q8f)**: Shoots at the last enemy, the one that is behind everyone.
 
 ![card2](https://github.com/user-attachments/assets/55e43697-f40b-458d-83c4-cf0a41a63094)
+![card2-lvl1](https://github.com/user-attachments/assets/6d6bf660-dbb1-4e38-8388-75ab7038c8b2)
+![card2-lvl2](https://github.com/user-attachments/assets/46e4956c-a5af-499a-b366-43078f80cbad)
+![card2-lvl3](https://github.com/user-attachments/assets/ae0de42f-d9e4-4dbe-b0f7-b7ef398d9322)
+![card2-lvl4](https://github.com/user-attachments/assets/e66a1d8d-7127-459d-b757-7cee108443cb)
+![card2-lvl5](https://github.com/user-attachments/assets/4c68054d-9719-481c-8a67-ed4086538642)
+
 
 3️⃣ **Shooter (turret_q8r)**: Shoots enemies randomly.
 
 ![card3](https://github.com/user-attachments/assets/ad96adc7-c9e8-4069-9554-3dc39b7669b9)
+![card3-lvl1](https://github.com/user-attachments/assets/ad8e966a-978a-4448-b472-91e9177b681c)
+![card3-lvl2](https://github.com/user-attachments/assets/bbc6ece1-a704-44d1-9c1d-efbfd23942ce)
+![card3-lvl3](https://github.com/user-attachments/assets/43307897-16fc-4187-b419-282927e448b1)
+![card3-lvl4](https://github.com/user-attachments/assets/bb562acd-62a9-4592-b7cc-020abfd3db65)
+![card3-lvl5](https://github.com/user-attachments/assets/7ae26a79-2b4f-493a-97bc-5882a2abe74c)
+
 
 4️⃣ **Shooter (turret_q8m)**: Fires at the enemy that has the most health.
 
 ![card6](https://github.com/user-attachments/assets/5c955d03-c705-49dc-be35-23aa5704d36c)
+![card6-lvl1](https://github.com/user-attachments/assets/96fb2a65-2179-4680-b8ff-8f4242d76bdf)
+![card6-lvl2](https://github.com/user-attachments/assets/2f704b74-d13d-40b8-9918-21ded3cf47bd)
+![card6-lvl3](https://github.com/user-attachments/assets/4f00607d-659b-46db-81b3-fb536ad21a5a)
+![card6-lvl4](https://github.com/user-attachments/assets/6b464871-4140-42b5-bf63-62b3337b6406)
+![card6-lvl5](https://github.com/user-attachments/assets/1ee0ae34-f886-46a9-9f81-6626d08bda83)
 
 ### 💥 Bombs
 
