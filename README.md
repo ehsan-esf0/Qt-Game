@@ -25,11 +25,6 @@ There are four types of shooters:
 4️⃣ **Shooter (turret_q8m)**: Fires at the enemy that has the most health.
 
 ![card6](https://github.com/user-attachments/assets/5c955d03-c705-49dc-be35-23aa5704d36c)
-![card6-lvl1](https://github.com/user-attachments/assets/96fb2a65-2179-4680-b8ff-8f4242d76bdf)
-![card6-lvl2](https://github.com/user-attachments/assets/2f704b74-d13d-40b8-9918-21ded3cf47bd)
-![card6-lvl3](https://github.com/user-attachments/assets/4f00607d-659b-46db-81b3-fb536ad21a5a)
-![card6-lvl4](https://github.com/user-attachments/assets/6b464871-4140-42b5-bf63-62b3337b6406)
-![card6-lvl5](https://github.com/user-attachments/assets/1ee0ae34-f886-46a9-9f81-6626d08bda83)
 
 ### 💥 Bombs
 
